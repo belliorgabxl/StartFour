@@ -1,0 +1,130 @@
+.navbar{
+    top:0px;
+    left: 0px;
+    position: fixed;
+    display: grid;
+    height: 150px;
+    width: 100%;
+    grid-template-rows: 100px 50px;
+    background-color: white;
+    z-index: 20;
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+}
+
+.topbar{
+    border-bottom: 3px solid black;
+    display: grid;
+    grid-template-columns:7% 13% 10% 30% 25% 15%;
+    box-shadow: 0px 1px 4px gray;
+    text-decoration: none;
+}
+.sign{
+    border-left: 3px solid black;
+    display: grid;
+    padding :10px 0px 10px 60px;
+    grid-template-rows: 10px 25px 25px 10px;
+    font-size: 23px;
+    font-weight: 400px;
+}
+.sign a{
+    text-decoration: none;
+    color: black;
+}
+.sign a:hover{
+    color:blue;
+}
+.singbtn{
+    padding-bottom: 10px;
+
+}
+
+.logotab{
+
+    padding: 10px 20px 0px 20px;
+}
+.logoname{
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 33px 0px 0 15px
+}
+.mainbar_search1{
+    display: grid;
+    place-items: center;
+}
+.mainbar_search2{
+    background: white;
+    width: 300px;
+    display: flex;
+    place-items: center;
+    border: solid 2px gray;
+    border-radius: 1.5rem;
+}
+.search{
+    border:none;
+    outline:none;
+    font-size:16px
+  }
+.helptab{
+    font-size: 18px;
+    font-weight: 300px;
+    text-decoration: none;
+    padding: 40px 0px 0px 240px;
+}
+.helptab a:hover{
+    color:blue;
+}
+
+
+
+.menubar{
+    display: grid;
+    grid-template-columns: 5% 15.8% 15.8% 15.8% 15.8% 15.8% 15.8%;
+    box-shadow: 0px 2px 10px gray;
+}
+.menulist{
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    display: grid;
+    place-items: center;
+}
+.menulist:hover{
+    background-color: #000333;
+    color:white;
+}
+
+.dropdown_menu {
+    font-size: 22px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 20
+}
+
+.dropdown_menu a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    z-index: 20;
+}
+.dropdown{
+    background-color: white;
+    padding: 5px 0px 0px 10px
+}
+.dropdown:hover{
+    background-color: #000333;
+}
+.dropdown_menu a:hover {
+    background-color: #000333;
+    color: white;
+}
+
+.dropdown:hover .dropdown_menu {
+    display: block;
+}

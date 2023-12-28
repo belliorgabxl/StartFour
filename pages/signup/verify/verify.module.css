@@ -1,0 +1,16 @@
+.title_verify{
+    padding:130px 50px 50px 50px;
+    display: grid;
+    place-items: center;
+}
+.content_verify{
+    padding:10px 10px 10px 10px;
+    margin: 30px 100px 60px 100px;
+    box-shadow: 0px 2px 5px gray;
+    border-top: 30px solid #000033;
+    border-radius: 1.5rem;
+    width: 400px;
+    height: 300px;
+    display: grid;
+    place-items: center;
+}

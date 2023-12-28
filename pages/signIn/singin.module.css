@@ -1,0 +1,54 @@
+.body{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color:#E8E8E8;
+  }
+  
+.container{
+    display: grid;
+    place-items: center;
+    width: 93%;
+    background-image: url(https://img.freepik.com/free-photo/white-wall-texture-background_24972-2224.jpg?w=740&t=st=1702744123~exp=1702744723~hmac=9d52f17a58211bf640c8f0072e6e08a033756ed23d115c3d47c5530927f574eb);
+    margin-top: 140px;
+  }
+.container a{
+    text-decoration: none;
+  }
+
+.signin_form{
+    background-color: white;
+    display: grid;
+   place-items: center;
+    width: 40%;
+    height: 255px;
+    margin-top: 40px;
+    border-radius: 1.5rem;
+    border-top: 25px solid 	#282828;
+    margin-bottom: 50px;
+    box-shadow: 0px 2px 20px gray;
+    grid-template-rows: 60px 60px 60px 60px;
+}
+.titlebox{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ 
+}
+.input_box{
+    width: 80%;
+    height: 40px;
+    background-color:#F8F8F8 ;
+    font-size: 16px;
+    border: 1px solid #F0F0F0 ;
+}
+.login_btn{
+    border-radius: 0.5rem;
+    border:none;
+    background-color: 	#282828;
+    color: white;
+    width: 80%;
+    height: 40px;
+}

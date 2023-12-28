@@ -1,0 +1,100 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color:#E8E8E8;
+    
+  }
+  .container {
+    place-items: center;
+    width: 93%;
+    background-color: white;
+    margin-top: 110px;
+    height: 3500px;
+  }
+  .RoomType {
+    font-family: serif;
+    transform: translate(150px,20px);
+    font-size: 25px;
+    margin-top: 50px;
+  }
+  .ButtonRoomType {
+    color: black;
+    transform: translate(1120px,0px);
+    height: 30px;
+    width: 100px;
+    background-color: white;
+    box-shadow: 1px 1px 5px;
+    border-radius: 5px;
+    padding: 10px 0px 0px 10px;
+    
+  }
+  .ButtonRoomType :hover {
+    background: blueviolet;
+  }
+  .ButtonRoomType a{
+    text-decoration: none;
+    color: black;
+  }
+  .boxgrid {
+    display: grid;
+    grid-template-columns:  31% 31% 31% ;
+    margin: 50px;
+    padding: 0px 100px 0px 100px;
+    
+  }
+  .textsell {
+    background-color:#E8E8E8 ;
+    opacity: 0.6;
+    width: 200px;
+    height: 50px;
+    transform: translate(0px,-80px);
+    padding: 10px 0px 0px 10px ;
+  }
+  
+  
+  
+  
+  
+  .boxgridshow{
+    display: grid;
+    grid-template-columns:  50% 50% ;
+    border: 1px solid black;
+    margin-top: 50px;
+    margin-left: 130px;
+    height: 500px;
+    width: 1180px;
+    box-shadow: 2px 2px 5px;
+    border-radius: 20px;
+    
+  }
+  .RecommendRoom {
+    font-family: serif;
+    transform: translate(150px,20px);
+    font-size: 25px;
+    margin-top: 50px;
+  }
+  .ImageRecommendRoom {
+    transform: translate(100px,50px);
+  }
+  .text {
+    transform: translate(110px,80px);
+  }
+  .textStandardRoom {
+    font-family: serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .textAmenities {
+    font-family: serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .textAllAmenities {
+    font-family: serif;
+    font-size: 5px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    line-height: 30px;
+  }
+  

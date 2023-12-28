@@ -1,0 +1,57 @@
+.foot{
+    background-color: #263238;
+    color:white;
+    text-align: center;
+    width: 100%;
+  }
+
+
+ .body{
+  display: grid;
+  grid-template-columns: 500px 300px 535px;
+  height: 250px;
+ }
+
+ .blog{
+  color: white;
+ }
+ .blog1{
+  padding-left: 30px;
+  display: grid;
+  grid-template-rows: 80px 60px 60px;
+ }
+ .logo{
+  display: grid;
+  grid-template-columns: 80px 200px 200px;
+ }
+ .logotext{
+  font-size: 30px;
+  margin-right: 100px;
+ }
+ .pp{
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+ }
+ .copyright{
+  text-align: left;
+ }
+ .blog3{
+  display: grid;
+  place-items: center;
+  grid-template-rows: 100px 100px 50px;
+ }
+ .kmitl{
+  text-align: left;
+ }
+
+ .blog3 a{
+  text-decoration: none;
+  color: white;
+ }
+ .blog3 a:hover{
+  color:black;
+ }
+ .aboutus{
+  font-size: 25px;
+  
+ }

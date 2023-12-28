@@ -1,0 +1,22 @@
+{
+  "name": "gabxl",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
+    "mongodb": "^6.3.0",
+    "mongoos": "^0.0.1-security",
+    "mongoose": "^8.0.3",
+    "next": "^14.0.4",
+    "react": "^18",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1"
+  }
+}

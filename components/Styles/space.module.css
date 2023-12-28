@@ -1,0 +1,17 @@
+.body{
+    height: 50px;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    z-index: 0;
+    background-color:#E8E8E8;
+  }
+  .container{
+    z-index: 1;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    width: 93%;
+    color: black;
+    background-color: white;
+  }

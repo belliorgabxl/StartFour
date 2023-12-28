@@ -1,0 +1,185 @@
+.body{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color:#F0F0F0;
+    }
+      
+    .container{
+      text-align: center;
+    display: grid;
+    width: 93%;
+    background-color: white;
+    margin-top: 140px;
+    }
+    
+    .homeimg{
+      font-size: 50px;
+      width: 1240px;
+      height: 350px;
+      }
+    .map{
+      margin: 0 0 20px 0;
+      display: grid;
+      place-items: center;
+      grid-template-rows: 100px 320px;
+      font-size: 50px;
+      width:1240;
+      height: 420px;
+      background-image: url(https://img.freepik.com/free-photo/white-wall-texture-background_24972-2224.jpg?w=740&t=st=1702744123~exp=1702744723~hmac=9d52f17a58211bf640c8f0072e6e08a033756ed23d115c3d47c5530927f574eb);
+    }
+    
+    .map a{
+      text-decoration: none;
+      color: black;
+    }
+    .mapfunction{
+      width: 100%;
+      display: grid;
+      grid-template-columns: 5% 25% 10% 30% 15% 10% 5%;
+    }
+    .mapfunction1{
+      background-color: white;
+      border-radius: 0.8rem;
+      height: 60px;
+      font-size: 20px;
+      margin: 8px 0 0px 0px;
+      padding : 14px 0 0 15px;
+    }
+    .mapfunction1:hover{
+      background-color: #282828;
+    }
+    .mapfunction1:hover a{
+      color:white;
+    }
+    .mapfunction2{
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      font-weight: 500;
+      font-family: 'Times New Roman', Times, serif;
+      border-radius: 0.8rem;
+      background-color: white;
+      height: 50px;
+      margin: 15px 0 0 0px;
+      grid-template-columns: 10% 60% 20% 10%;
+    }
+    .mapfunction2:hover{
+      background-color: #282828;
+    }
+    .mapfunction2:hover a{
+      color:white;
+    }
+    .mapfunction3{
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      font-weight: 500;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: white;
+      height: 40px;
+      width: 80px;
+      margin: 8px 0 0 0px;
+      box-shadow: 0 5px 10px gray;
+    }
+    .mapfunction3:hover{
+      background-color: #282828;
+      color: white;
+    }
+    .mapclass{
+      width: 95%;
+    }
+    
+    
+    .room_function{
+      display: grid;
+      width: 100%;
+      grid-template-columns: 10% 10% 80%;
+      height: 50px;
+    }
+    .room_btn{
+      background-color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0px 2px 4px 0px gray ;
+    }
+    .room_btn:hover{
+      background-color: black;
+      color: white;
+    }
+    .room_btn:hover a{
+      color: white;
+    }
+    .room_btn a{
+      color: black;
+      text-decoration: none;
+    }
+    .roomcomponents{
+      width: 100%;
+      border:1px solid #E0E0E0;
+      display: grid;
+      place-items: center;
+    
+    }
+    .roomBox{
+      display: flex;
+      width: 1000px;
+      height: 300px;
+      box-shadow: 0 2px 10px gray ;
+      margin : 10px 0 20px 0 ;
+    }
+    
+    .imgBox{
+    width: 400px;
+    height: 300px;
+    }
+    .textBox{
+      width: 600px;
+      height: 300px;
+      display: grid;
+      grid-template-rows:70px 60px 140px 30px;
+      padding-left: 20px;
+    }
+    
+    .textBox1{
+    padding-top: 10px;
+    display: flex;
+    gap: 20px;
+    }
+    .dormNameBox{
+      height: 35px;
+      border-bottom: 1px solid gray;
+      font-size: 28px;
+      font-weight: 550;
+      font-family: 'Times New Roman', Times, serif;
+     
+    }
+    .locationBox{
+      padding-top: 7px;
+      font-size: 20px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .priceBox{
+      display: flex;
+      gap: 10px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .price{
+      font-size: 40px;
+      font-weight: 650;
+    }
+    .month{
+      padding-top: 13px;
+      font-size: 25px;
+    }
+    .detailBox{
+      text-align: left;
+      display: flex;
+      font-size: 18px;
+    }
+    .typeBox{
+      display: flex;
+      font-size:22px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 400;
+    }
