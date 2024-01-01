@@ -1,14 +1,16 @@
 import connectMongoDB from "@/libs/mongodb";
 import Dors from "@/models/dormitory";
-import { NextResponse } from "next/server";
+import clientPromise from "@/libs/mongoPromise";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { type, dorm_name, location, img, price, detail } =
-      await request.json();
-    await connectMongoDB();
-    await Dors.create({ type, dorm_name, location, img, price, detail });
-    return res.json({ message: "Update Dormitory Success" }, { status: 201 });
+    const client = await  clientPromise;
+    const db =  client.db("information");
+    const {type,dorm_name,location,img,price,detail }= req.body;
+    const dormitory = await db.collection("dors").insertOne(
+      {type,dorm_name,location,img,price,detail }
+    )
+    res.json(dormitory);
   }
   if (req.method === "GET") {
     await connectMongoDB();
