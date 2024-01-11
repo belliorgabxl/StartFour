@@ -1,0 +1,99 @@
+.body{
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+}
+.container{
+    background-color: gray;
+}
+.topic{
+    margin:20px 0 30px 0;
+    text-align: right;
+    font-size: 22px;
+    padding-right: 20px;
+}
+.topicLine{
+    width: 1200px;
+}
+.content1{
+    width: 1200px;
+    font-size: 22px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0 0 100px 0;
+}
+.topTitle{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+.date{
+    font-size: 20px;
+    font-family: 'Gill Sans', 
+    'Gill Sans MT', Calibri, 
+    'Trebuchet MS', sans-serif;
+    padding-left: 880px;
+    margin-bottom: 20px;
+}
+.commit1{
+    font-weight: 700;
+}
+.inputLine{
+    margin: 15px 0 0 0 ;
+}
+.textbold{
+    font-weight: 600;
+}
+.textBoldTop{
+    font-weight: 500;
+}
+
+
+.content2{
+    margin: 150px  0 20px 0;
+    font-size: 22px;
+    width: 1200px;
+    font-size: 22px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.btnZone{
+    background-color: white;
+    display:grid;
+    place-items: center;
+    height: 100px;
+}
+.btn{
+    all: unset;
+    font-size: 23px;
+    font-weight: 500;
+    margin: 20px 0 0px 0;
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: #259b24;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+}
+.btn:hover{
+    box-shadow: 0 6px 16px gray;
+}
+.singmentBox{
+    margin: 200px 0 150px 0;;
+    height: 200px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 600px 600px;
+}
+.signment{
+    width: 500px;
+    height: 200px;
+    padding-left: 100px;
+}
+.agreement{
+    text-align: right;
+    margin: 100px 0 100px 0;
+    height: 200px;
+}
