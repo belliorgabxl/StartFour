@@ -1,9 +1,14 @@
 import Image from 'next/image';
 import styles from "../styles/Home.module.css"
 import Navbar from '@/components/Navbar';
-import Map from "@/components/MapServerside"
+import dynamic from "next/dynamic";
 import Link from 'next/link';
 import { useState,useEffect } from 'react';
+
+const Map = dynamic(() => import("@/components/MarkerMap/map"), {
+  ssr: false,
+});
+
 
 const getDors = async () => {
   try {
@@ -23,6 +28,12 @@ const getDors = async () => {
   }
 };
 export default function Home() {
+  const [searchlocat, setSearchLocat] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchLocat(e.target.value);
+  };
+
   const [dors, setDors] = useState(null);
   useEffect(() => {
     getDors().then((d) => {
@@ -34,47 +45,25 @@ export default function Home() {
   <Navbar/>
     <div className={styles.container}>
       <div className={styles.homeimg}>
-        <Image src="/condo_homepage.jpg" width={1239} height={350} alt="img"/>
+        <Image src="/Homepage.jpg" width={1379} height={400} alt="img"/>
       </div>
-      <div className={styles.map}>
-            <div className={styles.mapfunction}>
-
-                      <div></div>
-              
-                <span className={styles.mapfunction1}><Link href="#">
-                      LOCATION<br/>
-                      <b>Ladkrabang ,1112</b> </Link>
-                </span>
-             
-
-                      <div></div>
-
-              <div className={styles.mapfunction2}>
-                <div></div>
-                <Link href="#">
-                <div>EXPOLOR MORE </div> </Link><Link href="#">
-                <Image src="/Building.png" width={40} height={40} alt='logo'></Image>
+        <div className={styles.searchBox}>
+              <input
+                className={styles.searchInput}
+                type="text"
+                placeholder="Search Dormitory name or Location"
+                onChange={handleSearch}
+                value={searchlocat}
+              />
+                <Link class={styles.searchButton} href="/NearMe">
+                  <Image src="/scicon.png" width={25} height={25} alt="img"/>
                 </Link>
-                <div></div>
-                </div>
+        </div>
 
-                        <div></div>
-
-              <Link href="#">
-                    <div className={styles.mapfunction3}>
-                      see all
-                    </div>
-              </Link>
-
-                <div></div>
-
-            </div>
-
-            <div className={styles.mapclass}>
-               <Map/>
-            </div>
-      </div>
-      
+        <div className={styles.map}> 
+          <Map searchlocat={searchlocat} />
+        </div>
+    
       <div className={styles.room_function}>
             
               <div className={styles.room_btn}>

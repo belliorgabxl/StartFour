@@ -1,0 +1,20 @@
+.map {
+    width: 100%;
+    height: 40rem;
+    padding-top: 50px;
+}
+
+.text {
+    text-align: center;
+    font-size: 40px;
+
+}
+
+.bor {
+    border-width: 100%;
+    border-style: solid;
+}
+.scbox{
+    height: 50px;
+ 
+}
