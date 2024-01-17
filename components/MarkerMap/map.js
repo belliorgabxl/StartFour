@@ -18,6 +18,7 @@ const Map = ({ searchlocat }) => {
 
         if (json && json.dormitory && Array.isArray(json.dormitory)) {
           setDormData(json.dormitory);
+          console.log("ข้อมูลหอพัก",json.dormitory)
         } else {
           console.error("Fetched data is not in the expected format:", json);
           setDormData([]);
