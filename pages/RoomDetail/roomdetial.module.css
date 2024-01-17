@@ -1,0 +1,114 @@
+/* styles.module.css */
+
+.container {
+    display: flex;
+    margin-top: 160px; 
+    padding-left: 50px;
+   
+}
+.textname{
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20px;
+    
+}
+.textlo {
+    text-align: center;
+    font-size: 15px;
+    padding: 20px
+}
+.imageColumn {
+    flex: 1;
+}
+
+.detailsColumn {
+    flex: 1;
+    padding: 16px;
+    padding-right: 50px;
+    margin-left: 30px;
+  
+}
+
+.imageWrapper {
+    border: solid 1px;
+    width: 500px;
+    height: 350px;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.details {
+    
+    font-size: 13px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 650px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, .05) 0 3px 5px -1px, rgba(0, 0, 0, .1) 0 6px 10px 0, rgba(0, 0, 0, .1) 0 1px 18px 0;
+   
+   
+}
+.button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.textbar{
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-top: 6px;
+    border-width: 1000px;
+}
+.textbar1 {
+    padding-left: 10px;
+}
+.button {
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    
+}
+.dorm{
+        display: grid;
+        grid-template-columns: auto auto ;
+        width: 630px;
+        padding: 20px;
+        padding-top: 60px;
+}
+.detailsColumn1 {
+    flex: 1;
+    padding: 15px;
+    margin-left: 30px;
+
+}
+.price{
+    box-shadow: rgba(0, 0, 0, .05) 0 3px 5px -1px, rgba(0, 0, 0, .01) 0 6px 10px 0, rgba(0, 0, 0, .01) 0 1px 18px 0;
+    width: 200px;
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color:#eeeded;
+    padding: 20px;
+    border-radius: 0.5rem;
+    margin-top: -18px;
+
+   
+}
+.textprice{
+    line-height: 35px;
+    font-size: 14px;
+}
+.textdorm{
+    line-height: 22px;
+    font-size: 14px;
+    }
+.textdorm1 {
+    font-size: 16px;
+    line-height: 22px;
+}
