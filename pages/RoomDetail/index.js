@@ -13,7 +13,7 @@ const Home = () => {
             <div className={style.textname}>SJ House</div>
             <div className={style.textlo}><Image src="/map.png" alt="Image 1" width={20} height={20} />ถนน ลาดกระบัง แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพมหานคร 10520</div>
           <div className={style.imageWrapper}>
-            <Image src="/AJ.jpg" alt="Image 1" width={500} height={350} />
+            <Image src="/SJ.gif" alt="Image 1" width={500} height={350} />
           </div>
         </div>
         <div className={style.detailsColumn}>
