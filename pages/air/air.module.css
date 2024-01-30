@@ -1,0 +1,85 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color:#E8E8E8;
+    
+  }
+  .container {
+    place-items: center;
+    width: 93%;
+    background-color: white;
+    margin-top: 110px;
+    height: 10px;
+  }
+  .boxgrid {
+    margin-top: 100px;
+    margin-left: 100px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-decoration: none;
+  }
+  .boxroomleft {
+    box-shadow: 0 2px 20px gray ;
+    background-color: white;
+    height: 350px;
+    width: 900px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-bottom: 50px;
+  }
+  .Texthead {
+    transform: translate(430px , -330px);
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+  }
+  .Textlocation {
+    transform: translate(460px , -300px);
+    font-weight: bold;
+    color: black;
+    font-family: 'kanit' , sans-serif;
+  }
+  .Textdetail {
+    width: 400px;
+    transform: translate(440px , -260px);
+    color: rgb(155, 10, 10);
+    font-weight: bold;
+    font-family: 'Helvetica' , sans-serif;
+  }
+  .icon3 {
+    transform: translate(760px , -220px);
+    color: rgb(155, 10, 10);
+  }
+  .price {
+    transform: translate(780px , -250px);
+    font-size: 30px;
+    color: rgb(155, 10, 10);
+    font-weight: bold;
+  }
+  .Textprice {
+    transform: translate(720px , -250px);
+    font-weight: bold;
+    opacity: 0.5;
+    color: black;
+  }
+  .Texttype {
+    transform: translate(435px , -445px);
+    font-weight: bold;
+    text-decoration: none;
+    color: green;
+  }
+  .iconstar {
+    transform: translate(430px , -540px);
+  }
+  .iconmap {
+    transform: translate(375px , -540px);
+  }
+  .icondetail {
+    transform: translate(355px , -480px);
+  }
+  .Textreview {
+    transform: translate(500px , -586px);
+    color: rgb(15, 64, 210);
+    font-weight: bold;
+  }
