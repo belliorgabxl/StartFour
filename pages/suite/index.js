@@ -39,7 +39,7 @@ export default function Home() {
             {dors?.dormitory?.map((d) => 
                 d.type === 'ห้องสูท' && (
                     <div key={d._id} >
-                        <a href ="/RoomType" className={styles.boxgrid}>
+                        <Link  className={styles.boxgrid} href={"/Room/"+d._id} key={d._id}>
                             <div className={styles.boxroomleft}>
                                 <div >
                                     <img style={{borderRadius : '20px 0 0 20px'}} src={d.img} width={400} height={350} alt='img'></img>
@@ -58,7 +58,7 @@ export default function Home() {
                                     <div className={styles.Textreview}>ดีมาก</div>
                                 </div>
                             </div> 
-                        </a>
+                        </Link>
                     </div>   
                 )
             )}

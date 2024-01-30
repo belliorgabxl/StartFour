@@ -88,9 +88,9 @@ export default function Home() {
           <div className={styles.textBox}>
 
               <div className={styles.textBox1}>
-                <div className={styles.dormNameBox}>
-                  {d.dorm_name}
-                </div>
+                <Link  className={styles.dormNameBox} href={"/Room/"+d._id} key={d._id}>
+                 {d.dorm_name}
+                </Link>
                 <div className={styles.locationBox}>
                   , {d.location}
                 </div>

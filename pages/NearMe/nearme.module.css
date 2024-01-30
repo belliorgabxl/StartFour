@@ -64,6 +64,10 @@
     color: #0f1ef1;
     font-family: 'Roboto', sans-serif;
 }
+.bor a {
+    text-decoration: none;
+    color: #0f1ef1;
+}
 
 .line {
     margin-left: 15px;

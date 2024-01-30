@@ -12,9 +12,9 @@ export default function RoomType(){
           <div className={style.container}>
                <div className={style.boxgrid}>
                     <div className={style.box}>
-                         <div className={style.boxbackgroundNon}>
-                              NON AIRCONDITIONER ROOM
-                         </div>
+                         <Link href= "\fan"className={style.boxbackgroundNon}>
+                               NON AIRCONDITIONER ROOM
+                         </Link>
                          <div className={style.boximg}>
                             <img className={style.img1} src="https://i.pinimg.com/564x/61/11/00/611100f92e606fb39547c66f80e827fd.jpg" width={280} height ={260}/>
                             <img className={style.img2} src="https://i.pinimg.com/564x/53/01/2d/53012d4eef03168de29eaf4ce376f1a9.jpg" width={280} height ={260}/>
@@ -36,9 +36,9 @@ export default function RoomType(){
                         </figure>  
                     </div>
                     <div className={style.box}>
-                         <div className={style.boxbackgroundair}>
+                         <Link href= "\air"className={style.boxbackgroundair}>
                                AIR CONDITION ROOM
-                         </div>
+                         </Link>
                          <div className={style.boximg}>
                             <img className={style.img1} src="https://i.pinimg.com/564x/91/d4/00/91d4003624a0477504184e5d1ef84151.jpg" width={280} height ={260}/>
                             <img className={style.img2} src="https://i.pinimg.com/564x/45/0f/32/450f322dc4e20b5251f44f4378285270.jpg" width={280} height ={260}/>
@@ -60,9 +60,9 @@ export default function RoomType(){
                         </figure>  
                     </div>
                     <div className={style.box}>
-                         <div className={style.boxbackground}>
+                         <Link href= "\suite"className={style.boxbackground}>
                               SUITE ROOM
-                         </div>
+                         </Link>
                          <div className={style.boximg}>
                             <img className={style.img1} src="https://i.pinimg.com/564x/b7/34/89/b73489fcc01624968175be477deb592c.jpg" width={280} height ={260}/>
                             <img className={style.img2} src="https://i.pinimg.com/564x/f0/d9/16/f0d91635c038af37c84de1ecb5b7b2b3.jpg" width={280} height ={260}/>
@@ -84,9 +84,9 @@ export default function RoomType(){
                         </figure>  
                     </div>
                     <div className={style.box}>
-                         <div className={style.boxbackground}>
+                         <Link href= "\daily"className={style.boxbackground}>
                               DAILY ROOM
-                         </div>
+                         </Link>
                          <div className={style.boximg}>
                             <img className={style.img1} src="https://i.pinimg.com/564x/61/11/00/611100f92e606fb39547c66f80e827fd.jpg" width={280} height ={260}/>
                             <img className={style.img2} src="https://i.pinimg.com/564x/53/01/2d/53012d4eef03168de29eaf4ce376f1a9.jpg" width={280} height ={260}/>
