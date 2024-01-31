@@ -38,9 +38,14 @@
 }
 .singbtn{
     padding-bottom: 10px;
-
 }
-
+.sign button:hover{
+    color:blue;
+}
+.logoutbtn{
+    all:unset;
+    padding-bottom: 10px;
+}
 .logotab{
 
     padding: 10px 20px 0px 20px;

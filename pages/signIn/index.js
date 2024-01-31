@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import styles from "./singin.module.css";
 import Space from "@/components/SpaceTab";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 
@@ -52,9 +52,11 @@ export default function SigIn() {
     if (user_value == 1 && pass_value == 1){
       alert("Login Success!!");
       try{
-          router.push("/");
+        router.push("/Homepage");
         var getID = {UserID:user_login,State:"login"}
-        localStorage.setItem("Userlist",JSON.stringify(getID));
+        localStorage.setItem("userList",JSON.stringify(getID));
+
+
       }catch(e){
         console.log(error);
       }

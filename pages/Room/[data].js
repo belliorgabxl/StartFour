@@ -33,15 +33,12 @@ const price_list=[]
 const detail_list=[]
 const type_list=[]
 
-
 let dorm_name = "none"
 let locat_name = "none"
 let img_id = "none"
 let price_name = "none"
 let detail_name = "none"
 let type_name = "none"
-
-
 
     {dors?.dormitory?.map((d)=>{
         id_list.push(d._id),
@@ -76,7 +73,9 @@ let type_name = "none"
     const prevSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide - 1 + img_list.length) % img_list.length);
     };
-
+function BookingBtn(){
+  router.push("/GenPDF");
+}
 
     return (
     <div>
@@ -131,7 +130,7 @@ let type_name = "none"
               </div>
            </div>
              <div className={styles.textbar1}>
-              <button className={styles.button}>Booking</button></div>
+              <button onClick={BookingBtn} className={styles.button}>Booking</button></div>
               
             </div>
             <div className={styles.dorm}>

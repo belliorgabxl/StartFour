@@ -1,0 +1,130 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: #F0F0F0;
+  }
+  
+  .container {
+    text-align: center;
+    display: grid;
+    width: 93%;
+    background-color: white;
+    margin-top: 150px;
+  }
+  .roomcomponents {
+    width: 100%;
+    border: 1px solid #E0E0E0;
+    display: grid;
+    place-items: left;
+    padding-left: 20px;
+  }
+  .roomcomponents a{
+    color: black;
+    text-decoration: none;
+  }
+  .room_function {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 10% 10% 80%;
+    height: 50px;
+  }
+  
+  .room_btn {
+    background-color: white;
+    display: grid;
+    place-items: center;
+    box-shadow: 0px 2px 4px 0px gray;
+  }
+  
+  .room_btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .room_btn:hover a {
+    color: white;
+  }
+  
+  .room_btn a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .topic{
+    background-color: #000333;
+    color: white;
+    padding-left: 20px;
+    text-align: left;
+  }
+  
+.roomBox {
+    display: flex;
+    width: 1000px;
+    height: 300px;
+    box-shadow: 0 2px 10px gray;
+    margin: 10px 0 20px 0;
+  }
+  
+  .imgBox {
+    width: 400px;
+    height: 300px;
+  }
+  
+  .textBox {
+    width: 600px;
+    height: 300px;
+    display: grid;
+    grid-template-rows: 70px 60px 140px 30px;
+    padding-left: 20px;
+  }
+  
+  .textBox1 {
+    padding-top: 10px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .dormNameBox {
+    height: 35px;
+    border-bottom: 1px solid gray;
+    font-size: 28px;
+    font-weight: 550;
+    font-family: 'Times New Roman', Times, serif;
+  
+  }
+  
+  .locationBox {
+    padding-top: 7px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .priceBox {
+    display: flex;
+    gap: 10px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .price {
+    font-size: 40px;
+    font-weight: 650;
+  }
+  
+  .month {
+    padding-top: 13px;
+    font-size: 25px;
+  }
+  
+  .detailBox {
+    text-align: left;
+    display: flex;
+    font-size: 18px;
+  }
+  
+  .typeBox {
+    display: flex;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+  }
