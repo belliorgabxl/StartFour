@@ -7,12 +7,14 @@ import { useRouter } from "next/router";
 export default function Navbar(){
 const [user_id  ,setUserID] = useState('');
 const [user_state ,setState]  = useState("");
+const [user_type,setType] = useState("");
 const router = useRouter();
   useEffect(()=>{
     const userList = JSON.parse(localStorage.getItem("userList"))
     if(userList){
-        setUserID(userList.UserID)
-        setState(userList.State)
+        setUserID(userList.UserID);
+        setState(userList.State);
+        setType(userList.Type);
     }else{
         setState("none")
         setUserID("none")
@@ -23,7 +25,8 @@ function logOutBtn(){
     router.push("/")
 }
 
-  if (user_id && user_state=="login")
+  if (user_id && user_state=="login"){
+    if (user_type == "customer"){
     return(
         <nav className={styles.navbar}>
                 <div className={styles.topbar}> 
@@ -85,13 +88,49 @@ function logOutBtn(){
                 </div>
 
         </nav>
-    )
+    )}
+    else if (user_type == "seller"){
+        return(
+            <nav className={styles.navbar}>
+            <div className={styles.topbar}> 
+                    <span className={styles.logotab}>
+                        <Link href="/dormManager">
+                            <Image  src="/Honghub.png"
+                            width={80} height={80} alt="logo">
+                            </Image>
+                        </Link>
+                    </span>
+                    <span className={styles.logoname}>
+                        <Link href="/dormManager">HONGHUB</Link>
+                    </span>
+                    <span></span>
+                    <span className={styles.mainbar_search1}>
+                        <div className={styles.mainbar_search2}>
+                            <Image className="search_img" src="/search.png" 
+                            width={35} height={35} alt='logo'></Image>
+                            <input type="search" className={styles.search} 
+                            placeholder="  i'm searching for..." id=""></input>
+                        </div>
+                    </span>
+                    <span className={styles.helptab}><Link href="#">help?</Link></span>
+                    <span className={styles.sign}>
+                        <div></div>
+                        <button className={styles.logoutbtn} onClick={logOutBtn} >
+                            Logout
+                        </button>
+                        <div></div>
+                    </span>
+            </div>
+    </nav>
+        )
+    }
+    }
     else if (user_state == "none" && user_id == "none"){
         return(
             <nav className={styles.navbar}>
                 <div className={styles.topbar}> 
                         <span className={styles.logotab}>
-                            <Link href="/Homepage">
+                            <Link href="/">
                                 <Image  src="/Honghub.png"
                                 width={80} height={80} alt="logo">
                                 </Image>
@@ -99,7 +138,7 @@ function logOutBtn(){
                            
                         </span>
                         <span className={styles.logoname}>
-                            <Link href="/Homepage">HONGHUB</Link>
+                            <Link href="/">HONGHUB</Link>
                         </span>
                         <span></span>
 
@@ -117,10 +156,10 @@ function logOutBtn(){
                         <span className={styles.sign}>
                             <div></div>
                             <div className={styles.singbtn}>
-                                 <Link href="/signIn">Sign in</Link>
+                                 <Link href="/Sign/signIn">Sign in</Link>
                             </div>
                             <div>
-                                <Link href="/signup">Sign up</Link>
+                                <Link href="/Sign/signup">Sign up</Link>
                             </div>
                             <div></div>
                         </span>
@@ -135,7 +174,7 @@ function logOutBtn(){
                                 height={45}/>
                  
                             <div className={styles.dropdown_menu}>
-                                <a href="/Homepage">PROMOTION</a>
+                                <a href="/">PROMOTION</a>
                                 <a href="#">LOCATION</a>
                                 <a href="#">PRICE RANG</a>
                                 <a href="#">HELP</a>

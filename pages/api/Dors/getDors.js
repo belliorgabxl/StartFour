@@ -4,10 +4,9 @@ import clientPromise from "@/libs/mongoPromise";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const client = await  clientPromise;
-    const db =  client.db("information");
-    const {type,dorm_name,location,img,price,detail }= req.body;
-    const dormitory = await db.collection("dors").insertOne(
+    await connectMongoDB();
+    const {type,dorm_name,location,img,price,detail }= await req.body;
+    const dormitory = await Dors.create(
       {type,dorm_name,location,img,price,detail }
     )
     res.json(dormitory);

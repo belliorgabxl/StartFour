@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 const getUser = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/getUser", {
+    const res = await fetch("http://localhost:3000/api/User/getUser", {
       cache: "no-store",
     });
     if (!res.ok) {
@@ -31,17 +31,21 @@ export default function SigIn() {
     e.preventDefault();
     const user_list = [];
     const pass_list = [];
+    const type_list =  [];
+    let type_user = "";
     const {users} = await getUser();
     let user_value = 0;let pass_value = 0;
       users.map((u) => (
         user_list.push(u.username)
       ));
       users.map((u) => (
-        pass_list.push(u.password)
+        pass_list.push(u.password),
+        type_list.push(u.state)
       ));
     for (let i = 0 ; i<user_list.length;i++){
       if(user_list[i] == user_login){
         user_value = 1;
+        type_user =  type_list[i]
       }
       if(pass_list[i] == pass_login){
         pass_value=1;
@@ -52,11 +56,16 @@ export default function SigIn() {
     if (user_value == 1 && pass_value == 1){
       alert("Login Success!!");
       try{
-        router.push("/Homepage");
-        var getID = {UserID:user_login,State:"login"}
+        var getID = {UserID:user_login,State:"login",Type:type_user}
         localStorage.setItem("userList",JSON.stringify(getID));
-
-
+        if (type_user=="customer"){
+          router.push("/Homepage");
+        }
+        else if (type_user=="seller"){
+          router.push("/dormManager");
+        }else{
+          router.push("/")
+        }
       }catch(e){
         console.log(error);
       }
@@ -99,6 +108,8 @@ export default function SigIn() {
           <button className={styles.login_btn} type="submit">Sign Up</button>
         </form>
       </div>
+      <Space/>
+      <Footer/>
     </div>
   );
 }

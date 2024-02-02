@@ -7,7 +7,7 @@ import { useState,useEffect } from 'react';
 
 const getData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/getDors", {
+    const res = await fetch("http://localhost:3000/api/Dors/getDors", {
       cache: "no-store",
     });
 

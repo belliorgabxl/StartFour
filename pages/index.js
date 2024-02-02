@@ -12,7 +12,7 @@ const Map = dynamic(() => import("@/components/MarkerMap/map"), {
 
 const getDors = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/getDors", {
+    const res = await fetch("http://localhost:3000/api/Dors/getDors", {
       cache: "no-store",
     });
 
@@ -55,7 +55,7 @@ export default function Home() {
                 onChange={handleSearch}
                 value={searchlocat}
               />
-                <Link class={styles.searchButton} href="/NearMe">
+                <Link className={styles.searchButton} href="/NearMe">
                   <Image src="/scicon.png" width={25} height={25} alt="img"/>
                 </Link>
         </div>

@@ -13,7 +13,7 @@ const Map = ({ searchlocat }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/getDors");
+        const res = await fetch("http://localhost:3000/api/Dors/getDors");
         const json = await res.json();
 
         if (json && json.dormitory && Array.isArray(json.dormitory)) {

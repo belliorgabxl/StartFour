@@ -14,7 +14,7 @@ export default function register_page(){
   const handleSubmitt = async (e) => {
     e.preventDefault();
 
-    let name = document.getElementById("f_name").value + document.getElementById("l_name").value;
+    let name = document.getElementById("f_name").value +" "+ document.getElementById("l_name").value;
     let state = document.querySelector('input[name="status"]:checked').value;
     if(!username || !password || !email){
       console.log("you are not send email , password or username");
@@ -29,7 +29,7 @@ export default function register_page(){
           }
         else{
             try{
-              const res = await fetch("http://localhost:3000/api/getUser", {
+              const res = await fetch("http://localhost:3000/api/User/getUser", {
                 method: "POST",
                 headers: {
                   "Content-type": "application/json",
@@ -93,7 +93,7 @@ export default function register_page(){
             <div className={styles.status_form} >
 
             <input className={styles.r1_box} 
-            type="radio"  name="status"  value="custommer"/>
+            type="radio"  name="status"  value="customer"/>
             <label className={styles.l1}>customer</label>
 
             <input  className={styles.r2_box}
