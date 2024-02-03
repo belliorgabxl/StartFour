@@ -32,7 +32,9 @@ export default function SigIn() {
     const user_list = [];
     const pass_list = [];
     const type_list =  [];
+    const id_list = []
     let type_user = "";
+    let id_user = '';
     const {users} = await getUser();
     let user_value = 0;let pass_value = 0;
       users.map((u) => (
@@ -40,12 +42,14 @@ export default function SigIn() {
       ));
       users.map((u) => (
         pass_list.push(u.password),
-        type_list.push(u.state)
+        type_list.push(u.state),
+        id_list.push(u._id)
       ));
     for (let i = 0 ; i<user_list.length;i++){
       if(user_list[i] == user_login){
         user_value = 1;
         type_user =  type_list[i]
+        id_user = id_list[i]
       }
       if(pass_list[i] == pass_login){
         pass_value=1;
@@ -56,7 +60,7 @@ export default function SigIn() {
     if (user_value == 1 && pass_value == 1){
       alert("Login Success!!");
       try{
-        var getID = {UserID:user_login,State:"login",Type:type_user}
+        var getID = {UserID:user_login,State:"login",Type:type_user ,_id :id_user}
         localStorage.setItem("userList",JSON.stringify(getID));
         if (type_user=="customer"){
           router.push("/Homepage");

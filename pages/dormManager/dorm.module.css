@@ -6,10 +6,25 @@
   }
   
   .container {
+    
     text-align: center;
     display: grid;
+    place-items: center;
     width: 93%;
     background-color: white;
     margin-top: 140px;
   }
-  
+  .container a{
+    text-decoration: none;
+  }
+
+.btnRoom{
+  display: grid;
+  place-items: center;
+  border: 1px solid black;
+  width: 200px;
+  height: 60px;
+  font-size: 30px;
+  background-color: black;
+  color: white;
+}

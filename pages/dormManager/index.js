@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Space from "@/components/SpaceTab";
 import styles from "./dorm.module.css";
+import Link from "next/link";
 
 const getInfomation = async() => {
   res   = await fetch("http://localhost:3000/api/getDormManagement",{
@@ -23,6 +24,10 @@ export default function IDroom(){
 
       <h1> manager</h1>
 
+
+      <Link href="/dormManager/manageRoom" className={styles.btnRoom}>
+        + Room
+      </Link>
 
       </div>
       <Space/>
