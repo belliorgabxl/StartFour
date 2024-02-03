@@ -12,7 +12,7 @@ const Map = dynamic(() => import("@/components/MarkerMap/map"), {
 
 const getDors = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/Dors/getDors", {
+    const res = await fetch("http://localhost:3000/api/getDors", {
       cache: "no-store",
     });
 

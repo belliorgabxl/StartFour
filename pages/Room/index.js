@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const getData = async()=>{
 
-    const res = await fetch("http://localhost:3000/api/Dors/getDors", {
+    const res = await fetch("http://localhost:3000/api/getDors", {
       cache: "no-store",
     });
     return res.json();

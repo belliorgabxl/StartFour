@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 const getUser = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/User/getUser", {
+    const res = await fetch("http://localhost:3000/api/getUser", {
       cache: "no-store",
     });
     if (!res.ok) {

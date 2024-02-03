@@ -1,6 +1,6 @@
 import styles from "./addroom.module.css";
 import Navbar from "@/components/Navbar";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function addRoom(){
@@ -11,6 +11,15 @@ export default function addRoom(){
   const [price , setPrice] = useState("");
   const [detail , setDetail] =useState("");
   const router = useRouter();
+  const [create_by , setCreateBy] = useState("");
+    useEffect(()=>{
+      const userList = JSON.parse(localStorage.getItem("userList"))
+      if(userList){
+          setCreateBy(userList.UserID);
+      }else{
+        setCreateBy("none");
+      }
+    },[])
   const handleSubmitt = async (e) => {
     e.preventDefault();
     if(!type || !dorm_name || !location || !img || !price || !detail ){
@@ -19,12 +28,12 @@ export default function addRoom(){
     }
     else{
               try{
-                const res = await fetch("http://localhost:3000/api/Dors/getDors", {
+                const res = await fetch("http://localhost:3000/api/getDors", {
                   method: "POST",
                   headers: {
                     "Content-type": "application/json",
                   },
-                  body: JSON.stringify({type,dorm_name,location,img,price,detail }),
+                  body: JSON.stringify({type,dorm_name,location,img,price,detail,create_by }),
                 });
                 if (res.ok) {
                   alert("addPost Success");

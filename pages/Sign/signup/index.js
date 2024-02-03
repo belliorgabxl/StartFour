@@ -29,7 +29,7 @@ export default function register_page(){
           }
         else{
             try{
-              const res = await fetch("http://localhost:3000/api/User/getUser", {
+              const res = await fetch("http://localhost:3000/api/getUser", {
                 method: "POST",
                 headers: {
                   "Content-type": "application/json",

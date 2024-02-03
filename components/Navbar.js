@@ -5,10 +5,10 @@ import {useState,useEffect}  from "react";
 import { useRouter } from "next/router";
 
 export default function Navbar(){
+const router = useRouter();
 const [user_id  ,setUserID] = useState('');
 const [user_state ,setState]  = useState("");
 const [user_type,setType] = useState("");
-const router = useRouter();
   useEffect(()=>{
     const userList = JSON.parse(localStorage.getItem("userList"))
     if(userList){
