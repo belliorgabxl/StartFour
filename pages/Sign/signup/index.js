@@ -36,8 +36,37 @@ export default function register_page(){
                 },
                 body: JSON.stringify({ username,password,email,phone,name,state}),
               });
-              if (res.ok) {
-                router.push("/signup/verify");
+              if(state=="seller"){
+                let own_name = username;let dorm_name = "";let dorm_img = "";
+                let passportID = "";let authentical = "none"
+                let name = "";let old='';let phone_dorm='';let born='';let address=''
+                let floor_amount='';let room_amount='';let water_unit='';let elec_unit=''
+                let dorm_address=''
+                const res2 = await fetch("http://localhost:3000/api/getDorsManage", {
+                  method: "POST",
+                  headers: {
+                    "Content-type": "application/json",
+                  },
+                  body: JSON.stringify({own_name,
+                    dorm_name,
+                    passportID,
+                    dorm_img , 
+                    authentical,
+                    name,
+                    old,
+                    phone_dorm,
+                    born , 
+                    address,
+                    floor_amount,
+                    room_amount,
+                    water_unit
+                    ,elec_unit,
+                    dorm_address 
+                   }),
+                });
+              }
+              if (res.ok)  {
+                router.push("/Sign/signup/verify");
               } else {
                 throw new Error("Failed to create User");
               }
@@ -78,7 +107,7 @@ export default function register_page(){
 
             <input type="text" placeholder="Tel." 
              onChange={(e) => setPhone(e.target.value)} value={phone}
-            className={styles.tel_box}/>
+            className={styles.tel_box} maxLength={10}/>
             
             <input  
             onChange={(e) => setPassword(e.target.value)} 

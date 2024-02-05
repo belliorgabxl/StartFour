@@ -5,9 +5,19 @@ const  dormManagmentSchema  = new Schema(
     own_name :String,
     dorm_name:String,
     passportID:String,
-    dorm_img:Array,
-    authentical:String
+    dorm_img: String,
+    authentical:String,
+    address:String,
+    name:String,
+    old:String,
+    born:String,
+    phone_dorm:String,
+    floor_amount:String,
+    room_amount:String,
+    water_unit:String,
+    elec_unit:String,
+    dorm_address:String
   },{timestamps:true,}
 );
-const DormManagement = mongoose.model.DormManagement || mongoose.model('DormManagement',dormManagmentSchema);
-export default DormManagement;
+const DormMNM = mongoose.models.DormMNM || mongoose.model('DormMNM',dormManagmentSchema);
+export default DormMNM;

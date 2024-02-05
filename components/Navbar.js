@@ -91,7 +91,7 @@ function logOutBtn(){
     )}
     else if (user_type == "seller"){
         return(
-            <nav className={styles.navbar}>
+            <nav className={styles.navbar2}>
             <div className={styles.topbar}> 
                     <span className={styles.logotab}>
                         <Link href="/dormManager">

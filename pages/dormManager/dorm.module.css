@@ -1,23 +1,20 @@
 .body {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    background-color: #F0F0F0;
-  }
-  
-  .container {
-    
-    text-align: center;
-    display: grid;
-    place-items: center;
-    width: 93%;
-    background-color: white;
-    margin-top: 140px;
-  }
-  .container a{
-    text-decoration: none;
-  }
-
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background-color: #F0F0F0;
+}
+.container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  width: 93%;
+  background-color: white;
+  margin-top:90px;
+}
+.container a{
+  text-decoration: none;
+}
 .btnRoom{
   display: grid;
   place-items: center;
@@ -27,4 +24,114 @@
   font-size: 30px;
   background-color: black;
   color: white;
+}
+.Topic{
+  font-size: 38px;
+}
+.AuthenBox{
+  display: grid;
+  place-items:center;
+  width: 90%;
+  margin: 40px 0 40px 0;
+  height: 1000px;
+}
+.Form{
+  width: 80%;
+  height: 800px;
+  border: 2px solid gray;
+  border-top: 20px solid #282828;
+}
+.inputBox{
+  font-size: 18px;
+  width: 180px;
+  height: 25px;
+}
+.label{
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-right: 10px;
+}
+.line1{
+  margin: 40px 0 40px 0;
+  display: grid;
+  grid-template-columns: 70px 300px 300px  ;
+}
+.old{
+  font-size: 18px;
+  width: 50px;
+  height: 25px;
+}
+.line2{
+  margin: 40px 0 40px 0;
+  display: grid;
+  grid-template-columns: 80px 350px 250px 140px ;
+}
+.date{
+  font-size: 18px;
+  width: 150px;
+  height: 25px;
+}
+.AddressBox{
+  font-size: 20px;
+  width: 500px;
+}
+.line3{
+  margin: 40px 0 40px 0;
+  display: grid;
+  grid-template-columns: 40px 400px;
+}
+.line4{
+  margin: 40px 0 40px 0;
+  display: grid;
+  grid-template-columns: 90px 50px 500px ;
+}
+.line5{
+  margin: 40px 0 40px 0;
+  display: grid;
+  grid-template-columns: 90px 350px ;
+}
+.line6{
+  margin: 40px 0 40px 0;
+  display: grid;
+  grid-template-columns: 90px 190px 200px ;
+}
+.floor{
+  font-size: 17px;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+}
+.roomBox{
+  text-align: center;
+  font-size: 18px;
+  width: 60px;
+  height: 25px;
+}
+.line7{
+  margin: 40px 0 40px 0;
+  display: grid;
+  grid-template-columns: 70px 300px  ;
+}
+.price_unit{
+  text-align: center;
+  font-size: 18px;
+  width: 60px;
+  height: 25px;
+}
+.line9{
+  margin: 40px 0 40px 0;
+  display: grid;
+  grid-template-columns: 90px 80px 500px ;
+}
+.sendBtn{
+  all:unset;
+  height: 50px;
+  font-size: 25px;
+  width: 200px;
+  background-color: #282828;
+  color: white;
+  margin-top: 20px;
+}
+.sendBtn:hover{
+  background-color: black;
 }

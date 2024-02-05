@@ -133,3 +133,19 @@
 .dropdown:hover .dropdown_menu {
     display: block;
 }
+
+.navbar2{
+    top:0px;
+    left: 0px;
+    position: fixed;
+    display: grid;
+    height: 100px;
+    width: 100%;
+    grid-template-rows: 100px ;
+    background-color: white;
+    z-index: 20;
+}
+.navbar2 a{
+    text-decoration: none;
+    color: black;
+}

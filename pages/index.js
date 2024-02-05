@@ -29,11 +29,9 @@ const getDors = async () => {
 };
 export default function Home() {
   const [searchlocat, setSearchLocat] = useState("");
-
   const handleSearch = (e) => {
     setSearchLocat(e.target.value);
   };
-
   const [dors, setDors] = useState(null);
   useEffect(() => {
     getDors().then((d) => {

@@ -62,7 +62,6 @@ export default function InputBox(){
       let Endday  = E_day+"/"+E_month+"/"+E_year
       setDateEnd(dateEnd => dateEnd = Endday);
       
-
     }
      else{alert("empty")}
   }

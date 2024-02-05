@@ -112,7 +112,6 @@ export default function SigIn() {
           <button className={styles.login_btn} type="submit">Sign Up</button>
         </form>
       </div>
-      <Space/>
       <Footer/>
     </div>
   );

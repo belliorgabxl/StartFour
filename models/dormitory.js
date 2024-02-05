@@ -9,7 +9,8 @@ const dormitorySchema = new Schema(
         img:String,
         price:String,
         detail:String,
-        create_by:String
+        create_by:String,
+        booking_list:String
     },
     {timestamps:true,}
 );
