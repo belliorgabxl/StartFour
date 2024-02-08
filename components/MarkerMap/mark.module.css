@@ -14,7 +14,13 @@
     border-width: 100%;
     border-style: solid;
 }
-.scbox{
+
+.scbox {
     height: 50px;
- 
+
+}
+
+.map a {
+    text-decoration: none;
+    color: black;
 }

@@ -1,0 +1,128 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: #F0F0F0;
+  }
+  
+  .container {
+    text-align: center;
+    display: grid;
+    width: 93%;
+    background-color: white;
+    margin-top: 160px;
+    padding-left: 20px;
+  }
+  
+.roomBox {
+    display: flex;
+    width: 1000px;
+    height: 300px;
+    border: 3px solid gray;
+    margin: 0px 0 20px 0;
+  }
+  
+  .imgBox {
+    width: 400px;
+    height: 300px;
+  }
+  
+  .textBox {
+    width: 600px;
+    height: 300px;
+    display: grid;
+    grid-template-rows: 70px 60px 140px 30px;
+    padding-left: 20px;
+  }
+  
+  .textBox1 {
+    padding-top: 10px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .dormNameBox {
+    height: 35px;
+    border-bottom: 1px solid gray;
+    font-size: 28px;
+    font-weight: 550;
+    font-family: 'Times New Roman', Times, serif;
+  
+  }
+  
+  .locationBox {
+    padding-top: 7px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .priceBox {
+    display: flex;
+    gap: 10px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .price {
+    font-size: 40px;
+    font-weight: 650;
+  }
+  .month {
+    padding-top: 13px;
+    font-size: 25px;
+  }
+  
+  .detailBox {
+    text-align: left;
+    display: flex;
+    font-size: 18px;
+    padding-right: 5px;
+  }
+  
+  .typeBox {
+    display: flex;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+  }
+.btnArea{
+   margin: 30px 0 40px 0;
+}
+.ConfirmBtn{
+    all:unset;
+    background-color: #282828;
+    height: 60px;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ConfirmBtn:hover{
+    background-color: black;
+}
+.descript{
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 
+  'Arial Narrow', Arial, sans-serif;
+  border:3px solid gray;
+  border-bottom: none;
+  width: 800px;
+  height: 50px;
+  padding-left: 20px;
+  display: grid;
+  padding-top: 20px;
+  grid-template-columns: 450px 250px;
+}
+.topicBook{
+  margin: 20px 0 20px 0;
+  width: 250px;
+  height: 80px;
+  font-size: 30px;
+  background-color: #282828;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.alarm{
+  font-size: 40px;
+  margin: 40px 40px 40px 40px;
+}

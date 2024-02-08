@@ -135,3 +135,111 @@
 .sendBtn:hover{
   background-color: black;
 }
+.Boxgrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: 80px;
+}
+.Box {
+  display: grid;
+  transform: translate(-140px , 0px);
+  grid-template-columns: 100%;
+    
+}
+.Box1 {
+  color: gray;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px;
+  margin-bottom: 35px;
+  text-decoration: none;
+}
+.Box2 {
+  color: gray;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px;
+  text-decoration: none;
+}
+.Box3 {
+  color: gray;
+  width: 350%;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.Box3:hover {
+  transform:translateY(-5px)
+}
+.Box1:hover {
+  transform:translateY(-5px)
+}
+.Box2:hover {
+  transform:translateY(-5px)
+}
+.icon {
+  transform: translate(20px , 50px);
+}
+.iconarrowbottom {
+  transform: translate(20px , -60px);
+}
+.iconarrowbottom1 {
+  transform: translate(215px , -50px);
+}
+.iconarrowbottom2 {
+  transform: translate(5px , 50px);
+}
+.Text {
+  transform: translate(5px , 50px);
+  color: black;
+}
+.Textbox {
+  transform: translate(5px , 55px);
+  color: black;
+}
+
+.MailBox{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: 10px;
+}
+.mail{
+  color: gray;
+  width: 300px;
+  height: 220px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px;
+  margin-bottom: 35px;
+  text-decoration: none;
+}
+.mail_icon {
+  transform: translate(14px , 45px);
+}
+.MailBox:hover {
+  transform:translateY(-5px)
+}
+.alarmmail{
+  width: 300px;
+  height: 220px;
+  color: green;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px;
+  margin-bottom: 35px;
+  text-decoration: none;
+  border: 3px solid green;
+}
+.alarmMailBox:hover {
+  transform:translateY(-5px)
+}
+.mailArrowbottom {
+  transform: translate(30px , -80px);
+}

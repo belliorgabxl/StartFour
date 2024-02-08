@@ -2,6 +2,9 @@ import { useRef } from 'react';
 import generatePDF from 'react-to-pdf';
 import styles from "./create.module.css"
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+
+
 
 export default function CreatePDF({firstName , lastName , U_ID , born , Age
   ,homeID,sectionHome,sol,road,city,
@@ -14,9 +17,34 @@ export default function CreatePDF({firstName , lastName , U_ID , born , Age
   const floor =  room_ID[1];
   const totalprice = {amount:"19500" , priceWord:"หนึ่งหมื่นเก้าพันห้าร้อยบาทถ้วน"}
   const dormitory_Owner =  "นางสาวอะไรดี ยังนึกชื่อไม่ออก"
-  
+  const [user_id, setUserID] = useState("");
+  useEffect(() => {
+    const userList = JSON.parse(localStorage.getItem("userList"));
+    if (userList) {
+      setUserID(userList.UserID);
+    } else {
+      setUserID("none");
+    }
+  }, []);
+
+
   const router = useRouter();
-  function GenPDF(){
+  async function GenPDF(){
+  const Newaccess1 =  "customerPayment";
+  const Newaccess2 = "GenPDF";
+  const Newbooking = 'none'
+  const res = await fetch(`http://localhost:3000/api/BookingAPI/AlarmPDF/${user_id}`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      Newbooking,
+      Newaccess1,
+      Newaccess2
+    }),
+  });
+
     generatePDF(ref, {filename: 'สัญญาเช่าหอ'+firstName+'.pdf'});
     alert("Success!!");
     router.push('/');
@@ -28,6 +56,7 @@ export default function CreatePDF({firstName , lastName , U_ID , born , Age
     <div className={styles.body}>
       <div className={styles.topic}>
           <div>
+            {user_id}
             <br/>
              <span className={styles.textBoldTop}>JAI-JAI Place</span>
           </div>

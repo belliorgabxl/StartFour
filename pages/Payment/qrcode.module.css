@@ -1,0 +1,56 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: #F0F0F0;
+  }
+  
+  .container {
+    place-items: center;
+    display: grid;
+    width: 93%;
+    background-color: white;
+    margin-top: 160px;
+  }
+  
+  .topic{
+    margin: 20px 0 10px 0 ;
+    font-size: 35px;
+    background-color: #282828;
+    color: white;
+    width: 350px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+  }
+  .infoContainer{
+    font-size: 20px;
+    margin: 0 0 20px 0;
+  }
+  .con{
+    display: grid;
+    place-items: center;
+    width: 500px;
+    height: 380px;
+    border: 10px solid blue;
+  }
+  .btnArea{
+    display: grid;place-items: center;
+    margin: 20px 0 40px  0;
+  }
+  .payBtn{
+    all:unset;
+    width: 200px;
+    height: 60px;
+    font-size: 25px;
+    display: grid;place-items: center;
+    background-color: #282828;
+    color: white;
+  }
+  .payBtn:hover{
+    background-color: black;
+  }
+  .QRarea{
+    display: grid;
+    place-items: center;
+  }

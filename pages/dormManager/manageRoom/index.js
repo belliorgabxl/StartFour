@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import styles from "./manageRoom.module.css"
+
 const getData = async (idname) => {
   const res = await fetch(`http://localhost:3000/api/FindManageRoom/${idname}`, {
     cache: "no-store",
@@ -27,27 +31,38 @@ export default function manageRoom() {
       setDors(d);
     });
   }, []);
+
   return (
-    <div>
-      <div>
-        <h1> Room manager page</h1>
-        id name  : {user_id}
-      </div>
-      <div>
+    <div className={styles.body}>
+      <Navbar/>
+      <div className={styles.container}>
+        <div className={styles.Texthead}>
+          <h1> ห้องที่ลงทะเบียน</h1>
+        </div>
 
-        {dors?.length > 0 ? (
-          <div>
-        {dors?.map((d) => (
-          <Link href={"/dormManager/manageRoom/room/" + d._id}>
-            <div>
-              {d.dorm_name}
-              {d.price}
-              {d.type}
-            </div>
-          </Link>
-        ))}</div> ): (<h1>opps no post  คุณยังไม่ได้เพิ่มหอ</h1>)  }
+        <div >
+          {dors?.length > 0 ? (
+          <div className={styles.two} >
+            {dors?.map((d) => (
+              <Link className={styles.one} href={"/dormManager/manageRoom/room/" + d._id} >
+                <div className={styles.Box}>
+                  <img className={styles.icon} src="/iconroom.png" width={80} height={80}></img>
+                  <div className={styles.Textedit}>[แก้ไข]</div>
+                  <div className={styles.Textname}>{d.dorm_name}</div>
+                  <div className={styles.Texttype}>{d.type}</div>
+                </div>
+              </Link>
+            ))}
+          </div> ): (
+          <div className={styles.errorpost}>
+            <img className={styles.iconerror} src="/error.png" width={200} height={200}></img>
+            <div className={styles.Texterror} >opps no post </div>
+          </div>
+          )  }
 
+        </div>
       </div>
+      <Footer/>
     </div>
   );
 }

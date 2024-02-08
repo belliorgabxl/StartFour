@@ -24,7 +24,6 @@ function logOutBtn(){
     localStorage.clear()
     router.push("/")
 }
-
   if (user_id && user_state=="login"){
     if (user_type == "customer"){
     return(
@@ -73,17 +72,17 @@ function logOutBtn(){
                  
                             <div className={styles.dropdown_menu}>
                                 <a href="/Homepage">PROMOTION</a>
-                                <a href="#">LOCATION</a>
+                                <a href={"/payment/"+user_id}>LOCATION</a>
                                 <a href="#">PRICE RANG</a>
                                 <a href="#">HELP</a>
                             </div>
                         </div>
-                    <Link href="/addRoom" className={styles.menulist}><span >add Room</span></Link>
+                    <Link href="/#" className={styles.menulist}><span >Noticfication</span></Link>
                     <Link href="/RoomType" className={styles.menulist}><span >Roomtype</span></Link>
                     <Link href="/Homepage" className={styles.menulist}><span>Announcment</span></Link>
                     <Link href="/NearMe" className={styles.menulist}><span>NearMe</span></Link>
                     <Link href="/Homepage" className={styles.menulist}><span>Promotion</span></Link>
-                    <Link href="/GenPDF" className={styles.menulist}><span>ทำสัญญาเช่าหอ</span></Link>
+                    <Link href={"/Booking/"+user_id} className={styles.menulist}><span>Booking</span></Link>
                     
                 </div>
 
@@ -180,12 +179,12 @@ function logOutBtn(){
                                 <a href="#">HELP</a>
                             </div>
                         </div>
-                    <Link href="/addRoom" className={styles.menulist}><span >add Room</span></Link>
+                    <Link href="/#" className={styles.menulist}><span >Noticfication</span></Link>
                     <Link href="/RoomType" className={styles.menulist}><span >Roomtype</span></Link>
                     <Link href="/" className={styles.menulist}><span>Announcment</span></Link>
                     <Link href="/NearMe" className={styles.menulist}><span>NearMe</span></Link>
                     <Link href="/" className={styles.menulist}><span>Promotion</span></Link>
-                    <Link href="/GenPDF" className={styles.menulist}><span>ทำสัญญาเช่าหอ</span></Link>
+                    <Link href="/AboutUs" className={styles.menulist}><span>Aboute Us</span></Link>
                     
                 </div>
 

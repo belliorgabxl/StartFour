@@ -18,7 +18,9 @@ export default async function handler(req, res) {
       room_amount,
       water_unit
       ,elec_unit,
-      dorm_address  }= await req.body;
+      dorm_address,
+      booking_status,
+      id_room_booking  }= await req.body;
     const dorsManage = await DormMNM.create(
       {own_name,
         dorm_name,
@@ -34,7 +36,9 @@ export default async function handler(req, res) {
         room_amount,
         water_unit
         ,elec_unit,
-        dorm_address }
+        dorm_address,
+        booking_status,
+        id_room_booking }
     )
     res.json(dorsManage);
   }

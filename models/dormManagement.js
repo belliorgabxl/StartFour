@@ -16,7 +16,9 @@ const  dormManagmentSchema  = new Schema(
     room_amount:String,
     water_unit:String,
     elec_unit:String,
-    dorm_address:String
+    dorm_address:String,
+    booking_status:String,
+    id_room_booking:String
   },{timestamps:true,}
 );
 const DormMNM = mongoose.models.DormMNM || mongoose.model('DormMNM',dormManagmentSchema);

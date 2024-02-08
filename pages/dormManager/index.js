@@ -5,18 +5,19 @@ import styles from "./dorm.module.css";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-const getInfomation = async (id) => {
+const getDormManager = async (id) => {
   const res = await fetch(`http://localhost:3000/api/FindManageDormID/${id}`, {
-    cache: "no-store",
+    cache:"no-store",
   });
   return res.json();
 };
+
 // ````````````````````````````````````
 export default function IDroom() {
   const [user_id, setUserID] = useState("");
   const [user_state, setState] = useState("");
   const [user_type, setType] = useState("");
-  const [info, setInfo] = useState(null);
+  const [manage, setManager] = useState(null);
   useEffect(() => {
     const userList = JSON.parse(localStorage.getItem("userList"));
     if (userList) {
@@ -28,8 +29,8 @@ export default function IDroom() {
       setState("none");
       setType("none");
     }
-    getInfomation(userList.UserID).then((d) => {
-      setInfo(d);
+    getDormManager(userList.UserID).then((d) => {
+      setManager(d);
     });
   }, []);
   const [fname, setFname] = useState("");
@@ -45,7 +46,9 @@ export default function IDroom() {
   const [Newwater_unit, setWunit] = useState("");
   const [Newelec_unit, setEunit] = useState("");
   const [Newdorm_address, setDormAddress] = useState("");
-  const find=  info?._id;
+  const find=  manage?._id;
+  const booking_state = manage?.booking_status
+
 
 const  sendDataCheck = async()=>{
     let Newname = fname+' '+lname;
@@ -70,24 +73,57 @@ const  sendDataCheck = async()=>{
     } else {
       alert("somthing wrong");
     }
-    
-
-
   }
-
+  const customer = "bell";
   return (
     <>
-      {info?.authentical == "yes" ? (
+      {manage?.authentical == "yes" ? (
             <div className={styles.body}>
             <Navbar/>
             <div className={styles.container}>
-
-              {/* ปอทำส่วนนี้นะครับ */}
-
+            <div className={styles.Boxgrid}>
+                    <Link href= "/dormManager/addRoom" className={styles.Box1}>
+                        <img className={styles.icon} src="/addroom.png" width={100} height={100}></img>
+                        <img className={styles.iconarrowbottom} src="/circle.png" width={20} height={20}></img>
+                        <div className={styles.Text}>เพิ่มห้อง</div>
+                    </Link>
+                    <Link href= "/dormManager/check" className={styles.Box2}>
+                        <img className={styles.icon} src="/checkview.png" width={100} height={100}></img>
+                        <img className={styles.iconarrowbottom} src="/circle.png" width={20} height={20}></img>
+                        <div className={styles.Text}>ตรวจสอบ</div>
+                    </Link>
+                </div>
+                <div className={styles.Box}>
+                    <Link href="/dormManager/manageRoom" className={styles.Box3}>
+                        <img className={styles.iconarrowbottom1} src="/circle.png" width={20} height={20}></img>
+                        <img className={styles.iconarrowbottom2} src="/edit.png" width={100} height={100}></img>
+                        <div className={styles.Textbox}>แก้ไข</div>
+                    </Link>
+                </div>
+            {booking_state == "alarm"? (
+              <div className={styles.MailBox}>
+                <Link href={"/dormManager/dormConfirm/"+manage?.id_room_booking} className={styles.alarmmail} >
+                <div className={styles.mail}>
+                        <img className={styles.mail_icon} src="/letter.png" width={150} height={120}></img>
+                        <img className={styles.mailArrowbottom} src="/circle.png" width={20} height={20}></img>
+                        <div className={styles.Textbox}>มีการจอง</div>
+                </div>              
+                </Link>
+              </div>
+            ):
+            (
+              <div className={styles.MailBox}>
+                <div className={styles.mail}>
+                        <img className={styles.mail_icon} src="/letter.png" width={150} height={120}></img>
+                        <img className={styles.mailArrowbottom} src="/circle.png" width={20} height={20}></img>
+                        <div className={styles.Textbox}>ยังไม่มีการจอง</div>
+                </div>
+              </div>
+            )}
             </div>
             <Footer/>
         </div>
-      ) : info?.authentical == "none" ? (
+      ) : manage?.authentical == "none" ? (
         <div className={styles.body}>
           <Navbar></Navbar>
           <div className={styles.container}>
@@ -272,7 +308,7 @@ const  sendDataCheck = async()=>{
         </div>
       ) : (
         <div>
-          <h1>SomeThing're Wrong , Please Try again.</h1>
+          <h1>Loading...</h1>
         </div>
       )}
     </>

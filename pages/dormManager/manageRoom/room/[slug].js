@@ -1,5 +1,9 @@
 import { useRouter } from "next/router";
 import { useState,useEffect } from "react";
+import styles from "./room.module.css"
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 const getId = async (id) => {
     const res = await fetch(`http://localhost:3000/api/EditeRoom/${id}`, {
       cache: "no-store",
@@ -57,49 +61,64 @@ const handleSubmit = async (e) =>{
       throw new Error("Failed to update topic");
       
     }
-    router.push("/");
+    router.push("/dormManager/manageRoom");
   } catch (error) {
     alert("don't success"+error)
   }
 }
   return(
-    <div>
-      <div>
-        <h1>hello:{data?.dorm_name}</h1>
-      </div>
-    
-      <form onSubmit={handleSubmit} >
-        <input type="text"  placeholder="dormitory name"
-        onChange={(e)=>setName(e.target.value)}  defaultValue={data?.dorm_name}  />
-        <div>
-        <input type="text"  placeholder="type"
-        onChange={(e)=>setType(e.target.value)} defaultValue={data?.type} />
-        </div>
+    <div className={styles.body}>
+      <Navbar/>
+      <div className={styles.container}>
+        
        
-       <div>
-       <input type="text"  placeholder="price"
-        onChange={(e) =>setPrice(e.target.value)} defaultValue={data?.price} />
-       </div>
+    
+        <form className={styles.Box} onSubmit={handleSubmit} >
 
-        <div>
-        <input type="text" placeholder="location"
-        onChange={(e)=> setLocat(e.target.value)} defaultValue={data?.location} />
-        </div>
-        <div>
-        <input type="text"  placeholder="image"
-        onChange={(e)=>setImg(e.target.value)} defaultValue={data?.img} />
-        </div>
-        <div>
-        <input type="text"  placeholder="content"
-        onChange={(e) =>setDetail(e.target.value)} defaultValue={data?.detail} />
-        </div>
+          
+
+          <div className={styles.Texthead}>
+            <h1>แก้ไข :{data?.dorm_name}</h1>
+          </div>
+
+          <div >
+            <input className={styles.Textnameinput} type="text"  placeholder="dormitory name"
+            onChange={(e)=>setName(e.target.value)}  defaultValue={data?.dorm_name}  />
+          </div>
+          
+          <div>
+            <input className={styles.Textnameinput} type="text"  placeholder="type"
+            onChange={(e)=>setType(e.target.value)} defaultValue={data?.type} />
+          </div>
+       
+         <div>
+           <input className={styles.Textnameinput} type="text"  placeholder="price"
+            onChange={(e) =>setPrice(e.target.value)} defaultValue={data?.price} />
+         </div>
+
+         <div>
+            <input className={styles.Textnameinput} type="text" placeholder="location"
+            onChange={(e)=> setLocat(e.target.value)} defaultValue={data?.location} />
+         </div>
+
+         <div>
+            <input className={styles.Textnameinput} type="text"  placeholder="image"
+            onChange={(e)=>setImg(e.target.value)} defaultValue={data?.img} />
+         </div>
+
+         <div>
+            <input className={styles.Textdetailinput} type="text"  placeholder="content"
+            onChange={(e) =>setDetail(e.target.value)} defaultValue={data?.detail} />
+         </div>
 
         
-        <button type="submit">submit</button>
-      </form>
- 
+          <button className={styles.button} type="submit">submit</button>
 
-      
+          <img className={styles.iconedit} src="/edits.png" width={50} height={50}></img>
+
+        </form>
+      </div>
+      <Footer/>
     </div>
   );
 }

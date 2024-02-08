@@ -36,12 +36,39 @@ export default function register_page(){
                 },
                 body: JSON.stringify({ username,password,email,phone,name,state}),
               });
+              if(state=="customer"){
+                let user_booking = username;
+                let own_dormitory = "none";
+                let dorm_name = "none";
+                let price = "none";
+                let id_room="none";
+                let access1 = "none";
+                let access2 = "none"
+                let booking = "none"
+
+                const res3 = await fetch("http://localhost:3000/api/getBooking", {
+                  method: "POST",
+                  headers: {
+                    "Content-type": "application/json",
+                  },
+                  body: JSON.stringify({
+                      user_booking,
+                      own_dormitory,
+                      dorm_name,
+                      price,
+                      id_room,
+                      access1,
+                      access2,
+                      booking
+                   }),
+                });
+              }
               if(state=="seller"){
                 let own_name = username;let dorm_name = "";let dorm_img = "";
                 let passportID = "";let authentical = "none"
                 let name = "";let old='';let phone_dorm='';let born='';let address=''
                 let floor_amount='';let room_amount='';let water_unit='';let elec_unit=''
-                let dorm_address=''
+                let dorm_address='';let booking_status="none";let id_room_booking='none'
                 const res2 = await fetch("http://localhost:3000/api/getDorsManage", {
                   method: "POST",
                   headers: {
@@ -61,7 +88,9 @@ export default function register_page(){
                     room_amount,
                     water_unit
                     ,elec_unit,
-                    dorm_address 
+                    dorm_address,
+                    booking_status,
+                    id_room_booking
                    }),
                 });
               }

@@ -320,9 +320,6 @@ export default function InputBox(){
       <div className={styles.btnZone}>
          <button className={styles.btn} type="submit" onClick={Submit}>submit</button>
       </div>
-     
-     
-      
       
       </form> 
       </div><Footer/></div>
