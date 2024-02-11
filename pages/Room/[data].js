@@ -34,7 +34,7 @@ export default function Roomdata() {
       setState("none");
       setType("none");
     }
-  }, []);
+  }, [dors]);
   const img_list=[]
   const dorm_name = dors?.dorm_name;
   const locat_name = dors?.location;
@@ -79,6 +79,16 @@ export default function Roomdata() {
       },
       body: JSON.stringify({Newid_room,Newbooking_state }),
     });
+    let Newdormitory = Newdorm_name
+    const res4 = await fetch(`http://localhost:3000/api/AlarmDorm/AlarmUser/${user_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({Newdormitory}),
+    });
+    var getID = {UserID:user_id,State:"login",Type:"customer",_id :"0",Dormitory:Newdorm_name}
+        localStorage.setItem("userList",JSON.stringify(getID));
     router.push("/");
   }
 

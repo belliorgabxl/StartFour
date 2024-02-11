@@ -29,12 +29,13 @@ export default function register_page(){
           }
         else{
             try{
+              let dormitory= "none";
               const res = await fetch("http://localhost:3000/api/getUser", {
                 method: "POST",
                 headers: {
                   "Content-type": "application/json",
                 },
-                body: JSON.stringify({ username,password,email,phone,name,state}),
+                body: JSON.stringify({ username,password,email,phone,name,state,dormitory}),
               });
               if(state=="customer"){
                 let user_booking = username;
@@ -64,7 +65,7 @@ export default function register_page(){
                 });
               }
               if(state=="seller"){
-                let own_name = username;let dorm_name = "";let dorm_img = "";
+                let own_name = username;let dorm_name = "none";let dorm_img = "";
                 let passportID = "";let authentical = "none"
                 let name = "";let old='';let phone_dorm='';let born='';let address=''
                 let floor_amount='';let room_amount='';let water_unit='';let elec_unit=''

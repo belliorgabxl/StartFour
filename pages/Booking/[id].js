@@ -1,3 +1,4 @@
+
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import styles from "./book.module.css";
@@ -18,52 +19,50 @@ const getDors = async (id) => {
   );
   return res.json();
 };
-
 export default function booking() {
   const router = useRouter();
   const user = router.query.id;
   const [book, setBook] = useState(null);
   const [dors, setDors] = useState(null);
+  const [localDors, setLocalDors] = useState();
 
   useEffect(() => {
+    const userList = JSON.parse(localStorage.getItem("userList"));
+    if (userList) {
+      setLocalDors(userList.Dormitory);
+    } else {
+      setLocalDors("none");
+    }
     getBook(user).then((d) => {
       setBook(d);
-      getDors(d.dorm_name).then((r) => {
-        setDors(r);
-      });
     });
-  }, []);
-
+    getDors(userList.Dormitory).then((d) => {
+      setDors(d);
+    });
+  },[dors]);
   function step1() {
     router.push("/Payment/" + book?.id_room);
   }
   function step2() {
     router.push("/GenPDF");
   }
-  const bookState = book?.booking
+  const bookState = book?.booking;
   return (
     <div>
-      { bookState == "none" ? (
+      {bookState == "none" ? (
         <div className={styles.body}>
-          <Navbar/>
+          <Navbar />
           <div className={styles.container}>
-          <div className={styles.topicBook}>
-              Booking
-            </div>
-            <div className={styles.alarm}>
-             คุณยังไม่ได้ทำการจองหอพักใดๆ..
-            </div>
+            <div className={styles.topicBook}>Booking</div>
+            <div className={styles.alarm}>คุณยังไม่ได้ทำการจองหอพักใดๆ..</div>
           </div>
-          <Footer/>
+          <Footer />
         </div>
-      ) :book?.access1 == "none" && book?.access2=="none"?
-      (
+      ) : book?.access1 == "none" && book?.access2 == "none" ? (
         <div className={styles.body}>
-          <Navbar/>
+          <Navbar />
           <div className={styles.container}>
-          <div className={styles.topicBook}>
-              Booking
-            </div>
+            <div className={styles.topicBook}>Booking</div>
             <div className={styles.alarm}>
               รอผู้ปล่อยเช่าอนุมัติขั้นตอนการจอง...
             </div>
@@ -89,15 +88,13 @@ export default function booking() {
               </div>
             </div>
           </div>
-          <Footer/>
+          <Footer />
         </div>
-      ):book?.access1 == "allow" && book?.access2=="none" ? (
+      ) : book?.access1 == "allow" && book?.access2 == "none" ? (
         <div className={styles.body}>
           <Navbar />
           <div className={styles.container}>
-            <div className={styles.topicBook}>
-              Booking
-            </div>
+            <div className={styles.topicBook}>Booking</div>
             <div className={styles.descript}>
               <span>ชื่อผู้ใช้: {user}</span>
               <span>สถานะ: ได้ทำการจอง</span>
@@ -132,53 +129,39 @@ export default function booking() {
           </div>
           <Footer />
         </div>
-      ) :
-      book?.access1 == "customerPayment" && book?.access2=="none"?
-      (
+      ) : book?.access1 == "customerPayment" && book?.access2 == "none" ? (
         <div className={styles.body}>
-          <Navbar/>
+          <Navbar />
           <div className={styles.container}>
-          <div className={styles.topicBook}>
-              Booking
-            </div>
+            <div className={styles.topicBook}>Booking</div>
             <div className={styles.alarm}>
               รอผู้ปล่อยเช่าตรวจสอบใบเสร็จแล้วอนุมัติการทำสัญญา..
             </div>
           </div>
-          <Footer/>
+          <Footer />
         </div>
-      ):
-      book?.access1 == "customerPayment" && book?.access2=="allow"?
-      (
+      ) : book?.access1 == "customerPayment" && book?.access2 == "allow" ? (
         <div className={styles.body}>
-          <Navbar/>
+          <Navbar />
           <div className={styles.container}>
-          <div className={styles.topicBook}>
-              Booking
-            </div>
-            <div className={styles.alarm}>
-              "ผู้เช่าอนุมัติการทำสัญญาแล้ว"
-            </div>
-              <div className={styles.btnArea}>
+            <div className={styles.topicBook}>Booking</div>
+            <div className={styles.alarm}>"ผู้เช่าอนุมัติการทำสัญญาแล้ว"</div>
+            <div className={styles.btnArea}>
               <button onClick={step2} className={styles.ConfirmBtn}>
                 เริ่มทำสัญญา
               </button>
             </div>
           </div>
-          <Footer/>
+          <Footer />
         </div>
-      ): (
+      ) : (
         <div className={styles.body}>
-          <Navbar/>
+          <Navbar />
           <div className={styles.container}>
-          <div className={styles.topicBook}>
-              Booking
-            </div>
-            <div className={styles.alarm}>
-              Loading...
-            </div>
+            <div className={styles.topicBook}>Booking</div>
+            <div className={styles.alarm}>Loading...</div>
           </div>
-          <Footer/>
+          <Footer />
         </div>
       )}
     </div>

@@ -68,7 +68,7 @@ function logOutBtn(){
                                 src="/dropdown.png" 
                                 alt="dropdown"
                                 width={45}
-                                height={45}/>
+                                height={45}/>--
                  
                             <div className={styles.dropdown_menu}>
                                 <a href="/Homepage">PROMOTION</a>

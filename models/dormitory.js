@@ -10,7 +10,7 @@ const dormitorySchema = new Schema(
     detail: String,
     create_by: String,
     lat: String,
-    long: String,
+    long: String
   },
   { timestamps: true }
 );
