@@ -6,8 +6,8 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 import Space from "@/components/SpaceTab";
 
-const getData = async (iddata) => {
-  const res = await fetch(`http://localhost:3000/api/FindDorsID/${iddata}`, {
+const getData = async () => {
+  const res = await fetch(`http://localhost:3000/api/getDors`, {
     cache: "no-store",
   }); 
   return res.json();
@@ -18,31 +18,59 @@ export default function Roomdata() {
   const id = router.query.data;
   const [dors, setDors] = useState(null);
   const [user_id, setUserID] = useState("");
-  const [user_state, setState] = useState("");
-  const [user_type, setType] = useState("");
   useEffect(() => {
-    getData(id).then((d) => {
-      setDors(d);
-    });
     const userList = JSON.parse(localStorage.getItem("userList"));
     if (userList) {
       setUserID(userList.UserID);
-      setState(userList.State);
-      setType(userList.Type);
     } else {
       setUserID("none");
-      setState("none");
-      setType("none");
     }
-  }, [dors]);
-  const img_list=[]
-  const dorm_name = dors?.dorm_name;
-  const locat_name = dors?.location;
-  let img_id = dors?.img;
-  let price_name = dors?.price;
-  let detail_name = dors?.detail;
-  let type_name = dors?.type;
-  let dorm_id =   dors?._id
+    getData().then((d) => {
+      setDors(d);
+    });
+  },[]);
+  const dorm_name_list = []
+  const img_list = []
+  const locat_list =[]
+  const create_by_list = []
+  const price_list = []
+  const detail_list =[]
+  const type_list =[]
+  const id_list = []
+
+  const image_list=[]
+  let dorm_name = ""
+  let locat_name = ""
+  let img = ""
+  let price = ""
+  let detail = ""
+  let type = ""
+  let dorm_id =   ""
+  let create_by=''
+  {dors?.dormitory?.map((d)=>{
+    id_list.push(d._id),
+    dorm_name_list.push(d.dorm_name),
+    image_list.push(d.img),
+    create_by_list.push(d.create_by),
+    locat_list.push(d.location),
+    price_list.push(d.price),
+    detail_list.push(d.detail),
+    type_list.push(d.type)
+  })}
+  for(let i = 1;i<id_list.length ; i++ ){
+    if(id_list[i] == id){
+      dorm_name = dorm_name_list[i]
+      locat_name = locat_list[i]
+      img = image_list[i]
+      price = price_list[i]
+      detail = detail_list[i]
+      type  = type_list[i]
+      dorm_id = id_list[i]
+      create_by = create_by_list[i]
+    }
+  }
+
+
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => {
@@ -53,12 +81,11 @@ export default function Roomdata() {
       (prevSlide) => (prevSlide - 1 + img_list.length) % img_list.length
     );
   };
-
   async function BookingBtn() {
-    let Newown_dormitory = dors?.create_by
+    let Newown_dormitory = create_by
     let Newdorm_name = dorm_name
     let Newid_room = dorm_id
-    let Newprice = dors?.price 
+    let Newprice = price
     let Newaccess1 = "none" 
     let Newaccess2 = "none"
     let Newbooking_state = 'alarm'
@@ -107,13 +134,13 @@ export default function Roomdata() {
               className={styles.imageContainer}
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              <img className={styles.image} src={img_id} alt={dorm_name} />
-              {img_list.map((img_id, index) => (
+              <img className={styles.image} src={img} alt={dorm_name} />
+              {img_list.map((img, index) => (
                 <img
                   key={index}
                   className={styles.image}
-                  src={img_id}
-                  alt={dorm_name}
+                  src={img}
+                  alt={dorm}
                 />
               ))}
             </div>
@@ -147,7 +174,7 @@ export default function Roomdata() {
               </div>
               <div className={styles.textbar1}>
                 <div> Price</div>
-                <div>{price_name}/month</div>
+                <div>{price}/month</div>
               </div>
             </div>
             <div className={styles.textbar}>
@@ -156,7 +183,7 @@ export default function Roomdata() {
               </div>
               <div className={styles.textbar1}>
                 <div>Room type</div>
-                <div>{type_name}</div>
+                <div>{type}</div>
               </div>
             </div>
             <div className={styles.textbar1}>
@@ -168,7 +195,7 @@ export default function Roomdata() {
           <div className={styles.dorm}>
             <div className={styles.imageColumn}>
               <div className={styles.textdorm1}>รายละเอียดของหอพัก</div>
-              <div className={styles.textdorm}>{detail_name}</div>
+              <div className={styles.textdorm}>{detail}</div>
             </div>
             <div className={styles.detailsColumn1}>
               <div className={styles.price}>
@@ -182,7 +209,7 @@ export default function Roomdata() {
                   <div>ที่จอดรถ :</div>
                 </div>
                 <div className={styles.textprice}>
-                  <div>{price_name}/month</div>
+                  <div>{price}/month</div>
                   <div>8,000</div>
                   <div>8/unit</div>
                   <div>18/unit</div>

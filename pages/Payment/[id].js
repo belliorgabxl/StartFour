@@ -5,16 +5,16 @@ import { useRouter } from 'next/router';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-async function getBook(id) {
+async function getBook() {
   const res = await fetch(
-    `http://localhost:3000/api/BookingAPI/FindBookByIDroom/${id}`,
+    `http://localhost:3000/api/getBooking`,
     { cache: "no-store" }
   );
   return res.json();
 };
-const getDors = async (id) => {
+const getDors = async () => {
   const res = await fetch(
-    `http://localhost:3000/api/BookingAPI/FindDorsMNMByName/${id}`,
+    `http://localhost:3000/api/getDorsManage`,
     { cache: "no-store" }
   );
   return res.json();
@@ -22,31 +22,72 @@ const getDors = async (id) => {
 
 export default function payment(){
   const router = useRouter(); 
-  const id_room = router.query.id
+  const id_room_byID = router.query.id
   const [book, setBook] = useState(null);
-  const [amount, setAmount] = useState('');
-  const [mobileNumber, setMobileNumber] = useState('0957437740');
-  const [name, setName] = useState('');
-  const [qrCodeData, setQRCodeData] = useState('');
   const [dorm,setDorm] = useState(null);
+
 useEffect(()=>{
-  getBook(id_room).then((d)=>{
+  getBook().then((d)=>{
     setBook(d);
-    setAmount(d.price)
-    getDors(d.own_dormitory).then((r)=>{
-      setDorm(r)
-      setName(r.name)
-    })
+  })
+  getDors().then((r)=>{
+    setDorm(r)
   })
 },[])
+const user_booking_list = [];
+const own_dormitory_list = [];
+const dorm_name_list = [];
+const id_room_list = [];
+const price_list = [];
+const booking_list = [];
+const access1_list = [];
+const access2_list = [];
+let user_booking = "";
+let own_dormitory = "";
+let dorm_name = "";
+let id_room = "";
+let price = "";
+let booking = "";
+let access1 = "";
+let access2 = "";
+{
+  book?.map((b) => {
+    user_booking_list.push(b.user_booking),
+      own_dormitory_list.push(b.own_dormitory),
+      dorm_name_list.push(b.dorm_name),
+      id_room_list.push(b.id_room),
+      price_list.push(b.price),
+      booking_list.push(b.booking),
+      access1_list.push(b.access1),
+      access2_list.push(b.access2);
+  });
+}
+for (let i = 1; i < user_booking_list.length; i++) {
+  if (id_room_list[i] == id_room_byID ) {
+    own_dormitory = own_dormitory_list[i];
+    dorm_name = dorm_name_list[i];
+    id_room = id_room_list[i];
+    price = price_list[i];
+    booking = booking_list[i];
+    access1 = access1_list[i];
+    access2 = access2_list[i];
+    user_booking = user_booking_list[i]
+  }
+}
+let amount1  = price.replace(",", "");
+let amount = amount1
+let mobileNumber = "0957437740"   // เปลี่ยนเป็นเบอร์เจ้าของหอตรงนี้ได้
+let name = own_dormitory
+const [qrCodeData, setQRCodeData] = useState('');
 
+const dorm_owner_list = []
 useEffect(()=>{
     fetch('/api/QRcode', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ amount: parseFloat(amount), mobileNumber: mobileNumber }),
+    body: JSON.stringify({ amount: parseFloat(parseInt(amount)), mobileNumber: mobileNumber }),
   })
     .then(response => response.json())
     .then(data => {
@@ -55,13 +96,13 @@ useEffect(()=>{
 },[])
 
 async function sendPayment(){
-  const Newuser_booking = book?.user_booking;
-  const Newown_dormitory = book?.own_dormitory;
-  const Newdorm_name = book?.dorm_name;
-  let Newid_room = book?.id_room;
-  const Newprice = book?.price;
+  const Newuser_booking = user_booking;
+  const Newown_dormitory = own_dormitory;
+  const Newdorm_name = dorm_name;
+  let Newid_room = id_room;
+  const Newprice = price;
   const Newaccess1 =  "customerPayment";
-  const Newaccess2 = book?.access2;
+  const Newaccess2 = access2;
   const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_room}`, {
     method: "PUT",
     headers: {
@@ -77,14 +118,13 @@ async function sendPayment(){
       Newaccess2
     }),
   });
-  router.push("/Booking/"+book?.user_booking)
+  router.push("/Booking/"+user_booking)
 }
   return(
     <div className={styles.body}>
       <Navbar/>
 
     <div className={styles.container}>   
-
      <div className={styles.topic}>QR Code Promptpay</div>
         {qrCodeData? (
           <div className={styles.QRarea}>

@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import dynamic from "next/dynamic";
 import Link from 'next/link';
 import { useState,useEffect } from 'react';
+import Footer from '@/components/Footer';
 
 const Map = dynamic(() => import("@/components/MarkerMap/map"), {
   ssr: false,
@@ -116,10 +117,6 @@ export default function Home() {
         </div>
     </div>
         )}
-
-
-
-    
       </div>
 
       <div>
@@ -129,6 +126,7 @@ export default function Home() {
         <hr/> 
         <Link href="/pages/test2"> <h1>POST TEST</h1></Link>
     </div>
+    <Footer/>
    </div>
   )
 }

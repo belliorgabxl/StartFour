@@ -1,3 +1,4 @@
+import { trim } from "lodash";
 import mongoose, { Schema } from "mongoose";
 
 const dormitorySchema = new Schema(
@@ -10,9 +11,11 @@ const dormitorySchema = new Schema(
     detail: String,
     create_by: String,
     lat: String,
-    long: String
+    long: String,
+    find_dorm:String
   },
   { timestamps: true }
 );
 const Dors = mongoose.models.Dors || mongoose.model("Dors", dormitorySchema);
 export default Dors;
+

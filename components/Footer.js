@@ -12,7 +12,7 @@ export default function Footer(){
                 <div className={styles.blog1}>
 
                     <div  className={styles.logo}>
-                        <Image src="/HongHub.png" alt="logo" height={70} width={70}></Image>
+                        <Image src="/Honghub_white.png" alt="logo" height={70} width={70}></Image>
                         <h1 className={styles.logotext}>HongHub</h1>
                     </div>
 

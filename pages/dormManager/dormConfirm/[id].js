@@ -4,42 +4,85 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import styles from "./confirm.module.css"
 const  getBookingId = async (id)=>{
-  const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/getBooking`, {
     cache: "no-store",
   });
   return res.json();
 }
 const getDorsID  = async (id)=>{
-  const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindRoomID/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/getDors`, {
     cache: "no-store",
   });
   return res.json();
 }
 export default function Dormconfirm(){
   const router = useRouter();
-  const id_room =  router.query.id;
-  const [booking,setBooking] = useState(null);
+  const id_room_byID=  router.query.id;
+  const [book,setBooking] = useState(null);
   const [dors,setDors] = useState(null);
 
   useEffect(()=>{
-    getBookingId(id_room).then((d)=>{
+    getBookingId().then((d)=>{
       setBooking(d);
     })
-    getDorsID(id_room).then((d)=>{
-      setDors(d);
+    getDorsID().then((r)=>{
+      setDors(r);
     })
   },[])
-  const access1 = booking?.access1
-  const access2 = booking?.access2
+
+  const user_booking_list = [];
+  const own_dormitory_list = [];
+  const dorm_name_list = [];
+  const id_room_list = [];
+  const price_list = [];
+  const booking_list = [];
+  const access1_list = [];
+  const access2_list = [];
+  const updatelist = []
+  let updateAt=''
+  let user_booking = "";
+  let own_dormitory = "";
+  let dorm_name = "";
+  let id_room = "";
+  let price = "";
+  let booking = "";
+  let access1 = "";
+  let access2 = "";
+  {
+    book?.map((b) => {
+      user_booking_list.push(b.user_booking),
+        own_dormitory_list.push(b.own_dormitory),
+        dorm_name_list.push(b.dorm_name),
+        id_room_list.push(b.id_room),
+        price_list.push(b.price),
+        booking_list.push(b.booking),
+        access1_list.push(b.access1),
+        access2_list.push(b.access2)
+        ,updatelist.push(b.updatedAt)
+    });
+  }
+  for (let i = 1; i < user_booking_list.length; i++) {
+    if (id_room_list[i] == id_room_byID) {
+      own_dormitory = own_dormitory_list[i];
+      dorm_name = dorm_name_list[i];
+      id_room = id_room_list[i];
+      price = price_list[i];
+      booking = booking_list[i];
+      access1 = access1_list[i];
+      access2 = access2_list[i];
+      user_booking = user_booking_list[i]
+      updateAt = updatelist[i]
+    }
+  }
 
   const Step1Btn = async()=>{
-    const Newuser_booking = booking?.user_booking;
-    const Newown_dormitory = booking?.own_dormitory;
-    const Newdorm_name = booking?.dorm_name;
-    const Newid_room = booking?.id_room;
-    const Newprice = booking?.price;
+    const Newuser_booking = user_booking;
+    const Newown_dormitory = own_dormitory;
+    const Newdorm_name = dorm_name;
+    const Newid_room  = id_room;
+    const Newprice = price;
     const Newaccess1 =  "allow";
-    const Newaccess2 = booking?.access2;
+    const Newaccess2 = access2;
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_room}`, {
       method: "PUT",
       headers: {
@@ -58,12 +101,12 @@ export default function Dormconfirm(){
     router.push("/dormManager")
   }
   const Step2Btn = async()=>{
-    const Newuser_booking = booking?.user_booking;
-    const Newown_dormitory = booking?.own_dormitory;
-    const Newdorm_name = booking?.dorm_name;
-    const Newid_room = booking?.id_room;
-    const Newprice = booking?.price;
-    const Newaccess1 =  booking?.access1;
+    const Newuser_booking = user_booking;
+    const Newown_dormitory = own_dormitory;
+    const Newdorm_name = dorm_name;
+    const Newid_room = id_room;
+    const Newprice = price;
+    const Newaccess1 =  access1;
     const Newaccess2 = "allow";
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_room}`, {
       method: "PUT",
@@ -83,14 +126,14 @@ export default function Dormconfirm(){
     router.push("/dormManager")
   }
   const Step3Btn = async()=>{
-    const Newuser_booking = booking?.user_booking;
-    const Newown_dormitory = booking?.own_dormitory;
-    const Newdorm_name = booking?.dorm_name;
-    let Newid_room = booking?.id_room;
-    const Newprice = booking?.price;
+    const Newuser_booking = user_booking;
+    const Newown_dormitory = own_dormitory;
+    const Newdorm_name = dorm_name;
+    let Newid_room = id_room;
+    const Newprice = price;
     const Newaccess1 =  "success";
     const Newaccess2 = "success";
-    const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_room}`, {
+    const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${user_booking}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -127,12 +170,12 @@ export default function Dormconfirm(){
           Noticfication
         </div>
         <div className={styles.alarm1}>
-        จองมาจาก คุณ : {booking?.user_booking}<br/>
+        จองมาจาก คุณ : {user_booking}<br/>
         สถานะ : รอการยืนยันจากคุณ        <hr/>
         ตัวหอพักของคุณที่จองคือ<br/>
-        หอพัก {dors?.dorm_name}<br/>
-        ราคา : {dors?.price}<br/>
-        จองเมื่อ : {booking?.updatedAt}<br/>
+        หอพัก {dorm_name}<br/>
+        ราคา : {price}<br/>
+        จองเมื่อ : {updateAt}<br/>
         </div>
         <div className={styles.btnArea}>
         <button onClick={Step1Btn} className={styles.ConfirmBtn}>อนุมัติให้ชำระ</button>
