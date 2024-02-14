@@ -17,12 +17,13 @@
     "lodash": "^4.17.21",
     "mongodb": "^6.3.0",
     "mongoos": "^0.0.1-security",
-    "mongoose": "^8.0.3",
+    "mongoose": "^8.1.2",
     "next": "^14.1.0",
     "promptpay-qr": "^0.5.0",
     "qrcode": "^1.5.3",
     "react": "^18",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.50.1",
     "react-leaflet": "^4.2.1",
     "react-to-pdf": "^1.0.1"
   }

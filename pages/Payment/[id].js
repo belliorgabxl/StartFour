@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from 'next/router'; 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Upload from "@/components/Slip";
 
 async function getBook() {
   const res = await fetch(
@@ -103,6 +104,28 @@ async function sendPayment(){
   const Newprice = price;
   const Newaccess1 =  "customerPayment";
   const Newaccess2 = access2;
+  let imageUrl = "";
+
+  const fileInput = document.querySelector('input[type="file"]');
+  if (fileInput?.files?.length > 0) {
+      const receiptImage = fileInput.files[0];
+
+      const formData = new FormData();
+      formData.append("receiptImage", receiptImage);
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        imageUrl = responseData.imageUrl;
+      }
+    } else {
+      console.error("No file selected");
+    }
+
   const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_room}`, {
     method: "PUT",
     headers: {
@@ -115,7 +138,8 @@ async function sendPayment(){
       Newid_room,
       Newprice,
       Newaccess1,
-      Newaccess2
+      Newaccess2,
+      imageUrl
     }),
   });
   router.push("/Booking/"+user_booking)
@@ -126,18 +150,23 @@ async function sendPayment(){
 
     <div className={styles.container}>   
      <div className={styles.topic}>QR Code Promptpay</div>
+      <div className={styles.detail}>เปิดแอพพลิเคชั่นธนาคาร สแกน QR Code ด้านล่าง พร้อมกับแนบหลักฐานการชำระเงิน</div>
         {qrCodeData? (
           <div className={styles.QRarea}>
-          <div className={styles.con}>
-            <div className={styles.qrCode}>
-              <img src={qrCodeData} alt="QR Code" style={{ width: '250px', objectFit: 'contain' }} />
-            </div>
+        <div className={styles.con}>
+              <div className={styles.title}>
+                <Image src="/payment.png" width={280} height={110} alt="img" />
+              </div>
+              <div className={styles.qrCode}>
+                <img src={qrCodeData} alt="QR Code" style={{ width: '280px', objectFit: 'contain' }} />
+              </div>
             <div className={styles.infoContainer}>
               ชื่อบัญชี : {name}
               <div>รหัสพร้อมเพย์ : {mobileNumber}</div>
               <div>จำนวนเงิน : {amount} บาท</div>
             </div>
           </div>
+          <Upload onFileChange={(file) => console.log("Received file:", file)} />
           <div className={styles.btnArea}>
             <button onClick={sendPayment} className={styles.payBtn}>ยืนยันการชำระ</button>
           </div>

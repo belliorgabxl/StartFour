@@ -32,7 +32,11 @@
     place-items: center;
     width: 500px;
     height: 380px;
-    border: 10px solid blue;
+    padding-top: 50px;
+  }
+  .detail {
+    font-size: 20px;
+    padding-top: 3%;
   }
   .btnArea{
     display: grid;place-items: center;
