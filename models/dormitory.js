@@ -1,4 +1,3 @@
-import { trim } from "lodash";
 import mongoose, { Schema } from "mongoose";
 
 const dormitorySchema = new Schema(
@@ -11,8 +10,7 @@ const dormitorySchema = new Schema(
     detail: String,
     create_by: String,
     lat: String,
-    long: String,
-    find_dorm:String
+    long: String
   },
   { timestamps: true }
 );

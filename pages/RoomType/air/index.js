@@ -30,9 +30,7 @@ export default function Home() {
         setDors(d);
       });
     }, []);
-
-    return (
-        
+    return ( 
         <div className={styles.body}>
             <Navbar/>
             <div className={styles.container}></div>

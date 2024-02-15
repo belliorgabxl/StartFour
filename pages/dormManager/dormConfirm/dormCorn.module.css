@@ -1,0 +1,58 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: #F0F0F0;
+  }
+.container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  width: 93%;
+  background-color: white;
+  margin-top: 95px;
+  padding-left: 20px;
+}
+.container a{
+  color: black;
+  text-decoration: none;
+}
+.topic{
+  margin: 20px 0 20px 0 ;
+  display: grid;
+  place-items: center;
+  border: 1px solid black;
+  font-size: 30px;
+  width: 450px;
+  height: 70px;
+  background-color: #282828;
+  color: white;
+  font-weight: 550;
+}
+.ListBox{
+  display: grid;
+  text-align: left;
+  margin: 20px 0 0 0;
+  width: 650px;
+  height: 120px;
+  box-shadow: 0 1px 5px gray;
+}
+
+.line1{
+  margin: 0 0 0 20px;
+  font-size: 30px;
+  font-weight: 500;
+}
+.line2{
+  margin: 0  0 0 60px;
+  font-size: 25px;
+}
+.blank{
+  height: 100px;
+}
+.ListBox:hover{
+  background-color: gray;
+}
+.container a:hover{
+  color: white;
+}

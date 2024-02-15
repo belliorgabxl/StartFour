@@ -220,8 +220,12 @@ export default function booking() {
         <div className={styles.body}>
           <Navbar />
           <div className={styles.container}>
-            <div className={styles.topicBook}>Booking</div>
-            <div className={styles.alarm}>Loading...</div>
+            <div className={styles.topicBook}>
+              Booking
+              </div>
+            <div className={styles.alarm}>
+              Loading...
+            </div>
           </div>
           <Footer />
         </div>

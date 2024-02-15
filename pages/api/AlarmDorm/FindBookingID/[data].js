@@ -19,7 +19,7 @@ export default async function handler(req,res){
       Newaccess2:access2,
       Newbooking:booking
      }= await req.body;
-    const dormitory = await Booked.findOneAndUpdate({id_room:data},
+    const dormitory = await Booked.findOneAndUpdate({_id:data},
       {user_booking,own_dormitory,dorm_name,
       id_room,price,access1,access2,booking })
     res.json(dormitory);

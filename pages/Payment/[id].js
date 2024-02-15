@@ -25,8 +25,18 @@ export default function payment(){
   const id_room_byID = router.query.id
   const [book, setBook] = useState(null);
   const [dorm,setDorm] = useState(null);
+  const [user_id , setUserID] = useState();
+  const [id_booking_local , setIDbook] = useState();
 
 useEffect(()=>{
+  const userList = JSON.parse(localStorage.getItem("userList"));
+    if (userList) {
+      setUserID(userList.UserID);
+      setIDbook(userList._id);
+    } else {
+      setUserID("none");
+      setIDbook("none")
+    }
   getBook().then((d)=>{
     setBook(d);
   })
@@ -42,6 +52,8 @@ const price_list = [];
 const booking_list = [];
 const access1_list = [];
 const access2_list = [];
+const id_book_database_list= []
+let id_book_database =''
 let user_booking = "";
 let own_dormitory = "";
 let dorm_name = "";
@@ -50,6 +62,7 @@ let price = "";
 let booking = "";
 let access1 = "";
 let access2 = "";
+
 {
   book?.map((b) => {
     user_booking_list.push(b.user_booking),
@@ -59,11 +72,13 @@ let access2 = "";
       price_list.push(b.price),
       booking_list.push(b.booking),
       access1_list.push(b.access1),
-      access2_list.push(b.access2);
+      access2_list.push(b.access2),
+      id_book_database_list.push(b._id)
   });
 }
 for (let i = 1; i < user_booking_list.length; i++) {
-  if (id_room_list[i] == id_room_byID ) {
+  if (id_book_database_list[i] == id_booking_local ) {
+    id_book_database = id_book_database_list[i]
     own_dormitory = own_dormitory_list[i];
     dorm_name = dorm_name_list[i];
     id_room = id_room_list[i];
@@ -118,7 +133,7 @@ async function sendPayment(){
       Newaccess2
     }),
   });
-  router.push("/Booking/"+user_booking)
+  router.push("/Booking/"+user_id)
 }
   return(
     <div className={styles.body}>

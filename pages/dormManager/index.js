@@ -15,19 +15,16 @@ const getDormManager = async (id) => {
 // ````````````````````````````````````
 export default function IDroom() {
   const [user_id, setUserID] = useState("");
-  const [user_state, setState] = useState("");
-  const [user_type, setType] = useState("");
+  const [id_booking_local , setIDBOOK] = useState('')
   const [manage, setManager] = useState(null);
   useEffect(() => {
     const userList = JSON.parse(localStorage.getItem("userList"));
     if (userList) {
       setUserID(userList.UserID);
-      setState(userList.State);
-      setType(userList.Type);
+      setIDBOOK(userList._id)
     } else {
       setUserID("none");
-      setState("none");
-      setType("none");
+      setIDBOOK(userList._id)
     }
     getDormManager(userList.UserID).then((d) => {
       setManager(d);
@@ -102,7 +99,7 @@ const  sendDataCheck = async()=>{
                 </div>
             {booking_state == "alarm"? (
               <div className={styles.MailBox}>
-                <Link href={"/dormManager/dormConfirm/"+manage?.id_room_booking} className={styles.alarmmail} >
+                <Link href={"/dormManager/dormConfirm"} className={styles.alarmmail} >
                 <div className={styles.mail}>
                         <img className={styles.mail_icon} src="/letter.png" width={150} height={120}></img>
                         <img className={styles.mailArrowbottom} src="/circle.png" width={20} height={20}></img>
