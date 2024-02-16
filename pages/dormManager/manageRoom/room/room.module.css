@@ -17,14 +17,26 @@
     place-items: center;
     margin-top: 20px;
 }
-.Box {
-    transform: translate(500px , 0px);
-    margin-top: 50px;
+.Boxgrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 80px;
+}
+.Box2 {
+    transform: translate(255px , 0px);
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    box-shadow: 0px 2px 15px;
+    border-radius: 30px 0px 0px 30px;
+}
+.Box1 {
+    transform: translate(0px , 0px);
     width: 500px;
     height: 500px;
     background-color: white;
     box-shadow: 0px 2px 15px;
-    border-radius: 30px;
+    border-radius: 0px 30px 30px 0px;
 }
 .Textnameinput {
     padding-left: 10px;
@@ -47,9 +59,16 @@
     border-radius: 10px;
 }
 .button {
-    transform: translate(210px , -10px);
-    padding: 10px 30px;
+    transform: translate(180px , 10px);
+    border: none;
+    border-radius: 0.3rem;
+    height: 45px;
+    width: 150px;
+    color: white;
+    font-size:20px;
+    background-color: #282828;
+    border-radius: 30px;
 }
 .iconedit {
-    transform: translate(-70px , -395px);
+    transform: translate(170px , 120px);
 }

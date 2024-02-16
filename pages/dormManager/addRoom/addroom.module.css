@@ -11,8 +11,11 @@
     background-color: white;
     margin-top: 140px;
 }
-.iconuser {
-    transform: translate(200px , 130px);
+.icondorm {
+    transform: translate(200px , 110px);
+}
+.iconline {
+    transform: translate(0px , 210px);
 }
 .Boxgrid {
     display: grid;

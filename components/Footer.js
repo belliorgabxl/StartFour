@@ -12,11 +12,15 @@ export default function Footer(){
                 <div className={styles.blog1}>
 
                     <div  className={styles.logo}>
-                        <Image src="/Honghub_white.png" alt="logo" height={70} width={70}></Image>
+                        <Image className={styles.Image} src="/HongHub.png" alt="logo" height={100} width={100}></Image>
                         <h1 className={styles.logotext}>HongHub</h1>
                     </div>
 
-                    <div className={styles.copyright}>
+                    
+                </div>
+
+                <div className={styles.blog}>
+                <div className={styles.copyright}>
                         Copyright @2023-Now<br/>
                         Telecommunication Engineering
                     </div>
@@ -28,12 +32,14 @@ export default function Footer(){
                     </div>
                 </div>
 
-                <div className={styles.blog}>
-                </div>
-
                 <div className={styles.blog3}>
                     <div className={styles.aboutus}>
-                        <Link href="/">About Us</Link>
+                        <Link className={styles.about} href="/">เกี่ยวกับเรา</Link>
+                        <div className={styles.Box1}>
+                            <Image  className={styles.icon1} src="/facebook.png" alt="facebook.png" height={80} width={80}></Image>
+                            <Image className={styles.icon2} src="/instagram.png" alt="instagram.png" height={75} width={80}></Image>
+                            <Image className={styles.icon3} src="/telephone.png" alt="telephone.png" height={80} width={80}></Image>
+                        </div>
                     </div>
                 </div>
            </div>

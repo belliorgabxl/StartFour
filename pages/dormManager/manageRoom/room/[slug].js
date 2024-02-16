@@ -71,52 +71,60 @@ const handleSubmit = async (e) =>{
       <Navbar/>
       <div className={styles.container}>
         
-       
-    
-        <form className={styles.Box} onSubmit={handleSubmit} >
+          <div className={styles.Boxgrid}>
+
+              <div className={styles.Box2}>
+                <img className={styles.iconedit} src="/edits.png" width={200} height={200}></img>
+              </div>
+
+              <form className={styles.Box1} onSubmit={handleSubmit} >
 
           
 
-          <div className={styles.Texthead}>
-            <h1>แก้ไข :{data?.dorm_name}</h1>
-          </div>
+                <div className={styles.Texthead}>
+                      <h1>แก้ไข :{data?.dorm_name}</h1>
+                </div>
 
-          <div >
-            <input className={styles.Textnameinput} type="text"  placeholder="dormitory name"
-            onChange={(e)=>setName(e.target.value)}  defaultValue={data?.dorm_name}  />
-          </div>
+                <div >
+                     <input className={styles.Textnameinput} type="text"  placeholder="dormitory name"
+                     onChange={(e)=>setName(e.target.value)}  defaultValue={data?.dorm_name}  />
+                </div>
           
-          <div>
-            <input className={styles.Textnameinput} type="text"  placeholder="type"
-            onChange={(e)=>setType(e.target.value)} defaultValue={data?.type} />
-          </div>
+                <div>
+                     <input className={styles.Textnameinput} type="text"  placeholder="type"
+                     onChange={(e)=>setType(e.target.value)} defaultValue={data?.type} />
+                </div>
        
-         <div>
-           <input className={styles.Textnameinput} type="text"  placeholder="price"
-            onChange={(e) =>setPrice(e.target.value)} defaultValue={data?.price} />
-         </div>
+                <div>
+                     <input className={styles.Textnameinput} type="text"  placeholder="price"
+                     onChange={(e) =>setPrice(e.target.value)} defaultValue={data?.price} />
+                </div>
 
-         <div>
-            <input className={styles.Textnameinput} type="text" placeholder="location"
-            onChange={(e)=> setLocat(e.target.value)} defaultValue={data?.location} />
-         </div>
+                <div>
+                    <input className={styles.Textnameinput} type="text" placeholder="location"
+                    onChange={(e)=> setLocat(e.target.value)} defaultValue={data?.location} />
+                </div>
 
-         <div>
-            <input className={styles.Textnameinput} type="text"  placeholder="image"
-            onChange={(e)=>setImg(e.target.value)} defaultValue={data?.img} />
-         </div>
+                <div>
+                    <input className={styles.Textnameinput} type="text"  placeholder="image"
+                    onChange={(e)=>setImg(e.target.value)} defaultValue={data?.img} />
+                </div>
 
-         <div>
-            <input className={styles.Textdetailinput} type="text"  placeholder="content"
-            onChange={(e) =>setDetail(e.target.value)} defaultValue={data?.detail} />
-         </div>
+                <div>
+                    <input className={styles.Textdetailinput} type="text"  placeholder="content"
+                    onChange={(e) =>setDetail(e.target.value)} defaultValue={data?.detail} />
+                </div>
+
+                
 
         
-          <button className={styles.button} type="submit">submit</button>
+                <button className={styles.button} type="submit">submit</button>
 
-          <img className={styles.iconedit} src="/edits.png" width={50} height={50}></img>
+                
 
-        </form>
+              </form>
+          </div>
+        
       </div>
       <Footer/>
     </div>
