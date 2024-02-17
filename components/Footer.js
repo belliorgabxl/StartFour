@@ -12,15 +12,11 @@ export default function Footer(){
                 <div className={styles.blog1}>
 
                     <div  className={styles.logo}>
-                        <Image className={styles.Image} src="/HongHub.png" alt="logo" height={100} width={100}></Image>
+                        <Image src="/Honghub_white.PNG" alt="logo" height={70} width={70}></Image>
                         <h1 className={styles.logotext}>HongHub</h1>
                     </div>
 
-                    
-                </div>
-
-                <div className={styles.blog}>
-                <div className={styles.copyright}>
+                    <div className={styles.copyright}>
                         Copyright @2023-Now<br/>
                         Telecommunication Engineering
                     </div>
@@ -32,14 +28,18 @@ export default function Footer(){
                     </div>
                 </div>
 
+                <div className={styles.blog}>
+                </div>
+
                 <div className={styles.blog3}>
                     <div className={styles.aboutus}>
-                        <Link className={styles.about} href="/">เกี่ยวกับเรา</Link>
-                        <div className={styles.Box1}>
-                            <Image  className={styles.icon1} src="/facebook.png" alt="facebook.png" height={80} width={80}></Image>
-                            <Image className={styles.icon2} src="/instagram.png" alt="instagram.png" height={75} width={80}></Image>
-                            <Image className={styles.icon3} src="/telephone.png" alt="telephone.png" height={80} width={80}></Image>
-                        </div>
+                        <Link href="/">About Us</Link>
+                    </div>
+                    <div className={styles.text}>SOCIAL NETWORKS</div>
+                    <div className={styles.icon}>
+                        <Image className={styles.icon1} src="/facebook.png" width={45} height={45} alt='logo'></Image>
+                        <Image className={styles.icon1} src="/instagram.png" width={45} height={45} alt='logo'></Image>
+                        <Image className={styles.icon1} src="/telephone.png" width={45} height={45} alt='logo'></Image>
                     </div>
                 </div>
            </div>

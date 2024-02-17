@@ -83,7 +83,7 @@
 }
 .menubar{
     display: grid;
-    grid-template-columns: 5% 23.75% 23.75% 23.75% 23.75% ;
+    grid-template-columns: 5% 19% 19% 19% 19% 19%;
     box-shadow: 0px 2px 10px gray;
 }
 .menubartwo{
@@ -179,5 +179,5 @@
     transform: translate(230px,23px);
 }
 .booking {
-    transform: translate(223px,25px);
+    transform: translate(215px,25px);
 }  

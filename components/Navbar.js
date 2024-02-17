@@ -53,17 +53,17 @@ function logOutBtn(){
 
                         <span className={styles.iconteb}>
 
-                            <Link href={"/Booking/"+user_id}>
+                            <Link href="#">
                                 <Image className={styles.bell} src="/bell.png" 
-                                width={35} height={35} alt='logo'></Image>
+                                width={30} height={30} alt='logo'></Image>
                             </Link>
 
                             <div className={styles.booking}>
-                                การจอง
+                                แจ้งเตือน
                             </div>
 
                             <div>
-                                <Image className={styles.iconprofilecustomer} src="/users.png" 
+                                <Image className={styles.iconprofilecustomer} src="/iconuser.jpg" 
                                 width={30} height={30} alt='logo'></Image>
                             </div>
 
@@ -97,6 +97,7 @@ function logOutBtn(){
                                 <a href="/RoomType" > ประเภทห้อง </a>
                                 <a href="/NearMe" >ห้องพักใกล้ฉัน</a>
                                 <a href={"/Payment/"+user_id} >จ่ายเงิน</a>
+                                <a href={"/Booking/"+user_id}>จอง</a>
                                 <a href="#">เกี่ยวกับเรา</a>
                                 <a href="#">ช่วยเหลือ</a> 
                             </div>
@@ -105,6 +106,7 @@ function logOutBtn(){
                     <Link href="/RoomType" className={styles.menulist}><span >ประเภทห้อง</span></Link>
                     <Link href="/NearMe" className={styles.menulist}><span>ห้องพักใกล้ฉัน</span></Link>
                     <Link href={"/Payment/"+user_id} className={styles.menulist}><span>จ่ายเงิน</span></Link>
+                    <Link href={"/Booking/"+user_id} className={styles.menulist}><span>จอง</span></Link>
                     <Link href="#" className={styles.menulist}><span>เกี่ยวกับเรา</span></Link>
                     
                 </div>

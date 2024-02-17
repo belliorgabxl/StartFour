@@ -9,27 +9,9 @@
 .body{
 display: grid;
 grid-template-columns: 500px 300px 535px;
-height: 300px;
-box-shadow: 0px 2px 15px;
+height: 250px;
 }
-.Image {
-display: block;
-margin-top: 80px;
-margin-left: 150px;
-}
-.logotext{
-font-size: 30px;
-margin-left: 45px;
-margin-top: 200px;
-}
-.Box {
-width: 450px;
-height: 130px;
-background-color: aliceblue;
-margin-top: 20px;
-margin-left: 250px;
-border-radius: 30px;
-}
+
 .blog{
 color: white;
 }
@@ -42,15 +24,16 @@ grid-template-rows: 80px 60px 60px;
 display: grid;
 grid-template-columns: 80px 200px 200px;
 }
-
+.logotext{
+font-size: 30px;
+margin-right: 100px;
+}
 .pp{
 margin-bottom: 50px;
 padding-bottom: 10px;
 }
 .copyright{
 text-align: left;
-margin-top: 50px;
-font-size: 20px;
 }
 .blog3{
 display: grid;
@@ -70,21 +53,16 @@ color:black;
 }
 .aboutus{
 font-size: 25px;
-margin-top: 200px;
+margin-left: 225px;
 }
-.about {
-color: white;
-margin-left: -50px;
+.icon {
+  transform: translate(145px , -30px);
 }
 .icon1 {
-margin-left: -10px;
-margin-top: 20px;
+  padding-left:30px;
 }
-.icon2 {
-margin-left: 30px;
-margin-top: 20px;
-}
-.icon3 {
-margin-left: 30px;
-margin-top: 20px;
+.text {
+  margin-left: 320px;
+  margin-top: -60px;
+  font-size: 20px;
 }
