@@ -91,6 +91,7 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  "allow";
     const Newaccess2 = access2;
+    let Newnotic = "on"
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
@@ -103,7 +104,8 @@ export default function Dormconfirm(){
         Newid_room,
         Newprice,
         Newaccess1,
-        Newaccess2
+        Newaccess2,
+        Newnotic
       }),
     });
     router.push("/dormManager")
@@ -116,6 +118,7 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  access1;
     const Newaccess2 = "allow";
+    let Newnotic = "on"
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
@@ -128,7 +131,8 @@ export default function Dormconfirm(){
         Newid_room,
         Newprice,
         Newaccess1,
-        Newaccess2
+        Newaccess2,
+        Newnotic
       }),
     });
     router.push("/dormManager")
@@ -141,6 +145,7 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  "success";
     const Newaccess2 = "success";
+    let Newnotic = "on"
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
@@ -153,7 +158,8 @@ export default function Dormconfirm(){
         Newid_room,
         Newprice,
         Newaccess1,
-        Newaccess2
+        Newaccess2,
+        Newnotic
       }),
     });
     Newid_room="none";

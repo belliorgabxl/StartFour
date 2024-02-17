@@ -17,11 +17,12 @@ export default async function handler(req,res){
       Newprice:price,
       Newaccess1:access1,
       Newaccess2:access2,
-      Newbooking:booking
+      Newbooking:booking,
+      Newnotic:notic
      }= await req.body;
     const dormitory = await Booked.findOneAndUpdate({_id:data},
       {user_booking,own_dormitory,dorm_name,
-      id_room,price,access1,access2,booking })
+      id_room,price,access1,access2,booking,notic })
     res.json(dormitory);
   }
 }

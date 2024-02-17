@@ -118,6 +118,7 @@ async function sendPayment(){
   const Newprice = price;
   const Newaccess1 =  "customerPayment";
   const Newaccess2 = access2;
+  let Newnotic = "off"
   const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
     method: "PUT",
     headers: {
@@ -130,7 +131,8 @@ async function sendPayment(){
       Newid_room,
       Newprice,
       Newaccess1,
-      Newaccess2
+      Newaccess2,
+      Newnotic
     }),
   });
   router.push("/Booking/"+user_id)

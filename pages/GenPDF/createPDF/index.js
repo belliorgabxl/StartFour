@@ -33,6 +33,7 @@ export default function CreatePDF({firstName , lastName , U_ID , born , Age
   const Newaccess1 =  "customerPayment";
   const Newaccess2 = "GenPDF";
   const Newbooking = 'none'
+  let Newnotic = "off"
   const res = await fetch(`http://localhost:3000/api/BookingAPI/AlarmPDF/${user_id}`, {
     method: "PUT",
     headers: {
@@ -41,7 +42,8 @@ export default function CreatePDF({firstName , lastName , U_ID , born , Age
     body: JSON.stringify({
       Newbooking,
       Newaccess1,
-      Newaccess2
+      Newaccess2,
+      Newnotic
     }),
   });
 

@@ -3,12 +3,18 @@ import styles from "./styles/navbar.module.css";
 import Image from "next/image";
 import {useState,useEffect}  from "react";
 import { useRouter } from "next/router";
-
+const getBook = async () => {
+    const res = await fetch(`http://localhost:3000/api/getBooking`, {
+      cache: "no-store",
+    });
+    return res.json();
+  };
 export default function Navbar(){
 const router = useRouter();
 const [user_id  ,setUserID] = useState('');
 const [user_state ,setState]  = useState("");
 const [user_type,setType] = useState("");
+const [book , setBook] = useState();
   useEffect(()=>{
     const userList = JSON.parse(localStorage.getItem("userList"))
     if(userList){
@@ -19,13 +25,38 @@ const [user_type,setType] = useState("");
         setState("none")
         setUserID("none")
     }
+    getBook().then((b)=>{
+        setBook(b);
+    })
   },[])
 function logOutBtn(){
     localStorage.clear()
     router.push("/")
 }
+const id_booking_list = []
+const notic_list = []
+const user_booking_list = []
+const own_dormitory_list = []
+let id_booking =''
+let notic = ''
+let own_dormitory = ''
+let user_booking = ''
+{book?.map((b)=>{
+    notic_list.push(b.notic)
+    id_booking_list.push(b._id)
+    user_booking_list.push(b.user_booking)
+    own_dormitory_list.push(b.own_dormitory)
+})}
   if (user_id && user_state=="login"){
     if (user_type == "customer"){
+        for(let i = 0 ; i < id_booking_list.length ; i++){
+            if(user_booking_list[i] == user_id){
+                id_booking = id_booking_list[i]
+                user_booking = user_booking_list[i]
+                own_dormitory = own_dormitory_list[i]
+                notic = notic_list[i]
+            }
+        }
     return(
         <nav className={styles.navbar}>
                 <div className={styles.topbar}> 
@@ -52,15 +83,25 @@ function logOutBtn(){
                         </span>
 
                         <span className={styles.iconteb}>
-
-                            <Link href="#">
+                            { notic == "on"? (
+                                <Link href={"/Booking/"+user_id}>
                                 <Image className={styles.bell} src="/bell.png" 
                                 width={30} height={30} alt='logo'></Image>
-                            </Link>
-
-                            <div className={styles.booking}>
+                                <div className={styles.booking}>
                                 แจ้งเตือน
-                            </div>
+                                </div> 
+                                </Link>
+                                ):
+                                (
+                                    <Link href={"/Booking/"+user_id}>
+                                <Image className={styles.bell} src="/bell.png" 
+                                width={30} height={30} alt='logo'></Image>
+                                <div className={styles.booking}>
+                                ไม่แจ้งเตือน
+                                </div> 
+                                </Link> 
+                                )}
+                           
 
                             <div>
                                 <Image className={styles.iconprofilecustomer} src="/iconuser.jpg" 

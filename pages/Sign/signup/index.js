@@ -46,6 +46,7 @@ export default function register_page(){
                 let access1 = "none";
                 let access2 = "none"
                 let booking = "none"
+                let notic = "off"
 
                 const res3 = await fetch("http://localhost:3000/api/getBooking", {
                   method: "POST",
@@ -60,7 +61,8 @@ export default function register_page(){
                       id_room,
                       access1,
                       access2,
-                      booking
+                      booking,
+                      notic
                    }),
                 });
               }

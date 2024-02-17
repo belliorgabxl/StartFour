@@ -9,6 +9,7 @@ const bookingSchema = new Schema(
         booking:String,
         access1:String,
         access2:String,
+        notic:String
     },
     {timestamps:true,}
 );

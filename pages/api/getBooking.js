@@ -4,9 +4,9 @@ import Booked from "@/models/booking";
 export default async function handler(req, res) {
   if (req.method === "POST") {
     await connectMongoDB();
-    const { user_booking,own_dormitory,dorm_name, price,id_room,access1,access2,booking}= await req.body;
+    const { user_booking,own_dormitory,dorm_name, price,id_room,access1,access2,booking,notic}= await req.body;
     const book = await Booked.create(
-    { user_booking,own_dormitory,dorm_name, price,id_room,access1,access2,booking}
+    { user_booking,own_dormitory,dorm_name, price,id_room,access1,access2,booking,notic}
     )
     res.json(book);
  }
