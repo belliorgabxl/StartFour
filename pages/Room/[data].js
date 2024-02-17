@@ -18,12 +18,15 @@ export default function Roomdata() {
   const id = router.query.data;
   const [dors, setDors] = useState(null);
   const [user_id, setUserID] = useState("");
+  const [id_booking_local , setIDBOOK] = useState();
   useEffect(() => {
     const userList = JSON.parse(localStorage.getItem("userList"));
     if (userList) {
       setUserID(userList.UserID);
+      setIDBOOK(userList._id)
     } else {
       setUserID("none");
+      setIDBOOK("none");
     }
     getData().then((d) => {
       setDors(d);
@@ -104,8 +107,8 @@ export default function Roomdata() {
       },
       body: JSON.stringify({Newdormitory}),
     });
-    var getID = {UserID:user_id,State:"login",Type:"customer",_id :"0",Dormitory:Newdorm_name}
-        localStorage.setItem("userList",JSON.stringify(getID));
+    var getID = {UserID:user_id,State:"login",Type:"customer",_id :id_booking_local,Dormitory:Newdorm_name}
+    localStorage.setItem("userList",JSON.stringify(getID));
     router.push("/Homepage");
   }
   return (
