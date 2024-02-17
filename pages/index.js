@@ -75,7 +75,6 @@ export default function Home() {
       </div>
       
       <div className={styles.roomcomponents}>
-        <h1>Room components</h1>
 
         {dors?.dormitory?.slice(20).map((d) =>
         <div key={d._id}>
@@ -118,13 +117,8 @@ export default function Home() {
     </div>
         )}
       </div>
-
       <div>
-        room recomment
       </div>
-      <Link href="/pages/test"> <h1>WEB TEST</h1></Link>
-        <hr/> 
-        <Link href="/pages/test2"> <h1>POST TEST</h1></Link>
     </div>
     <Footer/>
    </div>

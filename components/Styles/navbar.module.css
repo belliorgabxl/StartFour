@@ -22,7 +22,6 @@
     text-decoration: none;
 }
 .sign{
-    border-left: 3px solid black;
     display: grid;
     padding :10px 0px 10px 60px;
     grid-template-rows: 10px 25px 25px 10px;
@@ -47,7 +46,6 @@
     padding-bottom: 10px;
 }
 .logotab{
-
     padding: 10px 20px 0px 20px;
 }
 .logoname{

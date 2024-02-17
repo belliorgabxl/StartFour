@@ -46,7 +46,6 @@ export default function DormConfirm(){
         )
         )}
         <div className={styles.blank}>
-
         </div>
       </div>
       <Footer/>

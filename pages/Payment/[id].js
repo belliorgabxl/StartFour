@@ -118,7 +118,7 @@ async function sendPayment(){
   const Newprice = price;
   const Newaccess1 =  "customerPayment";
   const Newaccess2 = access2;
-  const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_room}`, {
+  const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
     method: "PUT",
     headers: {
       "Content-type": "application/json",
