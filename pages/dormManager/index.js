@@ -11,12 +11,18 @@ const getDormManager = async (id) => {
   });
   return res.json();
 };
-
+const  getBookingId = async (id)=>{
+  const res = await fetch(`http://localhost:3000/api/getBooking`, {
+    cache: "no-store",
+  });
+  return res.json();
+}
 // ````````````````````````````````````
 export default function IDroom() {
   const [user_id, setUserID] = useState("");
   const [id_booking_local , setIDBOOK] = useState('')
   const [manage, setManager] = useState(null);
+  const [book,setBook] = useState(null);
   useEffect(() => {
     const userList = JSON.parse(localStorage.getItem("userList"));
     if (userList) {
@@ -29,6 +35,9 @@ export default function IDroom() {
     getDormManager(userList.UserID).then((d) => {
       setManager(d);
     });
+    getBookingId().then((d)=>{
+      setBook(d)
+    })
   }, []);
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -46,6 +55,16 @@ export default function IDroom() {
   const find=  manage?._id;
   const booking_state = manage?.booking_status
 
+  const own_dormitory_list = []
+  const count_customer = []
+  {book?.map((b)=>{
+    own_dormitory_list.push(b.own_dormitory)
+  })}
+  for(let i = 0 ; i < own_dormitory_list.length; i++){
+    if ( own_dormitory_list[i] == user_id){
+      count_customer.push(own_dormitory_list[i])
+    }
+  }
 
 const  sendDataCheck = async()=>{
     let Newname = fname+' '+lname;
@@ -97,7 +116,7 @@ const  sendDataCheck = async()=>{
                         <div className={styles.Textbox}>แก้ไข</div>
                     </Link>
                 </div>
-            {booking_state == "alarm"? (
+            {count_customer.length>0? (
               <div className={styles.MailBox}>
                 <Link href={"/dormManager/dormConfirm"} className={styles.alarmmail} >
                 <div className={styles.mail}>
