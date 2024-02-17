@@ -85,20 +85,14 @@ let user_booking = ''
                         <span className={styles.iconteb}>
                             { notic == "on"? (
                                 <Link href={"/Booking/"+user_id}>
-                                <Image className={styles.bell} src="/bell.png" 
-                                width={30} height={30} alt='logo'></Image>
-                                <div className={styles.booking}>
-                                แจ้งเตือน
-                                </div> 
+                                <Image className={styles.bell} src="/mail_on.png" 
+                                width={40} height={30} alt='logo'></Image>
                                 </Link>
                                 ):
                                 (
                                     <Link href={"/Booking/"+user_id}>
-                                <Image className={styles.bell} src="/bell.png" 
-                                width={30} height={30} alt='logo'></Image>
-                                <div className={styles.booking}>
-                                ไม่แจ้งเตือน
-                                </div> 
+                                <Image className={styles.bell} src="/mail_off.png" 
+                                width={40} height={30} alt='logo'></Image>
                                 </Link> 
                                 )}
                            

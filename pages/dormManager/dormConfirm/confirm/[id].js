@@ -145,7 +145,7 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  "success";
     const Newaccess2 = "success";
-    let Newnotic = "on"
+    let Newnotic = "off"
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
