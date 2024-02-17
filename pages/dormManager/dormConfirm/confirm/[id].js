@@ -135,7 +135,7 @@ export default function Dormconfirm(){
   }
   const Step3Btn = async()=>{
     const Newuser_booking = user_booking;
-    const Newown_dormitory = own_dormitory;
+    const Newown_dormitory = own_dormitory+":success";
     const Newdorm_name = dorm_name;
     let Newid_room = id_room;
     const Newprice = price;
