@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import styles from "./confirm.module.css"
+import Image from "next/image";
 const  getBookingId = async (id)=>{
   const res = await fetch(`http://localhost:3000/api/getBooking`, {
     cache: "no-store",
@@ -91,7 +92,6 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  "allow";
     const Newaccess2 = access2;
-    let Newnotic = "on"
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
@@ -104,8 +104,7 @@ export default function Dormconfirm(){
         Newid_room,
         Newprice,
         Newaccess1,
-        Newaccess2,
-        Newnotic
+        Newaccess2
       }),
     });
     router.push("/dormManager")
@@ -118,7 +117,6 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  access1;
     const Newaccess2 = "allow";
-    let Newnotic = "on"
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
@@ -131,8 +129,7 @@ export default function Dormconfirm(){
         Newid_room,
         Newprice,
         Newaccess1,
-        Newaccess2,
-        Newnotic
+        Newaccess2
       }),
     });
     router.push("/dormManager")
@@ -145,7 +142,6 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  "success";
     const Newaccess2 = "success";
-    let Newnotic = "off"
     const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
@@ -158,8 +154,7 @@ export default function Dormconfirm(){
         Newid_room,
         Newprice,
         Newaccess1,
-        Newaccess2,
-        Newnotic
+        Newaccess2
       }),
     });
     Newid_room="none";
@@ -184,17 +179,28 @@ export default function Dormconfirm(){
           Noticfication
         </div>
         <div className={styles.alarm1}>
-        จองมาจาก คุณ : {user_booking}<br/>
-        สถานะ : รอการยืนยันจากคุณ        <hr/>
-        ตัวหอพักของคุณที่จองคือ<br/>
-        หอพัก {dorm_name}<br/>
-        ราคา : {price}<br/>
-        จองเมื่อ : {updateAt}<br/>
-        </div>
-        <div className={styles.btnArea}>
-        <button onClick={Step1Btn} className={styles.ConfirmBtn}>อนุมัติให้ชำระ</button>
-        </div>
 
+          <div className={styles.texthead}>
+            อนุมัติให้ชำระเงิน
+          </div>
+          <div className={styles.text}>
+            <div className={styles.textname}>จองมาจาก : คุณ {user_booking}</div>
+            <div className={styles.textconfirm}>รอการยืนยันจากคุณ  </div>      
+            <div className={styles.divider1}></div>
+            <div className={styles.textdorm}>{dorm_name}</div>
+            <div className={styles.textprice}>ราคา : {price}</div>
+            <div className={styles.texttime}>จองเมื่อ : {updateAt}</div>
+            <div className={styles.divider2}></div>
+            <Image className={styles.imageusers} src="/dorm.png"  width={150} height={150} alt='users.png'></Image>
+            
+          </div>
+
+          <div className={styles.btnArea}>
+            <button onClick={Step1Btn} className={styles.ConfirmBtn_one}>อนุมัติให้ชำระ</button>
+          </div>
+
+        </div>
+        
       </div>
       <Footer/>
     </div>)
@@ -223,7 +229,7 @@ export default function Dormconfirm(){
         ผู้ขอเช่าได้ทำการชำระเงินสำเร็จแล้ว กรุณาเช็คสลิป..
         </div>
         <div className={styles.btnArea}>
-        <button onClick={Step2Btn} className={styles.ConfirmBtn}>
+        <button onClick={Step2Btn} className={styles.ConfirmBtn_two}>
            อนุมัติการทำสัญญา
         </button>
         </div>
@@ -257,7 +263,7 @@ export default function Dormconfirm(){
         ผู้ขอเช่าได้ทำสัญญาสำเร็จแล้ว<br/>โปรดตรวจสอบรายละเอียดสัญญาก่อนดำเนินการ <hr/>        
         </div>
         <div className={styles.btnArea}>
-          <button onClick={Step3Btn} className={styles.ConfirmBtn}>อนุมัติการเช่า</button>
+          <button onClick={Step3Btn} className={styles.ConfirmBtn_three}>อนุมัติการเช่า</button>
         </div>
 
       </div>

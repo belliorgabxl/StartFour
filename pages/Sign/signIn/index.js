@@ -144,7 +144,7 @@ useEffect(()=>{
             value={pass_login}
           />
           <button className={styles.login_btn} type="submit">
-            Sign Up
+            Sign In
           </button>
         </form>
       </div>

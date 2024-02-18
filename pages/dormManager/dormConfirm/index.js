@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import styles from "./dormCorn.module.css"
+import Image from "next/image";
 import Link from "next/link";
 const  getBookingId = async (id)=>{
   const res = await fetch(`http://localhost:3000/api/getBooking`, {
@@ -39,9 +40,28 @@ export default function DormConfirm(){
         {book?.map((b)=>
         b.own_dormitory === user_id &&(
           <Link href={("/dormManager/dormConfirm/confirm/"+b._id)} key={b._id} className={styles.ListBox}>
-            <li className={styles.line1}>ผู้จองชื่อ: {b.user_booking} จองเมื่อ: {b.updatedAt.slice(5,7)}/
-            {b.updatedAt.slice(8,10)} {b.updatedAt.slice(11,16)}</li>
-            <div className={styles.line2}>หอพักที่จอง: {b.dorm_name}</div>
+
+            <div className={styles.texthead}>
+              <Image className={styles.imagechat} src="/chat.png"  width={30} height={30} alt='chat.png'></Image>
+              <div className={styles.textname}>รายชื่อผู้จอง</div>
+            </div>
+
+            <div>
+              <div className={styles.line1}>ผู้จอง: คุณ {b.user_booking} </div>
+              <div className={styles.textbooking}>ยืนยันการจองแล้ว</div>
+            </div>
+
+            <div className={styles.divider1}></div>
+
+            <div>
+              <Image className={styles.imageusers} src="/users.png"  width={100} height={100} alt='users.png'></Image>
+              <div className={styles.line2}> {b.dorm_name}</div>
+            </div>
+            
+            <div className={styles.line3}>จองเมื่อ : {b.updatedAt.slice(5,7)}/
+            {b.updatedAt.slice(8,10)} {b.updatedAt.slice(11,16)}</div>
+
+            <div className={styles.divider2}></div>
           </Link>
         )
         )}

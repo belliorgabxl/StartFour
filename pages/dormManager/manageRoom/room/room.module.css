@@ -10,7 +10,6 @@
     width: 93%;
     background-color: white;
     margin-top: 110px;
-    height: 1000px;
 }
 .Texthead {
     display: grid;
@@ -21,9 +20,10 @@
     display: grid;
     grid-template-columns: 50% 50%;
     margin-top: 80px;
+    margin-bottom: 50px;
 }
 .Box2 {
-    transform: translate(255px , 0px);
+    transform: translate(200px , 0px);
     width: 500px;
     height: 500px;
     background-color: gray;

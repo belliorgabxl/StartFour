@@ -1,58 +1,104 @@
 .body {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    background-color: #F0F0F0;
-  }
-.container {
-  text-align: center;
   display: grid;
   place-items: center;
-  width: 93%;
-  background-color: white;
-  margin-top: 95px;
-  padding-left: 20px;
+  width: 100%;
+  background-color: #F0F0F0;
+}
+.container {
+text-align: center;
+display: grid;
+place-items: center;
+width: 93%;
+background-color: white;
+margin-top: 95px;
+padding-left: 20px;
 }
 .container a{
-  color: black;
-  text-decoration: none;
+color: black;
+text-decoration: none;
 }
 .topic{
-  margin: 20px 0 20px 0 ;
-  display: grid;
-  place-items: center;
-  border: 1px solid black;
-  font-size: 30px;
-  width: 450px;
-  height: 70px;
-  background-color: #282828;
-  color: white;
-  font-weight: 550;
+margin: 20px 0 20px 0 ;
+display: grid;
+place-items: center;
+border: 1px solid black;
+font-size: 30px;
+width: 450px;
+height: 70px;
+background-color: #282828;
+color: white;
+font-weight: 550;
 }
 .ListBox{
-  display: grid;
-  text-align: left;
-  margin: 20px 0 0 0;
-  width: 650px;
-  height: 120px;
-  box-shadow: 0 1px 5px gray;
+display: grid;
+text-align: left;
+margin: 20px 0 0 0;
+width: 700px;
+height: 300px;
+border-radius: 30px;
+box-shadow: 0 1px 5px gray;
 }
-
+.texthead {
+width: 700px;
+height: 50px;
+background-color: #282828;
+color: white;
+border-radius: 30px 30px 0px 0px;
+}
+.textname {
+padding-top: 5px;
+transform: translate(100px , -30px);
+font-size: 25px;
+font-family: 'Times New Roman', Times, serif;
+}
+.imagechat {
+transform: translate(20px , 10px);
+}
 .line1{
-  margin: 0 0 0 20px;
-  font-size: 30px;
-  font-weight: 500;
+margin: 0 0 0 20px;
+font-size: 20px;
+font-family: 'Times New Roman', Times, serif;
+font-weight: bold;
+transform: translate(5px , 10px);
+font-weight: bold;
+}
+.textbooking {
+width: 150px;
+height: 30px;
+background-color: #9ed492;
+color: #124a05;
+transform: translate(490px , -17px);
+padding-top: 5px;
+padding-left: 25px;
+font-weight: bold;
+}
+.divider1 {
+border-top: 1px solid black;
+margin-top: -10px;
+}
+.imageusers {
+transform: translate(50px , 0px);
 }
 .line2{
-  margin: 0  0 0 60px;
-  font-size: 25px;
+margin: 0  0 0 60px;
+font-size: 25px;
+font-weight: bold;
+transform: translate(150px , -90px);
+}
+.line3 {
+font-weight: bold;
+transform: translate(210px , -80px);
+}
+.divider2 {
+border-top: 1px solid black;
+margin-top: -50px;
 }
 .blank{
-  height: 100px;
+height: 100px;
 }
 .ListBox:hover{
-  background-color: gray;
+background-color: gray;
 }
 .container a:hover{
-  color: white;
+color: white;
 }

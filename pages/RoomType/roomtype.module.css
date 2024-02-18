@@ -23,7 +23,7 @@
   margin-left: -50px;
   background-color: white;
   height: 350px;
-  width: 800px;
+  width: 770px;
   box-shadow: 0 2px 20px gray ;
 }
 .boxbackground {
@@ -66,12 +66,12 @@
 .iconslideleft {
   position: absolute;
   z-index: 2;
-  transform: translate(15px , 170px);
+  transform: translate(15px , 153px);
 }
 .iconslideright {
   position: absolute;
   z-index: 2;
-  transform: translate(500px , 170px);
+  transform: translate(450px , 153px);
 }
 .slide {
   width: 100%;

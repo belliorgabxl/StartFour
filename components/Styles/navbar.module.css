@@ -13,14 +13,32 @@
     text-decoration: none;
     color: black;
 }
-
-.topbar{
+.topbar {
     border-bottom: 3px solid black;
     display: grid;
-    grid-template-columns:7% 13% 10% 30% 25% 15%;
+    grid-template-columns: 7% 13% 10% 30% 25% 15%;
     box-shadow: 0px 1px 4px gray;
     text-decoration: none;
 }
+
+.topbar1 {
+    border-bottom: 3px solid black;
+    display: grid;
+    grid-template-columns: 7% 8% 67% 1% 6% 10%;
+    box-shadow: 0px 1px 4px gray;
+    text-decoration: none;
+    place-items: center;
+}
+
+.topbar2 {
+    border-bottom: 3px solid black;
+    display: grid;
+    grid-template-columns: 7% 8% 66% 4% 5% 10%;
+    box-shadow: 0px 1px 4px gray;
+    text-decoration: none;
+    place-items: center;
+}
+
 .sign{
     display: grid;
     padding :10px 0px 10px 60px;
@@ -51,7 +69,12 @@
 .logoname{
     font-weight: 500;
     font-size: 1.5rem;
-    padding: 33px 0px 0 15px
+    margin: 23px 0px 10px 0px;
+    
+    
+}
+.home{
+    margin: 35px 0px 10px 20px;
 }
 .mainbar_search1{
     display: grid;
@@ -154,9 +177,7 @@
     text-decoration: none;
     color: black;
 }
-.gear {
-    margin-left: 10px;
-}
+
 .logoutbtn {
     margin-top: 10px;
 }
@@ -164,18 +185,84 @@
     margin-left: 300px;
     margin-top: -30px;
 }
-.iconprofilecustomer {
-    transform: translate(320px,-33px);
+.iconprofilecustomer{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-left: -50px;
 }
 .name {
     margin-left: 305px;
 }
-.namecustomer {
-    transform: translate(320px,-29px);
+.namecust{
+    padding-top: 8px;
+    font-size: 19px;
+    margin-left: 9px;
 }
-.bell {
-    transform: translate(230px,23px);
+.namesell {
+    margin-top: 8px;
+    padding-left: 8px;
+    font-size: 19px;
 }
-.booking {
-    transform: translate(215px,25px);
-}  
+
+.outdropdown_one {
+    margin: 2px 0px 0px 25px;
+    position: relative;
+    display: inline-block;
+   
+}
+.outdropdown_two {
+    margin: 2px 0px 0px 0px;
+    position: relative;
+    display: inline-block;
+   
+}
+.logoname1{
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 15px 0px 10px 15px;
+}
+.logoname2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 33px 0px 10px 15px;
+}
+
+.gearIcon {
+    cursor: pointer;
+}
+
+.dropdownout {
+    display: block;
+    position: absolute;
+    top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    
+
+}
+
+.menuButton {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px 20px 15px 20px;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    margin-left: -20px;
+
+
+}
+
+.dropdownout:hover {
+    background-color: #ffffff;
+    color: #ffffff;
+
+}
+
+.menuButton:hover {
+    background-color: #000000;
+    color: #ffffff;
+  
+}
+

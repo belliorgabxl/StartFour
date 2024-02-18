@@ -1,63 +1,169 @@
 .body {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    background-color: #F0F0F0;
-  }
-  
-  .container {
-    text-align: center;
-    display: grid;
-    width: 93%;
-    background-color: white;
-    margin-top: 95px;
-    padding-left: 20px;
-  }
-  .topicBook{
-    margin: 20px 0 20px 0;
-    width: 250px;
-    height: 80px;
-    font-size: 30px;
-    background-color: #282828;
-    color: white;
-    display: grid;
-    place-items: center;
-  }
-  .alarm{
-    font-weight: 600;
-    font-size: 40px;
-    margin: 40px 40px 40px 40px;
-  }
-  .alarm1{
-    padding-left: 300px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 40px;
-    margin: 40px 40px 40px 40px;
-  }
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background-color: #F0F0F0;
+}
 
-  .btnArea{
-    margin: 30px 0 40px 0;
- }
- .ConfirmBtn{
-     all:unset;
-     background-color: #282828;
-     height: 60px;
-     width: 200px;
-     color: white;
-     font-size: 20px;
-     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- }
- .ConfirmBtn:hover{
-     background-color: black;
- }
- .topic{
-    display: grid;
-    place-items: center;
-    background-color: #282828;
-    height: 80px;
-    width: 250px;
-    color: white;
-    font-size: 35px;
-    font-family: 'Times New Roman', Times, serif;
- }
+.container {
+  text-align: center;
+  display: grid;
+  width: 93%;
+  background-color: white;
+  margin-top: 95px;
+  padding-left: 20px;
+}
+.topicBook{
+  margin: 20px 0 20px 0;
+  width: 250px;
+  height: 80px;
+  font-size: 30px;
+  background-color: #282828;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.alarm{
+  font-weight: 600;
+  font-size: 40px;
+  margin: 40px 40px 40px 40px;
+}
+.alarm1{
+  display: grid;
+  transform: translate(200px , 0px);
+  border-radius: 30px ;
+  width: 600px;
+  height: 500px;
+  box-shadow: 0 1px 5px gray;
+  padding-left: 300px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 40px;
+  margin: 40px 40px 40px 40px;
+}
+.texthead {
+  width: 800px;
+  height: 50px;
+  font-size: 25px;
+  background-color: #282828;
+  color: white;
+  border-radius: 30px 30px 0px 0px;
+  transform: translate(-300px , 0px);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  padding-left: 100px;
+  padding-top: 20px;
+}
+.text {
+  margin-left: -100px;
+  margin-top: 10px;
+}
+.textname {
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  transform: translate(-130px , 20px);
+}
+.textconfirm {
+  background-color: #d98888;
+  width: 250px;
+  height: 30px;
+  font-size: 25px;
+  color: #650e0e;
+  transform: translate(350px , -17px);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+  font-weight: bold;
+}
+.divider1 {
+  border-top: 1px solid black;
+  max-width: 900px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: -200px;
+}
+.textdorm {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 80px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+.textprice {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 80px;
+  margin-bottom: 10px;
+}
+.texttime {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 80px;
+}
+.divider2 {
+  border-top: 1px solid black;
+  max-width: 900px;
+  margin-top: 80px;
+  margin-left: -200px;
+}
+.imageusers {
+  transform: translate(-130px , -200px);
+}
+.btnArea{
+  margin-left: 60px;
+  transform: translate(0px , -150px);
+}
+.ConfirmBtn_one{
+   all:unset;
+   background-color: #282828;
+   height: 60px;
+   width: 180px;
+   color: white;
+   font-size: 20px;
+   padding-left: 50px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ConfirmBtn_one:hover{
+   background-color: black;
+}
+.ConfirmBtn_two{
+  all:unset;
+  background-color: #282828;
+  height: 60px;
+  width: 180px;
+  color: white;
+  font-size: 20px;
+  padding-left: 0px;
+  margin-top: 150px;
+  margin-left: -100px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ConfirmBtn_two:hover{
+  background-color: black;
+}
+.ConfirmBtn_three{
+  all:unset;
+  background-color: #282828;
+  height: 60px;
+  width: 180px;
+  color: white;
+  font-size: 20px;
+  padding-left: 0px;
+  margin-top: 150px;
+  margin-left: -100px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ConfirmBtn_three:hover{
+  background-color: black;
+}
+.topic{
+  display: grid;
+  place-items: center;
+  background-color: #282828;
+  height: 80px;
+  width: 250px;
+  color: white;
+  font-size: 35px;
+  font-family: 'Times New Roman', Times, serif;
+}

@@ -15,6 +15,9 @@ const [user_id  ,setUserID] = useState('');
 const [user_state ,setState]  = useState("");
 const [user_type,setType] = useState("");
 const [book , setBook] = useState();
+const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+
   useEffect(()=>{
     const userList = JSON.parse(localStorage.getItem("userList"))
     if(userList){
@@ -29,6 +32,11 @@ const [book , setBook] = useState();
         setBook(b);
     })
   },[])
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
 function logOutBtn(){
     localStorage.clear()
     router.push("/")
@@ -59,66 +67,71 @@ let user_booking = ''
         }
     return(
         <nav className={styles.navbar}>
-                <div className={styles.topbar}> 
-                        <span className={styles.logotab}>
+                <div className={styles.topbar1}> 
+                        <div className={styles.logotab}>
                             <Link href="/Homepage">
                                 <Image  src="/Honghub.png"
                                 width={80} height={80} alt="logo">
                                 </Image>
                             </Link>
                            
-                        </span>
-                        <span className={styles.logoname}>
-                            <Link href="/Homepage">HONGHUB</Link>
-                        </span>
-                        <span></span>
+                        </div>
+                        <div className={styles.logoname}>
+                            <Link  className={styles.home} href="/Homepage">HONGHUB</Link>
+                        </div>
+                       
 
-                        <span className={styles.mainbar_search1}>
+                        <div className={styles.mainbar_search1}>
                             <div className={styles.mainbar_search2}>
                                 <Image className="search_img" src="/search.png" 
                                 width={35} height={35} alt='logo'></Image>
                                 <input type="search" className={styles.search} 
                                 placeholder="  i'm searching for..." id=""></input>
                             </div>
-                        </span>
+                        </div>
 
-                        <span className={styles.iconteb}>
+                        <div className={styles.iconteb}>
                             { notic == "on"? (
                                 <Link href={"/Booking/"+user_id}>
-                                <Image className={styles.bell} src="/mail_on.png" 
-                                width={40} height={30} alt='logo'></Image>
+                                <Image className={styles.bell} src="/notion.png" 
+                                width={32} height={32} alt='notion.jpg'></Image>
                                 </Link>
                                 ):
                                 (
-                                    <Link href={"/Booking/"+user_id}>
-                                <Image className={styles.bell} src="/mail_off.png" 
-                                width={40} height={30} alt='logo'></Image>
+                                <Link href={"/Booking/"+user_id}>
+                                <Image className={styles.bell} src="/nonenoti.png" 
+                                width={29} height={34} alt='nonenoti.jpg'></Image>
                                 </Link> 
                                 )}
-                           
+                        </div>
+                        <div className={styles.outdropdown_one}>
+                        <Image
+                            src="/gear.png" 
+                            alt="dropdown"
+                            width={37}
+                            height={37}
+                            onClick={toggleDropdown}
+                        />
 
-                            <div>
-                                <Image className={styles.iconprofilecustomer} src="/iconuser.jpg" 
-                                width={30} height={30} alt='logo'></Image>
-                            </div>
-
-                            <div className={styles.namecustomer}>
-                                {user_id}
-                            </div>
-
-                        </span>
-
-                        <span className={styles.sign}>
-                            <div></div>
-                            <div> <Image className={styles.gear} src="/gear.png" 
-                            width={30} height={30} alt='logo'></Image>
-                            </div>
-                            <button className={styles.logoutbtn} onClick={logOutBtn} >
+                        {isDropdownOpen && (
+                            <div className={styles.dropdownout}>
+                            <button
+                                className={styles.menuButton}
+                                onClick={logOutBtn}
+                            >
                                 Logout
                             </button>
-                            <div></div>
-                        </span>
-                </div>
+                            </div>
+                        )}
+                        </div>
+                        <div className={styles.iconprofilecustomer}>
+                        <div>
+                            <Image src="/iconuser.jpg" 
+                            width={38} height={38} alt='iconuser.jpg'></Image></div>
+                            <div className={styles.namecust}>{user_id}</div>
+                        </div>
+
+                    </div>
 
                 <div className={styles.menubar}>
                         <div className={styles.dropdown}>
@@ -127,12 +140,11 @@ let user_booking = ''
                                 alt="dropdown"
                                 width={45}
                                 height={45}/>--
-                 
                             <div className={styles.dropdown_menu}>
                                 <a href="/RoomType" > ประเภทห้อง </a>
                                 <a href="/NearMe" >ห้องพักใกล้ฉัน</a>
                                 <a href={"/Payment/"+user_id} >จ่ายเงิน</a>
-                                <a href={"/Booking/"+user_id}>จอง</a>
+                                <a href={"/Booking/"+user_id}>จองหอพัก</a>
                                 <a href="#">เกี่ยวกับเรา</a>
                                 <a href="#">ช่วยเหลือ</a> 
                             </div>
@@ -141,7 +153,7 @@ let user_booking = ''
                     <Link href="/RoomType" className={styles.menulist}><span >ประเภทห้อง</span></Link>
                     <Link href="/NearMe" className={styles.menulist}><span>ห้องพักใกล้ฉัน</span></Link>
                     <Link href={"/Payment/"+user_id} className={styles.menulist}><span>จ่ายเงิน</span></Link>
-                    <Link href={"/Booking/"+user_id} className={styles.menulist}><span>จอง</span></Link>
+                    <Link href={"/Booking/"+user_id} className={styles.menulist}><span>จองหอพัก</span></Link>
                     <Link href="#" className={styles.menulist}><span>เกี่ยวกับเรา</span></Link>
                     
                 </div>
@@ -151,53 +163,69 @@ let user_booking = ''
     else if (user_type == "seller"){
         return(
             <nav className={styles.navbar2}>
-            <div className={styles.topbar}> 
-                    <span className={styles.logotab}>
+            <div className={styles.topbar2}> 
+                    <div className={styles.logotab}>
                         <Link href="/dormManager">
                             <Image  src="/Honghub.png"
                             width={80} height={80} alt="logo">
                             </Image>
                         </Link>
-                    </span>
-                    <span className={styles.logoname}>
+                    </div>
+                    <div className={styles.logoname1}>
                         <Link href="/dormManager">HONGHUB</Link>
-                    </span>
-                    <span></span>
-                    <span className={styles.mainbar_search1}>
+                    </div>
+
+                    <div className={styles.mainbar_search1}>
                         <div className={styles.mainbar_search2}>
                             <Image className="search_img" src="/search.png" 
-                            width={35} height={35} alt='logo'></Image>
+                            width={35} height={35} alt='search.png'></Image>
                             <input type="search" className={styles.search} 
                             placeholder="  i'm searching for..." id=""></input>
                         </div>
-                    </span>
+                    </div>
                     
-                    <span className={styles.profile}>
-                        <Link href= "/dormManager/check" >
-                            <Image className={styles.bell} src="/letter.png" 
-                            width={35} height={35} alt='logo'></Image>
+                    <div className={styles.iconteb}>
+                    { notic == "on"? (
+                        <Link href= "/dormManager/dormConfirm" >
+                        <Image className={styles.bell} src="/mail_off.png" 
+                        width={42} height={34} alt='mail_off.png'></Image>
                         </Link>
+                        ):
+                        (
+                        <Link href= "/dormManager/dormConfirm" >
+                        <Image className={styles.bell} src="/mail_on.png" 
+                        width={42} height={34} alt='mail_on.png'></Image>
+                        </Link> 
+                        )}
+                    </div>
 
-                        <div>
-                            <Image className={styles.iconprofile} src="/users.png" 
-                            width={30} height={30} alt='logo'></Image>
-                        </div>
+                    <div className={styles.outdropdown_two}>
+                    <Image
+                        src="/gear.png" 
+                        alt="dropdown"
+                        width={40}
+                        height={40}
+                        onClick={toggleDropdown}
+                    />
 
-                        <div className={styles.name}>
-                            {user_id}
-                        </div>
-
-                    </span>
-                    <span className={styles.sign}>
-                        <div></div>
-                        <div> <Image className={styles.gear} src="/gear.png" 
-                            width={30} height={30} alt='logo'></Image>
-                        </div>
-                        <button className={styles.logoutbtn} onClick={logOutBtn} >
+                    {isDropdownOpen && (
+                        <div className={styles.dropdownout}>
+                        <button
+                            className={styles.menuButton}
+                            onClick={logOutBtn}
+                        >
                             Logout
                         </button>
-                        <div></div>
-                    </span>
+                        </div>
+                    )}
+                    </div>
+                    
+                    <div className={styles.iconprofilecustomer}>
+                    <div>
+                        <Image src="/iconuser.jpg" 
+                        width={38} height={38} alt='iconuser.jpg'></Image></div>
+                        <div className={styles.namesell}>{user_id}</div>
+                    </div>
             </div>
     </nav>
         )
@@ -210,20 +238,20 @@ let user_booking = ''
                         <span className={styles.logotab}>
                             <Link href="/">
                                 <Image  src="/Honghub.png"
-                                width={80} height={80} alt="logo">
+                                width={80} height={80} alt="Honghub.png">
                                 </Image>
                             </Link>
                            
                         </span>
-                        <span className={styles.logoname}>
+                        <div className={styles.logoname2}>
                             <Link href="/">HONGHUB</Link>
-                        </span>
+                        </div>
                         <span></span>
 
                         <span className={styles.mainbar_search1}>
                             <div className={styles.mainbar_search2}>
                                 <Image className="search_img" src="/search.png" 
-                                width={35} height={35} alt='logo'></Image>
+                                width={35} height={35} alt='search.png'></Image>
                                 <input type="search" className={styles.search} 
                                 placeholder="  i'm searching for..." id=""></input>
                             </div>
