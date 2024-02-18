@@ -13,7 +13,7 @@ export default function Footer(){
 
                     <div  className={styles.logo}>
                         <Image src="/Honghub_white.PNG" alt="logo" height={70} width={70}></Image>
-                        <h1 className={styles.logotext}>HongHub</h1>
+                        <h1 className={styles.logotext}>TELEROOM</h1>
                     </div>
 
                     <div className={styles.copyright}>
@@ -39,7 +39,7 @@ export default function Footer(){
 
                     <div className={styles.textfooter_one}>
                         <div className={styles.textfooter_one1}>
-                            เกี่ยวกับ  HongHub
+                            เกี่ยวกับ  TeleRoom
                         </div>
                         <div className={styles.fun}>
                             <Link href="/">วิธีการจอง</Link>

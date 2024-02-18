@@ -77,7 +77,7 @@ let user_booking = ''
                            
                         </div>
                         <div className={styles.logoname}>
-                            <Link  className={styles.home} href="/Homepage">HONGHUB</Link>
+                            <Link  className={styles.home} href="/Homepage">TELEROOM</Link>
                         </div>
                        
 
@@ -172,7 +172,7 @@ let user_booking = ''
                         </Link>
                     </div>
                     <div className={styles.logoname1}>
-                        <Link href="/dormManager">HONGHUB</Link>
+                        <Link href="/dormManager">TELEROOM</Link>
                     </div>
 
                     <div className={styles.mainbar_search1}>
@@ -244,7 +244,7 @@ let user_booking = ''
                            
                         </span>
                         <div className={styles.logoname2}>
-                            <Link href="/">HONGHUB</Link>
+                            <Link href="/">TELEROOM</Link>
                         </div>
                         <span></span>
 

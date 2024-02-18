@@ -19,8 +19,9 @@ export default function Home() {
     <>
       <div className={style.bor}>
        
-      
-
+       <Link href="/" className={style.btn}>
+       <Image src="/back.png" width={30} height={30} alt="img"/>
+      </Link>
       <span className={style.search}>
         <Image src="/pinlo.png" width={25} height={25} alt="img"/>
       <Link className={style.textbox} href="/">KMITL</Link>
