@@ -101,7 +101,7 @@ const  sendDataCheck = async()=>{
                     <Link href= "/dormManager/addRoom" className={styles.Box1}>
                         <img className={styles.icon} src="/addroom.png" width={100} height={100}></img>
                         <img className={styles.iconarrowbottom} src="/circle.png" width={20} height={20}></img>
-                        <div className={styles.Text}>เพิ่มห้อง</div>
+                        <div className={styles.Text}>เพิ่มหอพัก</div>
                     </Link>
                     <Link href= "/dormManager/check" className={styles.Box2}>
                         <img className={styles.icon} src="/checkview.png" width={100} height={100}></img>

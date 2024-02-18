@@ -78,6 +78,7 @@ export default function Roomdata() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % img_list.length);
+    
   };
   const prevSlide = () => {
     setCurrentSlide(

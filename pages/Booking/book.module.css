@@ -12,6 +12,7 @@
     background-color: white;
     margin-top: 160px;
     padding-left: 20px;
+    place-items: center;
   }
   
 .roomBox {

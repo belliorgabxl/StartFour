@@ -93,14 +93,14 @@ let user_booking = ''
                         <div className={styles.iconteb}>
                             { notic == "on"? (
                                 <Link href={"/Booking/"+user_id}>
-                                <Image className={styles.bell} src="/notion.png" 
-                                width={32} height={32} alt='notion.jpg'></Image>
+                                <Image className={styles.bell} src="/notion.jpg" 
+                                width={32} height={32} alt='notion'></Image>
                                 </Link>
                                 ):
                                 (
                                 <Link href={"/Booking/"+user_id}>
-                                <Image className={styles.bell} src="/nonenoti.png" 
-                                width={29} height={34} alt='nonenoti.jpg'></Image>
+                                <Image className={styles.bell} src="/nonenoti.jpg" 
+                                width={29} height={34} alt='nonenoti'></Image>
                                 </Link> 
                                 )}
                         </div>
@@ -145,7 +145,7 @@ let user_booking = ''
                                 <a href="/NearMe" >ห้องพักใกล้ฉัน</a>
                                 <a href={"/Payment/"+user_id} >จ่ายเงิน</a>
                                 <a href={"/Booking/"+user_id}>จองหอพัก</a>
-                                <a href="#">เกี่ยวกับเรา</a>
+                                <a href="/AboutUs">เกี่ยวกับเรา</a>
                                 <a href="#">ช่วยเหลือ</a> 
                             </div>
                         </div>
@@ -154,7 +154,7 @@ let user_booking = ''
                     <Link href="/NearMe" className={styles.menulist}><span>ห้องพักใกล้ฉัน</span></Link>
                     <Link href={"/Payment/"+user_id} className={styles.menulist}><span>จ่ายเงิน</span></Link>
                     <Link href={"/Booking/"+user_id} className={styles.menulist}><span>จองหอพัก</span></Link>
-                    <Link href="#" className={styles.menulist}><span>เกี่ยวกับเรา</span></Link>
+                    <Link href="/AboutUs" className={styles.menulist}><span>เกี่ยวกับเรา</span></Link>
                     
                 </div>
 
@@ -282,7 +282,7 @@ let user_booking = ''
                             <div className={styles.dropdown_menu}>
                                 <a href="/">ประเภทห้อง</a>
                                 <a href="#">ใกล้ฉัน</a>
-                                <a href="#">เกี่ยวกับเรา</a>
+                                <a href="/AboutUs">เกี่ยวกับเรา</a>
                                 <a href="#">ช่วยเหลือ</a>
                             </div>
                         </div>

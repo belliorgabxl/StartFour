@@ -1,5 +1,6 @@
 .bg{
     background-color: #ffff;
+
 }
 .container{
             display: grid;
@@ -25,10 +26,16 @@
 .text2 {
     text-align: left;
     padding: 10 px;
-    padding-left: 10%;
+    padding-left: 20%;
     font-size: 15px;
     font-weight: bold
 
+
+}
+.text3{
+    text-align: center;
+    font-size: 15px;
+    line-height: 25px;;
 }
 .img{
     padding-top: 3%;
@@ -38,7 +45,7 @@
 .block1{
         display: grid;
         grid-template-columns: 20% 80%;
-        padding: 40px 10px 10px 100px;
+        padding: 60px 10px 10px 100px;
 }
 .header{
     text-align: center;
@@ -54,22 +61,29 @@
 }
 .blockuse {
     display: grid;
-    border: 1px solid;
    place-items: center;
     grid-template-columns: 50% 50%;
-    margin-left: 10px;
+    margin-left: -100px;
     width: 1000px;
     height: 200px;
    
 }
-.profile{
-    
-   
-    border: 1px solid;
-    
-    
-}
+
 .name{
     
-    border: 1px solid;
+
+    text-align: center;
+}
+.pad{
+    padding-top: 5%;
+}
+.blockuse1 {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 50% 50%;
+    margin-left: -100px;
+    width: 1000px;
+    height: 200px;
+    padding-bottom: 10%;
+
 }

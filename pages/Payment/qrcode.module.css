@@ -32,11 +32,11 @@
     place-items: center;
     width: 500px;
     height: 380px;
-    border: 10px solid blue;
+    
   }
   .btnArea{
     display: grid;place-items: center;
-    margin: 20px 0 40px  0;
+    margin: 80px 0 40px  0;
   }
   .payBtn{
     all:unset;

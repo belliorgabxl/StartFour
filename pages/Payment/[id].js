@@ -146,6 +146,7 @@ async function sendPayment(){
         {qrCodeData? (
           <div className={styles.QRarea}>
           <div className={styles.con}>
+                          <img src="/payment.png" alt="QR Code" style={{ width: '250px', objectFit: 'contain' }} />
             <div className={styles.qrCode}>
               <img src={qrCodeData} alt="QR Code" style={{ width: '250px', objectFit: 'contain' }} />
             </div>
