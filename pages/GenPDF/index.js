@@ -1,7 +1,7 @@
 
 import styles  from "./input.module.css"
 import { useState } from "react";
-import CreatePDF from "./createPDF";
+import CreatePDF from "@/components/CreatePDF";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -278,22 +278,26 @@ export default function InputBox(){
           <div className={styles.line13}><div></div>
           <span>
             <label className={styles.label}>ค่าเช่าหอพักต่อเดือน:</label>
-            <input className={styles.price} type="text" value={amount1} />
+            <div className={styles.price} >{amount1}</div>
             
           </span>
           <span>
-            <input className={styles.priceword} type="text" value={priceWord1}/>
+            <div className={styles.priceword}>
+            {priceWord1}
+            </div>
           </span>
           </div>
 
           <div className={styles.line14}><div></div>
           <span>
             <label className={styles.label}>ค่าประกันหอพัก:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <input className={styles.price} type="text" value={amount2} />
+            <div className={styles.price} >{amount2}</div>
             
           </span>
           <span>
-            <input className={styles.priceword} type="text" value={priceWord2}/>
+          <div className={styles.priceword}>
+            {priceWord2}
+            </div>
           </span>
           </div>
 

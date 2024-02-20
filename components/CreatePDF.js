@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import generatePDF from 'react-to-pdf';
-import styles from "./create.module.css"
+import styles from "./Styles/create.module.css"
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 

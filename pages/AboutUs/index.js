@@ -1,8 +1,8 @@
 import styles from "./aboutus.module.css"
 import Navbar from "@/components/Navbar"
-import Image from "next/image"
+
 import Footer from "@/components/Footer"
-import Space from "@/components/SpaceTab"
+
 
 export default function(){
     return( 

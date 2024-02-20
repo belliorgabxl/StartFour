@@ -35,7 +35,7 @@ const getBook = async () => {
 export default function SigIn() {
   const [user_login, getUsername] = useState("");
   const [pass_login, getPassword] = useState("");
-  const [book, setBook] = useState();
+  const [book, setBook] = useState(null);
   const router = useRouter();
   const id_booking_list = [];
   const user_booking_list = []
