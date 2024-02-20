@@ -76,7 +76,7 @@ useEffect(()=>{
   });
 for (let i = 1; i < user_booking_list.length; i++) {
   if (id_book_database_list[i] == id_booking_local ) {
-    id_book_database = id_book_database_list[i]
+    setIDBOOKdb(id_book_database_list[i])
     setOwn(own_dormitory_list[i])
     setDormName(dorm_name_list[i])
     setIDroom(id_room_list[i])
