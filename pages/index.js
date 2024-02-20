@@ -9,11 +9,9 @@ import Footer from '@/components/Footer';
 const Map = dynamic(() => import("@/components/MarkerMap/map"), {
   ssr: false,
 });
-
-
 const getDors = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/getDors", {
+    const res = await fetch("/api/getDors", {
       cache: "no-store",
     });
 
