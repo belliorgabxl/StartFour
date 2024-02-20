@@ -5,13 +5,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const getBook = async () => {
-  const res = await fetch(`http://localhost:3000/api/getBooking`, {
+  const res = await fetch(`/api/getBooking`, {
     cache: "no-store",
   });
   return res.json();
 };
 const getDors = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/getDors`, {
+  const res = await fetch(`/api/getDors`, {
     cache: "no-store",
   });
   return res.json();

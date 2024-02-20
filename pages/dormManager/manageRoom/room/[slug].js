@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const getId = async (id) => {
-    const res = await fetch(`http://localhost:3000/api/EditeRoom/${id}`, {
+    const res = await fetch(`/api/EditeRoom/${id}`, {
       cache: "no-store",
     });
     return res.json();
@@ -49,7 +49,7 @@ const handleSubmit = async (e) =>{
     setDetail(data?.detail)
   }
   try {
-    const res = await fetch(`http://localhost:3000/api/EditeRoom/${id_data}`, {
+    const res = await fetch(`/api/EditeRoom/${id_data}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

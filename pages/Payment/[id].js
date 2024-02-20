@@ -7,14 +7,14 @@ import Footer from "@/components/Footer";
 
 async function getBook() {
   const res = await fetch(
-    `http://localhost:3000/api/getBooking`,
+    `/api/getBooking`,
     { cache: "no-store" }
   );
   return res.json();
 };
 const getDors = async () => {
   const res = await fetch(
-    `http://localhost:3000/api/getDorsManage`,
+    `/api/getDorsManage`,
     { cache: "no-store" }
   );
   return res.json();
@@ -53,17 +53,16 @@ const booking_list = [];
 const access1_list = [];
 const access2_list = [];
 const id_book_database_list= []
-let id_book_database =''
-let user_booking = "";
-let own_dormitory = "";
-let dorm_name = "";
-let id_room = "";
-let price = "";
-let booking = "";
-let access1 = "";
-let access2 = "";
-
-{
+const [id_book_database,setIDBOOKdb] = useState()
+const [user_booking, setUserbook] = useState()
+const [dorm_name , setDormName] =useState()
+const [id_room , setIDroom] = useState()
+const [booking , setBooking] = useState()
+const [access1 , setA1] = useState()
+const [access2 , setA2] = useState()
+const [ price , setPrice] = useState("");
+const [own_dormitory , setOwn] =useState('')
+useEffect(()=>{
   book?.map((b) => {
     user_booking_list.push(b.user_booking),
       own_dormitory_list.push(b.own_dormitory),
@@ -75,40 +74,38 @@ let access2 = "";
       access2_list.push(b.access2),
       id_book_database_list.push(b._id)
   });
-}
 for (let i = 1; i < user_booking_list.length; i++) {
   if (id_book_database_list[i] == id_booking_local ) {
     id_book_database = id_book_database_list[i]
-    own_dormitory = own_dormitory_list[i];
-    dorm_name = dorm_name_list[i];
-    id_room = id_room_list[i];
-    price = price_list[i];
-    booking = booking_list[i];
-    access1 = access1_list[i];
-    access2 = access2_list[i];
-    user_booking = user_booking_list[i]
+    setOwn(own_dormitory_list[i])
+    setDormName(dorm_name_list[i])
+    setIDroom(id_room_list[i])
+    setPrice(price_list[i])
+    setBooking(booking_list[i])
+    setA1(access1_list[i])
+    setA2(access2_list[i])
+    setUserbook(user_booking_list[i]) 
   }
 }
-let amount1  = price.replace(",", "");
-let amount = amount1
+},[book])
+
 let mobileNumber = "0957437740"   // เปลี่ยนเป็นเบอร์เจ้าของหอตรงนี้ได้
-let name = own_dormitory
 const [qrCodeData, setQRCodeData] = useState('');
 
-const dorm_owner_list = []
 useEffect(()=>{
+  let amount  = price.replace(",",'');  // 4300
     fetch('/api/QRcode', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ amount: parseFloat(parseInt(amount)), mobileNumber: mobileNumber }),
+    body: JSON.stringify({ amount: Number(amount), mobileNumber: mobileNumber }),
   })
     .then(response => response.json())
     .then(data => {
       setQRCodeData(data.Result);
     })
-},[])
+},[price])
 
 async function sendPayment(){
   const Newuser_booking = user_booking;
@@ -116,10 +113,10 @@ async function sendPayment(){
   const Newdorm_name = dorm_name;
   let Newid_room = id_room;
   const Newprice = price;
-  const Newaccess1 =  "customerPayment";
+  const Newaccess1 =  "customerPayment";  // 4,500
   const Newaccess2 = access2;
   let Newnotic = "off"
-  const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
+  const res = await fetch(`/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
     method: "PUT",
     headers: {
       "Content-type": "application/json",
@@ -151,9 +148,9 @@ async function sendPayment(){
               <img src={qrCodeData} alt="QR Code" style={{ width: '250px', objectFit: 'contain' }} />
             </div>
             <div className={styles.infoContainer}>
-              ชื่อบัญชี : {name}
+              ชื่อบัญชี : {own_dormitory}
               <div>รหัสพร้อมเพย์ : {mobileNumber}</div>
-              <div>จำนวนเงิน : {amount} บาท</div>
+              <div>จำนวนเงิน : {price} บาท</div>
             </div>
           </div>
           <div className={styles.btnArea}>

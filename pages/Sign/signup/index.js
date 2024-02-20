@@ -30,7 +30,7 @@ export default function register_page(){
         else{
             try{
               let dormitory= "none";
-              const res = await fetch("http://localhost:3000/api/getUser", {
+              const res = await fetch("/api/getUser", {
                 method: "POST",
                 headers: {
                   "Content-type": "application/json",
@@ -48,7 +48,7 @@ export default function register_page(){
                 let booking = "none"
                 let notic = "off"
 
-                const res3 = await fetch("http://localhost:3000/api/getBooking", {
+                const res3 = await fetch("/api/getBooking", {
                   method: "POST",
                   headers: {
                     "Content-type": "application/json",
@@ -72,7 +72,7 @@ export default function register_page(){
                 let name = "";let old='';let phone_dorm='';let born='';let address=''
                 let floor_amount='';let room_amount='';let water_unit='';let elec_unit=''
                 let dorm_address='';let booking_status="none";let id_room_booking='none'
-                const res2 = await fetch("http://localhost:3000/api/getDorsManage", {
+                const res2 = await fetch("/api/getDorsManage", {
                   method: "POST",
                   headers: {
                     "Content-type": "application/json",

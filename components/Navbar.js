@@ -4,7 +4,7 @@ import Image from "next/image";
 import {useState,useEffect}  from "react";
 import { useRouter } from "next/router";
 const getBook = async () => {
-    const res = await fetch(`http://localhost:3000/api/getBooking`, {
+    const res = await fetch(`/api/getBooking`, {
       cache: "no-store",
     });
     return res.json();

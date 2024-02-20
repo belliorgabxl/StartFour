@@ -8,7 +8,7 @@ import Image from "next/image";
 
 
 const getData = async (idname) => {
-    const res = await fetch(`http://localhost:3000/api/FindManageRoom/${idname}`, {
+    const res = await fetch(`/api/FindManageRoom/${idname}`, {
       cache: "no-store",
     });
     return res.json();

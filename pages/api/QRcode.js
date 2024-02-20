@@ -10,16 +10,13 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const amount = parseFloat(_.get(req, ["body", "amount"]));
     const mobileNumber = _.get(req, ["body", "mobileNumber"]); 
-
     const payload = generatePayload(mobileNumber, { amount });
-    
     const option = {
       color: {
         dark: '#000',
         light: '#fff'
       }
     };
-
     try {
       const url = await generateQRCode(payload, option);
       return res.status(200).json({

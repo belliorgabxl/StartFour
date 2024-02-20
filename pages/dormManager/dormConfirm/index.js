@@ -6,7 +6,7 @@ import styles from "./dormCorn.module.css"
 import Image from "next/image";
 import Link from "next/link";
 const  getBookingId = async (id)=>{
-  const res = await fetch(`http://localhost:3000/api/getBooking`, {
+  const res = await fetch(`/api/getBooking`, {
     cache: "no-store",
   });
   return res.json();

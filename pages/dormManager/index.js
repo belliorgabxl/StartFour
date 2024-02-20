@@ -6,13 +6,13 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const getDormManager = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/FindManageDormID/${id}`, {
+  const res = await fetch(`/api/FindManageDormID/${id}`, {
     cache:"no-store",
   });
   return res.json();
 };
 const  getBookingId = async (id)=>{
-  const res = await fetch(`http://localhost:3000/api/getBooking`, {
+  const res = await fetch(`/api/getBooking`, {
     cache: "no-store",
   });
   return res.json();
@@ -75,7 +75,7 @@ const  sendDataCheck = async()=>{
     let birth = day+"/"+month+"/"+year
     let Newauthentical = "yes"
     setBorn(Newborn => Newborn = birth);
-    const res = await fetch(`http://localhost:3000/api/FindManageDormID/${find}`, {
+    const res = await fetch(`/api/FindManageDormID/${find}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

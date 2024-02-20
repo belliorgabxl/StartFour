@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 const getUser = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/getUser", {
+    const res = await fetch("/api/getUser", {
       cache: "no-store",
     });
     if (!res.ok) {
@@ -21,7 +21,7 @@ const getUser = async () => {
 };
 const getBook = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/getBooking", {
+    const res = await fetch("/api/getBooking", {
       cache: "no-store",
     });
     if (!res.ok) {

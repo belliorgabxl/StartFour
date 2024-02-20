@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Space from "@/components/SpaceTab";
 
 const getData = async () => {
-  const res = await fetch(`http://localhost:3000/api/getDors`, {
+  const res = await fetch(`/api/getDors`, {
     cache: "no-store",
   }); 
   return res.json();
@@ -94,15 +94,15 @@ export default function Roomdata() {
     let Newaccess2 = "none"
     let Newbooking_state = 'alarm'
     let Newbooking = "yes"
-    const res2 = await fetch(`http://localhost:3000/api/FindBookingManager/${user_id}`, {
+    const res2 = await fetch(`/api/FindBookingManager/${user_id}`, {
       method: "PUT",headers: {"Content-type": "application/json",},
       body: JSON.stringify({Newown_dormitory,Newdorm_name , Newid_room 
         ,Newprice,Newaccess1 ,Newaccess2 ,Newbooking }),});
-    const res3 = await fetch(`http://localhost:3000/api/AlarmDorm/AlarmManager/${Newown_dormitory}`, {
+    const res3 = await fetch(`/api/AlarmDorm/AlarmManager/${Newown_dormitory}`, {
       method: "PUT",headers: {"Content-type": "application/json",},body: JSON.stringify({Newid_room,Newbooking_state }),
     });
     let Newdormitory = Newdorm_name
-    const res4 = await fetch(`http://localhost:3000/api/AlarmDorm/AlarmUser/${user_id}`, {method: "PUT",
+    const res4 = await fetch(`/api/AlarmDorm/AlarmUser/${user_id}`, {method: "PUT",
       headers: {
         "Content-type": "application/json",
       },

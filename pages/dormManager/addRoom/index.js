@@ -32,7 +32,7 @@ export default function addRoom(){
     }
     else{
               try{
-                const res = await fetch("http://localhost:3000/api/getDors", {
+                const res = await fetch("/api/getDors", {
                   method: "POST",
                   headers: {
                     "Content-type": "application/json",

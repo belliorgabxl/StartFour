@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 import styles from "./confirm.module.css"
 import Image from "next/image";
 const  getBookingId = async (id)=>{
-  const res = await fetch(`http://localhost:3000/api/getBooking`, {
+  const res = await fetch(`/api/getBooking`, {
     cache: "no-store",
   });
   return res.json();
 }
 const getDorsID  = async (id)=>{
-  const res = await fetch(`http://localhost:3000/api/getDors`, {
+  const res = await fetch(`/api/getDors`, {
     cache: "no-store",
   });
   return res.json();
@@ -92,7 +92,7 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  "allow";
     const Newaccess2 = access2;
-    const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
+    const res = await fetch(`/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -117,7 +117,7 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  access1;
     const Newaccess2 = "allow";
-    const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
+    const res = await fetch(`/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -142,7 +142,7 @@ export default function Dormconfirm(){
     const Newprice = price;
     const Newaccess1 =  "success";
     const Newaccess2 = "success";
-    const res = await fetch(`http://localhost:3000/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
+    const res = await fetch(`/api/AlarmDorm/FindBookingID/${id_booking_local}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -159,7 +159,7 @@ export default function Dormconfirm(){
     });
     Newid_room="none";
     let Newbooking_state="none";
-    const response = await fetch(`http://localhost:3000/api/AlarmDorm/AlarmManager/${Newown_dormitory}`, {
+    const response = await fetch(`/api/AlarmDorm/AlarmManager/${Newown_dormitory}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

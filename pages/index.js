@@ -14,7 +14,6 @@ const getDors = async () => {
     const res = await fetch("/api/getDors", {
       cache: "no-store",
     });
-
     if (!res.ok) {
       throw new Error("Failed to fetch topics");
     }
@@ -56,7 +55,6 @@ export default function Home() {
                   <Image src="/scicon.png" width={25} height={25} alt="img"/>
                 </Link>
         </div>
-
         <div className={styles.map}> 
           <Map searchlocat={searchlocat} />
         </div>

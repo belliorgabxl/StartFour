@@ -4,8 +4,6 @@ import styles from "./Styles/create.module.css"
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-
-
 export default function CreatePDF({firstName , lastName , U_ID , born , Age
   ,homeID,sectionHome,sol,road,city,
   town,state,postID,faculty,department,
@@ -34,7 +32,7 @@ export default function CreatePDF({firstName , lastName , U_ID , born , Age
   const Newaccess2 = "GenPDF";
   const Newbooking = 'none'
   let Newnotic = "off"
-  const res = await fetch(`http://localhost:3000/api/BookingAPI/AlarmPDF/${user_id}`, {
+  const res = await fetch(`/api/BookingAPI/AlarmPDF/${user_id}`, {
     method: "PUT",
     headers: {
       "Content-type": "application/json",
