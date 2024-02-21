@@ -3,9 +3,8 @@
   color:white;
   text-align: center;
   width: 100%;
+  margin-top: 50px;
 }
-
-
 .body{
 display: grid;
 grid-template-columns: 500px 300px 535px;
