@@ -188,29 +188,35 @@ function check(){
       <div className={styles.topic}>
           Noticfication
         </div>
+        <hr className={styles.line}/>
+        <div className={styles.BoxContent}>
         <div className={styles.alarm1}>
 
           <div className={styles.texthead}>
             อนุมัติให้ชำระเงิน
           </div>
           <div className={styles.text}>
-            <div className={styles.textname}>จองมาจาก : คุณ {user_booking}</div>
-            <div className={styles.textconfirm}>รอการยืนยันจากคุณ  </div>      
-            <div className={styles.divider1}></div>
-            <div className={styles.textdorm}>{dorm_name}</div>
-            <div className={styles.textprice}>ราคา : {price}</div>
-            <div className={styles.texttime}>จองเมื่อ : {updateAt}</div>
-            <div className={styles.divider2}></div>
-            <Image className={styles.imageusers} src="/dorm.png"  width={150} height={150} alt='users.png'></Image>
-            
+            <div className={styles.tagRed}>สถานะ : รอการยืนยันจากคุณ  </div> 
+            <div className={styles.textname}>
+              ผู้จอง : {user_booking}
+            </div>  
+            <div className={styles.inContent}>
+              <div className={styles.imgUser}>
+              <Image  src="/dorm.png"
+              width={150} height={150} alt='users.png'></Image>
+              </div>
+              <div className={styles.inContent_info}>
+                หอพัก : {dorm_name}<br/>
+                ราคา : {price}<br/>
+                จองเมื่อ : {updateAt}<br/>
+              </div>
+            </div>
           </div>
-
-          <div className={styles.btnArea}>
-            <button onClick={Step1Btn} className={styles.ConfirmBtn_one}>อนุมัติให้ชำระ</button>
-          </div>
-
         </div>
-        
+        <div className={styles.btnArea}>
+            <button onClick={Step1Btn} className={styles.ConfirmBtn}>อนุมัติให้ชำระ</button>
+          </div>
+        </div>
       </div>
       <Footer/>
     </div>)
@@ -222,9 +228,13 @@ function check(){
         <div className={styles.topic}>
           Noticfication
         </div>
-        <div className={styles.alarm}>
-          ผู้เช่าทำการชำระค่ามัดจำการจอง...
+        <hr className={styles.line}/>
+        <div className={styles.BoxContent}>
+          <div className={styles.alarm}>
+          "โปรดรอผู้เช่าทำการชำระค่ามัดจำการจอง"
         </div>
+        </div>
+        
       </div>
       <Footer/>
     </div>
@@ -235,18 +245,20 @@ function check(){
       <div className={styles.topic}>
           Noticfication
         </div>
-        <div className={styles.alarm}>
-        ผู้ขอเช่าได้ทำการชำระเงินสำเร็จแล้ว กรุณาเช็คหลักฐาน
-        </div>
-        <div className={styles.slipBox}>
-        <div className={styles.slipPayment}>
-          <img src={pathfile} width={450} height={530} alt="slip"/> 
-        </div>
-        </div>
-        <div className={styles.btnArea}>
-        <button onClick={Step2Btn} className={styles.ConfirmBtn_two}>
-           อนุมัติการทำสัญญา
-        </button>
+        <div className={styles.BoxContent}>
+            <div className={styles.alarm}>
+             ผู้ขอเช่าได้ทำการชำระเงินสำเร็จแล้ว กรุณาเช็คหลักฐาน
+            </div>
+          <div className={styles.slipBox}>
+              <div className={styles.slipPayment}>
+                <img src={pathfile} width={450} height={530} alt="slip"/> 
+              </div>
+          </div>
+          <div className={styles.btnArea}>
+          <button onClick={Step2Btn} className={styles.ConfirmBtn}>
+            อนุมัติการทำสัญญา
+          </button>
+          </div>
         </div>
       </div>
       <Footer/>
@@ -259,8 +271,10 @@ function check(){
         <div className={styles.topic}>
           Noticfication
         </div>
-        <div className={styles.alarm}>
-          รอผู้เช่าทำการกรอกสัญญา...
+        <div className={styles.BoxContent}>
+          <div className={styles.alarm}>
+            รอผู้เช่าทำการกรอกสัญญา...
+          </div>
         </div>
       </div>
       <Footer/>
@@ -270,12 +284,15 @@ function check(){
       <div className={styles.body}>
       <Navbar/>
       <div className={styles.container}>
-      <div className={styles.topic}>
+        <div className={styles.topic}>
           Noticfication
         </div>
-        <div className={styles.alarm}>
-        ผู้ขอเช่าได้ทำสัญญาสำเร็จแล้ว<br/>รอผู้เช่าทำการส่งหลักฐาน<hr/>        
+        <div className={styles.BoxContent}>
+          <div className={styles.alarm}>
+             ผู้ขอเช่าได้ทำสัญญาสำเร็จแล้ว รอผู้เช่าทำการส่งหลักฐาน       
+          </div>
         </div>
+        
       </div>
       <Footer/>
     </div>
@@ -287,12 +304,16 @@ function check(){
       <div className={styles.topic}>
           Noticfication
         </div>
-        <div className={styles.alarm}>
-        ผู้ขอเช่าได้ทำสัญญาสำเร็จแล้ว<br/>โปรดตรวจสอบรายละเอียดสัญญาก่อนดำเนินการ<br/>
-        <button onClick={check} className={styles.checkBtn}>สัญญาออนไลน์</button><hr/>
-        </div>
-        <div className={styles.btnArea}>
-          <button onClick={Step3Btn} className={styles.ConfirmBtn_three}>อนุมัติการเช่า</button>
+        <div className={styles.BoxContent}>
+          <div className={styles.alarm2}>
+          ผู้ขอเช่าได้ทำสัญญาสำเร็จแล้ว<br/>โปรดตรวจสอบรายละเอียดสัญญาก่อนดำเนินการ
+
+          </div>
+          <button onClick={check} className={styles.checkBtn}>ดูสัญญาออนไลน์</button>
+          <hr className={styles.line}/>
+          <div className={styles.btnArea}>
+            <button onClick={Step3Btn} className={styles.ConfirmBtn}>อนุมัติการเช่า</button>
+          </div>
         </div>
       </div>
       <Footer/>

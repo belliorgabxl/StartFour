@@ -6,12 +6,15 @@
 }
 
 .container {
-  text-align: center;
   display: grid;
   width: 93%;
   background-color: white;
   margin-top: 95px;
-  padding-left: 20px;
+}
+.BoxContent{
+  display: grid;
+  place-items: center;
+  padding: 0 0  60px 0;
 }
 .topicBook{
   margin: 20px 0 20px 0;
@@ -24,138 +27,108 @@
   place-items: center;
 }
 .alarm{
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1px 5px gray;
   font-weight: 600;
   font-size: 40px;
-  margin: 40px 0px 40px 0px;
+  margin: 80px 0px 40px 0px;
+  height: 120px;
+  width: 80%;
+  
 }
 .alarm1{
   display: grid;
-  transform: translate(200px , 0px);
-  border-radius: 30px ;
-  width: 600px;
-  height: 500px;
+  place-items: center;
+  border-radius: 0.5rem ;
+  width: 650px;
   box-shadow: 0 1px 5px gray;
-  padding-left: 300px;
-  text-align: left;
   font-weight: 600;
   font-size: 40px;
-  margin: 40px 40px 40px 0px;
+  margin: 10px 0 10px 0;
+}
+.alarm2{
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 0.5rem ;
+  width: 80%;
+  box-shadow: 0 1px 5px gray;
+  font-weight: 600;
+  font-size: 34px;
+  margin: 30px 0 10px 0;
+  height: 120px;
 }
 .texthead {
-  width: 800px;
-  height: 50px;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 60px;
   font-size: 25px;
   background-color: #282828;
   color: white;
-  border-radius: 30px 30px 0px 0px;
-  transform: translate(-300px , 0px);
+  border-radius: 0.5rem 0.5rem 0 0;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
-  padding-left: 100px;
-  padding-top: 20px;
 }
 .text {
-  margin-left: -100px;
-  margin-top: 10px;
+  width: 100%;
+  display: grid;
+  place-items: center;
 }
 .textname {
+  margin: 10px 0 10px 0;
   font-size: 25px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
-  transform: translate(-130px , 20px);
 }
-.textconfirm {
-  background-color: #d98888;
-  width: 250px;
-  height: 30px;
-  font-size: 25px;
-  color: #650e0e;
-  transform: translate(350px , -17px);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 25px;
-  font-weight: bold;
-}
-.divider1 {
-  border-top: 1px solid black;
-  max-width: 900px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: -200px;
-}
-.textdorm {
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: 80px;
-  margin-bottom: 10px;
-  margin-top: 50px;
-}
-.textprice {
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: 80px;
-  margin-bottom: 10px;
-}
-.texttime {
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: 80px;
-}
-.divider2 {
-  border-top: 1px solid black;
-  max-width: 900px;
-  margin-top: 80px;
-  margin-left: -200px;
-}
-.imageusers {
-  transform: translate(-130px , -200px);
-}
-.btnArea{
+.tagRed{
   display: grid;
   place-items: center;
-  margin-top: -120px;
-  margin-bottom: 20px;
+  background-color: #d98888;
+  width: 100%;
+  height: 50px;
+  font-size: 25px;
+  color: white;
 }
-.ConfirmBtn_one{
+.inContent{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  border: 1px solid gray
+}
+.inContent_info{
+  display: grid; place-items: center;
+  font-size: 25px;
+  border-left: 1px solid gray;
+}
+.imgUser{
+  display: grid;
+  place-items: center;
+}
+
+.btnArea{
+  display: grid;
+  width: 100;
+  place-items: center;
+  margin: 50px 0 0 0;
+}
+.ConfirmBtn{
    all:unset;
-   background-color: #282828;
+   background-color: #42bd41;
    height: 60px;
    width: 180px;
    color: white;
+   display: grid;
+   place-items: center;
    font-size: 20px;
-   padding-left: 50px;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.ConfirmBtn_one:hover{
+.ConfirmBtn:hover{
    background-color: black;
 }
-.ConfirmBtn_two{
-  all:unset;
-  background-color: #282828;
-  height: 60px;
-  width: 180px;
-  color: white;
-  font-size: 20px;
-  padding-left: 0px;
-  margin-top: 150px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.ConfirmBtn_two:hover{
-  background-color: black;
-}
-.ConfirmBtn_three{
-  all:unset;
-  background-color: #282828;
-  height: 60px;
-  width: 180px;
-  color: white;
-  font-size: 20px;
-  margin-top: 100px;
-  margin-left: -80px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.ConfirmBtn_three:hover{
-  background-color: black;
+.line{
+  width: 100%;
 }
 .topic{
   display: grid;
@@ -166,6 +139,7 @@
   color: white;
   font-size: 35px;
   font-family: 'Times New Roman', Times, serif;
+  margin:  0 0 0 10px;
 }
 .slipBox{
   display: grid;
@@ -179,12 +153,15 @@
 }
 .checkBtn{
   all: unset;
-  background: gray;
-  color: white;
+  background: #e0e0e0;
+  color: black;
   font-size: 18px;
   font-weight: 550;
   width: 200px;
   height: 45px;
+  margin: 20px  0 20px 0;
+  display: grid;
+  place-items: center;
   border-radius: 0.5rem;
 }
 .checkBtn:hover{
