@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./book.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { supabase } from "@/libs/supabase";
 
 const getBook = async () => {
   const res = await fetch(`/api/getBooking`, {
@@ -107,6 +108,30 @@ export default function booking() {
   }
   function step2() {
     router.push("/GenPDF");
+  }
+  async function step3(event){
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    formData.getAll("genPDF")
+    const pathfile =  "/GenPDF:"+user+".pdf"
+    const { data, error } = await supabase.storage.from('PDF').upload(pathfile,formData);
+    const Newaccess1 =  "wait";
+    const Newaccess2 = "approve";
+    const Newbooking = 'no'
+    let Newnotic = "off"
+    const res = await fetch(`/api/BookingAPI/AlarmPDF/${user}`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      Newbooking,
+      Newaccess1,
+      Newaccess2,
+      Newnotic
+    }),
+  });
+    router.push('/');
   }
   const bookState = booking;
   return (
@@ -213,6 +238,41 @@ export default function booking() {
                 เริ่มทำสัญญา
               </button>
             </div>
+          </div>
+          <Footer />
+        </div>
+      ): access1 == "customerPayment" && access2 == "GenPDF" ? (
+        <div className={styles.body}>
+          <Navbar />
+          <div className={styles.container}>
+            <div className={styles.topicBook}>Booking</div>
+            <div className={styles.alarm}>ทำการส่งสัญญาให้ผู้ดูแลตรวจสอบ</div>
+            <form onSubmit={step3}>
+              <input type="file" name="genPDF" className={styles.inputFile}/>
+               <div className={styles.btnArea}>
+              <button  className={styles.ConfirmBtn}>
+                ส่ง
+              </button>
+            </div>
+            </form>
+          </div>
+          <Footer />
+        </div>
+      ): access1 == "wait" && access2 == "GenPDF" ? (
+        <div className={styles.body}>
+          <Navbar />
+          <div className={styles.container}>
+            <div className={styles.topicBook}>Booking</div>
+            <div className={styles.alarm}>รอผู้ดูแลตรวจสอบ</div>
+          </div>
+          <Footer />
+        </div>
+      ): access1 == "success" && access2 == "success" ? (
+        <div className={styles.body}>
+          <Navbar />
+          <div className={styles.container}>
+            <div className={styles.topicBook}>Booking</div>
+            <div className={styles.alarm}>ท่านอยู่ระหว่างการเช่าหอพัก {dorm_name}</div>
           </div>
           <Footer />
         </div>

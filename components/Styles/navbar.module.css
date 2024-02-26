@@ -24,7 +24,7 @@
 .topbar1 {
     border-bottom: 3px solid black;
     display: grid;
-    grid-template-columns: 7% 8% 67% 1% 6% 10%;
+    grid-template-columns: 7% 13% 35% 5% 20% 4% 4% 15%;
     box-shadow: 0px 1px 4px gray;
     text-decoration: none;
     place-items: center;
@@ -77,6 +77,8 @@
     margin: 35px 0px 10px 20px;
 }
 .mainbar_search1{
+    width: 100%;
+    height: 100%;
     display: grid;
     place-items: center;
 }
@@ -182,20 +184,21 @@
     margin-top: 10px;
 }
 .iconprofile {
-    margin-left: 300px;
-    margin-top: -30px;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    border: 1px solid black;
 }
 .iconprofilecustomer{
-    text-align: center;
     display: grid;
-    grid-template-columns: 50% 50%;
-    margin-left: -50px;
+    place-items: center;
+    width: 100%;
+    grid-template-columns: 30% 70%;
 }
-.name {
-    margin-left: 305px;
-}
+
 .namecust{
-    padding-top: 8px;
+    width: 100%;
+    text-align: left;
     font-size: 19px;
 }
 .namesell {
@@ -205,10 +208,15 @@
 }
 
 .outdropdown_one {
-    margin: 2px 0px 0px 25px;
-    position: relative;
-    display: inline-block;
-   
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+.iconbell{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-top: 6px;
 }
 .outdropdown_two {
     margin: 2px 0px 0px 0px;
@@ -265,3 +273,45 @@
   
 }
 
+.mainbar_feature{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items:center;
+    grid-template-rows: 50% 50%;
+    margin-left: 90px;
+}
+.booking_btn{
+    all:unset;
+    color: white;
+    background-color: #282828;
+    height: 40px;
+    width: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 19px;
+    font-weight: 500;
+}.booking_btn:hover{
+    background-color: #000333;
+}
+.postRoom_btn{
+    all:unset;
+    background-color: #282828;
+    color:white;
+    height: 40px;
+    width: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 19px;
+    font-weight: 500;
+}.postRoom_btn:hover{
+    background-color: #000333;
+}
+.help{
+    margin: 0 0 0 80px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.help:hover{
+    text-decoration: underline;
+    color: blue;
+}

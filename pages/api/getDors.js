@@ -1,6 +1,5 @@
 import connectMongoDB from "@/libs/mongodb";
 import Dors from "@/models/dormitory";
-import clientPromise from "@/libs/mongoPromise";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {

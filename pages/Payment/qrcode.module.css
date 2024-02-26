@@ -1,56 +1,89 @@
 .body {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    background-color: #F0F0F0;
-  }
-  
-  .container {
-    place-items: center;
-    display: grid;
-    width: 93%;
-    background-color: white;
-    margin-top: 160px;
-  }
-  
-  .topic{
-    margin: 20px 0 10px 0 ;
-    font-size: 35px;
-    background-color: #282828;
-    color: white;
-    width: 350px;
-    height: 60px;
-    display: grid;
-    place-items: center;
-  }
-  .infoContainer{
-    font-size: 20px;
-    margin: 0 0 20px 0;
-  }
-  .con{
-    display: grid;
-    place-items: center;
-    width: 500px;
-    height: 380px;
-    
-  }
-  .btnArea{
-    display: grid;place-items: center;
-    margin: 80px 0 40px  0;
-  }
-  .payBtn{
-    all:unset;
-    width: 200px;
-    height: 60px;
-    font-size: 25px;
-    display: grid;place-items: center;
-    background-color: #282828;
-    color: white;
-  }
-  .payBtn:hover{
-    background-color: black;
-  }
-  .QRarea{
-    display: grid;
-    place-items: center;
-  }
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background-color: #F0F0F0;
+}
+
+.container {
+  place-items: center;
+  display: grid;
+  width: 93%;
+  background-color: white;
+  margin-top: 160px;
+  background-color: gray;
+  padding : 0  0 50px 0
+}
+.topic{
+  margin: 20px 0 10px 0 ;
+  font-size: 32px;
+  background-color: black;
+  color: white;
+  width: 350px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+}
+.whiteBackgroud{
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+.QRArea{
+  display: grid;
+  place-items: center;
+  margin: 20px 0 0 0 ;
+  height: 700px;
+}
+.QRBox{
+  display: grid;
+  place-items: center;
+  width: 350px;
+  height: 360px;
+}
+.Logo{
+  margin-bottom: -10px;
+}
+.QRCode{
+background-color: white;
+}
+.infomation{
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+  font-weight: 550;
+  font-family: 'Times New Roman', Times, serif;
+}
+.fileBox{
+  margin: 20px 0 0  0;
+}
+.fileInput{
+  all: unset;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  border: 2px solid #282828;
+  width: 250px;
+  font-size: 16px;
+  font-weight: 550;
+  background-color: white;
+}
+.suggest{
+  margin: 4px 0 0 0 ;
+  font-size: 15px;
+  color: blue;
+}
+.btnArea{
+  display: grid;place-items: center;
+  margin: 20px 0 40px  0;
+}
+.payBtn{
+  all:unset;
+  width: 200px;
+  height: 60px;
+  font-size: 25px;
+  display: grid;place-items: center;
+  background-color: #282828;
+  color: white;
+}
+.payBtn:hover{
+  background-color: black;
+}

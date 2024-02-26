@@ -41,6 +41,12 @@ function logOutBtn(){
     localStorage.clear()
     router.push("/")
 }
+function Booking_btn(){
+    router.push("/Booking/"+user_id)
+}
+function PostRomm_btn(){
+    router.push("/PostRoom/"+user_id)
+}
 const id_booking_list = []
 const notic_list = []
 const user_booking_list = []
@@ -89,8 +95,20 @@ let user_booking = ''
                                 placeholder="  i'm searching for..." id=""></input>
                             </div>
                         </div>
-
-                        <div className={styles.iconteb}>
+                        <Link href="/help" className={styles.help}>
+                            Help?
+                        </Link>
+                        <div className={styles.mainbar_feature}>
+                            <button className={styles.booking_btn} 
+                            onClick={Booking_btn}>
+                                ข้อมูลการจอง
+                            </button>
+                            <button className={styles.postRoom_btn} 
+                            onClick={PostRomm_btn}>
+                                +&nbsp;Post Room
+                            </button>
+                        </div>
+                        <div className={styles.iconbell}>
                             { notic == "on"? (
                                 <Link href={"/Booking/"+user_id}>
                                 <Image className={styles.bell} src="/notion.jpg" 
@@ -125,10 +143,12 @@ let user_booking = ''
                         )}
                         </div>
                         <div className={styles.iconprofilecustomer}>
-                        <div>
-                            <Image src="/iconuser.jpg" 
-                            width={38} height={38} alt='iconuser.jpg'></Image></div>
-                            <div className={styles.namecust}>{user_id}</div>
+                            <div >
+                                <Image src="/iconuser.jpg"width={38} height={38} alt='iconuser.jpg'></Image>
+                            </div>
+                            <div className={styles.namecust}>
+                                {user_id}
+                            </div>
                         </div>
 
                     </div>
@@ -139,7 +159,7 @@ let user_booking = ''
                                 src="/dropdown.png" 
                                 alt="dropdown"
                                 width={45}
-                                height={45}/>--
+                                height={45}/>
                             <div className={styles.dropdown_menu}>
                                 <a href="/RoomType" > ประเภทห้อง </a>
                                 <a href="/NearMe" >ห้องพักใกล้ฉัน</a>

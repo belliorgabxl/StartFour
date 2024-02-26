@@ -127,3 +127,11 @@
   font-size: 40px;
   margin: 40px 40px 40px 40px;
 }
+.inputFile{
+  border: 1px solid black;
+  width: 250px;
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}

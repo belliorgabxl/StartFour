@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from 'next/router'; 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { supabase } from "@/libs/supabase";
 
 async function getBook() {
   const res = await fetch(
@@ -107,7 +108,12 @@ useEffect(()=>{
     })
 },[price])
 
-async function sendPayment(){
+async function sendPayment(event){
+  event.preventDefault();
+  const formData = new FormData(event.currentTarget);
+  formData.getAll("slip")
+  const pathfile =  "/slip:"+user_booking+".png"
+  const { data, error } = await supabase.storage.from('attachments').upload(pathfile,formData);
   const Newuser_booking = user_booking;
   const Newown_dormitory = own_dormitory;
   const Newdorm_name = dorm_name;
@@ -139,35 +145,46 @@ async function sendPayment(){
       <Navbar/>
 
     <div className={styles.container}>   
-     <div className={styles.topic}>QR Code Promptpay</div>
-        {qrCodeData? (
-          <div className={styles.QRarea}>
-          <div className={styles.con}>
-                          <img src="/payment.png" alt="QR Code" style={{ width: '250px', objectFit: 'contain' }} />
-            <div className={styles.qrCode}>
+        {qrCodeData? ( 
+          <form className={styles.QRArea} onSubmit={sendPayment}>
+            <div className={styles.topic}>
+              การชำระเงิน
+            </div>
+          <div className={styles.whiteBackgroud}>
+          <div className={styles.QRBox}>
+            <div className={styles.Logo}>
+              <img src="/payment.png" alt="QR Code" width={350} height={120} />
+            </div>
+            <div className={styles.QRCode}>
               <img src={qrCodeData} alt="QR Code" style={{ width: '250px', objectFit: 'contain' }} />
             </div>
-            <div className={styles.infoContainer}>
-              ชื่อบัญชี : {own_dormitory}
-              <div>รหัสพร้อมเพย์ : {mobileNumber}</div>
-              <div>จำนวนเงิน : {price} บาท</div>
+          </div>
+          <div className={styles.infomation}>
+            <li>ชื่อบัญชี : {own_dormitory}</li>
+            <li>รหัสพร้อมเพย์ : {mobileNumber}</li>
+            <li>จำนวนเงิน : {price} บาท</li>
+            <div className={styles.fileBox}>
+            <input className={styles.fileInput} type="file"
+             name="slip"/>
+             <p className={styles.suggest}>
+              ***กรุณาแนบหลักฐานการชำระเงิน***
+             </p>
             </div>
           </div>
+          </div>
           <div className={styles.btnArea}>
-            <button onClick={sendPayment} className={styles.payBtn}>ยืนยันการชำระ</button>
+            <button type="submit" className={styles.payBtn}>ยืนยันการชำระ</button>
           </div>
-              <Footer/>
-          </div>
+          </form>
         ):
         (
           <div>
+            Loading...
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   )
 }
-
-
-
 

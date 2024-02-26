@@ -1,0 +1,14 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: #F0F0F0;
+  }
+  
+  .container {
+    text-align: center;
+    display: grid;
+    width: 93%;
+    background-color: white;
+    margin-top: 160px;
+  }

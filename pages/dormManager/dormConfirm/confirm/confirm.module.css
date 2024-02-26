@@ -26,7 +26,7 @@
 .alarm{
   font-weight: 600;
   font-size: 40px;
-  margin: 40px 40px 40px 40px;
+  margin: 40px 0px 40px 0px;
 }
 .alarm1{
   display: grid;
@@ -39,7 +39,7 @@
   text-align: left;
   font-weight: 600;
   font-size: 40px;
-  margin: 40px 40px 40px 40px;
+  margin: 40px 40px 40px 0px;
 }
 .texthead {
   width: 800px;
@@ -111,8 +111,10 @@
   transform: translate(-130px , -200px);
 }
 .btnArea{
-  margin-left: 60px;
-  transform: translate(0px , -150px);
+  display: grid;
+  place-items: center;
+  margin-top: -120px;
+  margin-bottom: 20px;
 }
 .ConfirmBtn_one{
    all:unset;
@@ -136,7 +138,6 @@
   font-size: 20px;
   padding-left: 0px;
   margin-top: 150px;
-  margin-left: -100px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .ConfirmBtn_two:hover{
@@ -149,9 +150,8 @@
   width: 180px;
   color: white;
   font-size: 20px;
-  padding-left: 0px;
-  margin-top: 150px;
-  margin-left: -100px;
+  margin-top: 100px;
+  margin-left: -80px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .ConfirmBtn_three:hover{
@@ -166,4 +166,27 @@
   color: white;
   font-size: 35px;
   font-family: 'Times New Roman', Times, serif;
+}
+.slipBox{
+  display: grid;
+  place-items: center;
+}
+.slipPayment{
+  display: grid;
+  place-items: center;
+  border:1px solid gray;
+  width: 460px;
+}
+.checkBtn{
+  all: unset;
+  background: gray;
+  color: white;
+  font-size: 18px;
+  font-weight: 550;
+  width: 200px;
+  height: 45px;
+  border-radius: 0.5rem;
+}
+.checkBtn:hover{
+  background-color: #282828;
 }

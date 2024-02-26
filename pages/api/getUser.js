@@ -1,13 +1,11 @@
 import connectMongoDB from "@/libs/mongodb";
 import User from "@/models/user";
-import clientPromise from "@/libs/mongoPromise";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const client = await clientPromise;
-    const db = client.db("information");
+    await connectMongoDB();
     const { username, password ,email ,phone,name,state,dormitory}  = req.body;
-    const user = await db.collection("users").insertOne({
+    const user = await User.create({
       username, password ,email ,phone,name,state,dormitory
     })
     res.json(user);

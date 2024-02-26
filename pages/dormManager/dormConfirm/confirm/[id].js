@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import styles from "./confirm.module.css"
 import Image from "next/image";
+import Link from "next/link";
 const  getBookingId = async (id)=>{
   const res = await fetch(`/api/getBooking`, {
     cache: "no-store",
@@ -78,12 +79,15 @@ export default function Dormconfirm(){
       id_room = id_room_list[i];
       price = price_list[i];
       booking = booking_list[i];
-      access1 = access1_list[i];
-      access2 = access2_list[i];
+      access1 = access1_list[i]
+      access2 = access2_list[i]
       user_booking = user_booking_list[i]
       updateAt = updatelist[i]
     }
   }
+  
+  const pathPDF = "https://kmaderbohtpzmtunqlbx.supabase.co/storage/v1/object/public/PDF/GenPDF:"+user_booking+".pdf"
+  const pathfile = "https://kmaderbohtpzmtunqlbx.supabase.co/storage/v1/object/public/attachments/slip:"+user_booking+".png"
   const Step1Btn = async()=>{
     const Newuser_booking = user_booking;
     const Newown_dormitory = own_dormitory;
@@ -172,7 +176,9 @@ export default function Dormconfirm(){
     });
     router.push("/dormManager")
   }
-
+function check(){
+  router.push(pathPDF)
+}
   return(
     <>
       {access1=="none"?(
@@ -217,7 +223,7 @@ export default function Dormconfirm(){
           Noticfication
         </div>
         <div className={styles.alarm}>
-          รอผู้เช่าทำการชำระค่ามัดจำการจอง...
+          ผู้เช่าทำการชำระค่ามัดจำการจอง...
         </div>
       </div>
       <Footer/>
@@ -230,7 +236,12 @@ export default function Dormconfirm(){
           Noticfication
         </div>
         <div className={styles.alarm}>
-        ผู้ขอเช่าได้ทำการชำระเงินสำเร็จแล้ว กรุณาเช็คสลิป..
+        ผู้ขอเช่าได้ทำการชำระเงินสำเร็จแล้ว กรุณาเช็คหลักฐาน
+        </div>
+        <div className={styles.slipBox}>
+        <div className={styles.slipPayment}>
+          <img src={pathfile} width={450} height={530} alt="slip"/> 
+        </div>
         </div>
         <div className={styles.btnArea}>
         <button onClick={Step2Btn} className={styles.ConfirmBtn_two}>
@@ -254,8 +265,7 @@ export default function Dormconfirm(){
       </div>
       <Footer/>
     </div>
-    ):
-    access1=="customerPayment"&&access2=="GenPDF"?
+    ): access1=="customerPayment"&&access2=="GenPDF"?
     (
       <div className={styles.body}>
       <Navbar/>
@@ -264,17 +274,29 @@ export default function Dormconfirm(){
           Noticfication
         </div>
         <div className={styles.alarm}>
-        ผู้ขอเช่าได้ทำสัญญาสำเร็จแล้ว<br/>โปรดตรวจสอบรายละเอียดสัญญาก่อนดำเนินการ <hr/>        
+        ผู้ขอเช่าได้ทำสัญญาสำเร็จแล้ว<br/>รอผู้เช่าทำการส่งหลักฐาน<hr/>        
+        </div>
+      </div>
+      <Footer/>
+    </div>
+    ): access1=="wait"&&access2=="approve"?
+    (
+      <div className={styles.body}>
+      <Navbar/>
+      <div className={styles.container}>
+      <div className={styles.topic}>
+          Noticfication
+        </div>
+        <div className={styles.alarm}>
+        ผู้ขอเช่าได้ทำสัญญาสำเร็จแล้ว<br/>โปรดตรวจสอบรายละเอียดสัญญาก่อนดำเนินการ<br/>
+        <button onClick={check} className={styles.checkBtn}>สัญญาออนไลน์</button><hr/>
         </div>
         <div className={styles.btnArea}>
           <button onClick={Step3Btn} className={styles.ConfirmBtn_three}>อนุมัติการเช่า</button>
         </div>
-
       </div>
       <Footer/>
     </div>
-      // <
-      // </div>
     )
     :(
       <div>

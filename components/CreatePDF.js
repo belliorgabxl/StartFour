@@ -30,7 +30,7 @@ export default function CreatePDF({firstName , lastName , U_ID , born , Age
   async function GenPDF(){
   const Newaccess1 =  "customerPayment";
   const Newaccess2 = "GenPDF";
-  const Newbooking = 'none'
+  const Newbooking = 'yes'
   let Newnotic = "off"
   const res = await fetch(`/api/BookingAPI/AlarmPDF/${user_id}`, {
     method: "PUT",
