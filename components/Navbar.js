@@ -277,7 +277,7 @@ let user_booking = ''
                             </div>
                         </span>
 
-                        <span className={styles.helptab}><Link href="#">ช่วยเหลือ</Link></span>
+                        <span className={styles.helptab}><Link href="/help">ช่วยเหลือ</Link></span>
 
                         <span className={styles.sign}>
                             <div></div>
