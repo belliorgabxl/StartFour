@@ -1,0 +1,59 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: #F0F0F0;
+}
+.container {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    width: 93%;
+    background-color: white;
+    margin-top:200px;
+}
+.grid {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 30% 70%;
+    margin-top: -100px;
+}
+.Boxgridone { 
+    width: 100%;
+    height: 30%;
+    text-align: left;
+}
+.Boxgridtwo { 
+    width: 800px;
+    height: 500px;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 50px 450px;
+    border-radius: 19.5px;
+    box-shadow: 0px 1px 5px;
+}
+.Boxleft { 
+    width: 804px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: -30px;
+    margin-top: 30px;
+    background-color:  #3d3d3d;
+    margin-left: -3px;
+    color: white;
+    border-radius: 15px  15px 0 0;
+}
+.Boxright { 
+    width: 800px;
+    height: 420px;
+    margin-top: 30px;
+}
+.line {
+    white-space: pre-wrap;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}

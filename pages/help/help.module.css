@@ -1,0 +1,344 @@
+.body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: #F0F0F0;
+}
+.container {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    width: 93%;
+    background-color: white;
+    margin-top:200px;
+}
+.Boxonegrid {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 42.8px 42.8px 42.8px 42.8px 42.8px 42.8px 42.8px;
+    width: 800px;
+    height: 300px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 5px;
+}
+.Boxhead {
+    font-size: 30px;
+    padding-top: 5px;
+    width: 800px;
+    height: 42.8px;
+    background-color:  #3d3d3d;
+    margin-top: 04px;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+.Textone {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 600px 200px;
+    width: 800px;
+    height: 42.8px;
+    text-decoration: none;
+}
+.Textoneleft {
+    width: 600px;
+    height: 42.8px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 50px;
+    text-align: left;
+    padding-left: 200px;
+    color: black;
+}
+.Textoneright {
+    width: 100px;
+    height: 42.8px;
+    padding-top: 50px;
+}
+.divider1 {
+    border-top: 2px solid black;
+    width: 750px;
+    margin-top: 30px;
+}
+.Texttwo {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 600px 200px;
+    width: 800px;
+    height: 42.8px;
+    text-decoration: none;
+}
+.Texttwoleft {
+    width: 600px;
+    height: 42.8px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 35px;
+    text-align: left;
+    padding-left: 200px;
+    color: black;
+}
+.Texttworight {
+    width: 200px;
+    height: 42.8px;
+    padding-top: 35px;
+}
+.divider2 {
+    border-top: 2px solid black;
+    width: 750px;
+    margin-top: -5px;
+}
+.Textthree {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 600px 200px;
+    width: 800px;
+    height: 42.8px;
+    text-decoration: none;
+}
+.Textthreeleft {
+    width: 600px;
+    height: 42.8px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 15px;
+    text-align: left;
+    padding-left: 200px;
+    color: black;
+}
+.Textthreeright {
+    width: 200px;
+    height: 42.8px;
+    padding-top: 15px;
+}
+.divider3 {
+    border-top: 2px solid black;
+    width: 750px;
+    margin-top: -45px;
+}
+.Boxtwogrid  {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 500px 300px;
+    height: 300px;
+}
+.Boxgridleft {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 50px 250px;
+    width: 450px;
+    height: 300px;
+    box-shadow: 0px 1px 5px;
+    border-radius: 15px;
+}
+.Boxleftone {
+    width: 451px;
+    height: 50px;
+    font-size: 30px;
+    background-color: #3d3d3d;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    padding-top: -20px;
+}
+.Boxlefttwo {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 150px 150px 150px;
+    width: 450px;
+    height: 250px;
+}
+.one {
+    width: 150px;
+    height: 170px;
+    padding-top: 80px;
+}
+.two {
+    width: 150px;
+    height: 170px;
+    padding-top: 80px;
+}
+.three {
+    width: 150px;
+    height: 170px;
+    padding-top: 80px;
+}
+.Boxgridright {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 100px 100px 100px;
+    width: 300px;
+    height: 300px;
+}
+.Boxrightone {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 200px 80px;
+    width: 280px;
+    height: 80px;
+    box-shadow: 0px 1px 5px;
+}
+.Textonebottomleft {
+    width: 200px;
+    height: 80px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 25px;
+    text-align: left;
+    padding-left: 40px;
+}
+.Textonebottomright {
+    width: 80px;
+    height: 80px;
+    padding-top: 25px;
+}
+.dropdown_menu {
+    width: 300px;
+    height: 200px;
+    border-radius: 30px;
+    box-shadow:  0 2px 10px gray;
+    font-size: 22px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 2 ;
+}
+.dropdown_menu a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left; 
+}
+.dropdown{
+    z-index: 1;
+    padding: 5px 0px 0px 10px
+}
+.dropdown:hover .dropdown_menu {
+    display: block;
+}
+.Boxrighttwo {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 200px 80px;
+    width: 280px;
+    height: 80px;
+    box-shadow: 0px 1px 5px;
+}
+.texthead {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.text {
+    height: 80px;
+    width: 250px;
+    background-color: rgb(188, 188, 188);
+    border: 2px gray solid;
+    margin-left: 25px;
+}
+.textone {
+    text-align: left;
+    margin-left: 25px;
+    padding-top: 20px;
+    font-size: 15px;
+}
+.texttwo {
+    text-align: left;
+    margin-left: 25px;
+    font-size: 15px;
+}
+.textbed {
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+.social {
+    height: 120px;
+    width: 250px;
+    background-color: rgb(188, 188, 188);
+    border: 2px gray solid;
+    margin-left: 25px;
+}
+.textsocial {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 40px 40px 40px;
+}
+.textgridone {
+    width: 250px;
+    height: 40px;
+}
+.textgridtwo {
+    width: 250px;
+    height: 40px;
+}
+.textgridthree {
+    width: 250px;
+    height: 40px;
+}
+.imgfacebook {
+    margin-left: -150px;
+    margin-top: -5px;
+}
+.imginstagram {
+    margin-left: -150px;
+    margin-top: -5px;
+}
+.imgphone {
+    margin-left: -150px;
+    margin-top: -5px;
+}
+.textfacebook { 
+    font-size: 15px;
+    color: white;
+    margin-top: -40px;
+}
+.textinstagram { 
+    font-size: 15px;
+    color: white;
+    margin-top: -40px;
+}
+.textphone { 
+    font-size: 15px;
+    color: white;
+    margin-top: -40px;
+}
+.Texttwobottomleft {
+    width: 200px;
+    height: 80px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 25px;
+    text-align: left;
+    padding-left: 40px;
+}
+.Texttwobottomright {
+    width: 80px;
+    height: 80px;
+    padding-top: 25px;
+}
+.Boxrightthree {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 200px 80px;
+    width: 280px;
+    height: 80px;
+    box-shadow: 0px 1px 5px;
+}
+.Textthreebottomleft {
+    width: 200px;
+    height: 80px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 25px;
+    text-align: left;
+    padding-left: 40px;
+}
+.Textthreebottomright {
+    width: 80px;
+    height: 80px;
+    padding-top: 25px;
+}
