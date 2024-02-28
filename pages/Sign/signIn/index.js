@@ -36,12 +36,36 @@ export default function SigIn() {
   const [user_login, getUsername] = useState("");
   const [pass_login, getPassword] = useState("");
   const [book, setBook] = useState(null);
+  const [user,setUser] = useState(null)
   const router = useRouter();
   const id_booking_list = [];
   const user_booking_list = []
+  const user_list = [];
+  const pass_list = [];
+  const type_list = [];
+  const id_list = [];
+  const dorm_list = [];
+  let dormitory = "";
+  let type_user = "";
+  let id_user = "";
+  let id_booking = ''
+  let user_value = 0;
+  let pass_value = 0;
+  user?.map((u) => user_list.push(u.username));
+  user?.map(
+    (u) => (
+      pass_list.push(u.password),
+      type_list.push(u.state),
+      id_list.push(u._id),
+      dorm_list.push(u.dormitory)
+    )
+  );
 useEffect(()=>{
   getBook().then((b)=>{
     setBook(b);
+  })
+  getUser().then((u)=>{
+    setUser(u);
   })
 },[])
   {book?.map((b)=>{
@@ -51,27 +75,6 @@ useEffect(()=>{
 
   const loginSubmit = async (e) => {
     e.preventDefault();
-    const user_list = [];
-    const pass_list = [];
-    const type_list = [];
-    const id_list = [];
-    const dorm_list = [];
-    let dormitory = "";
-    let type_user = "";
-    let id_user = "";
-    let id_booking = ''
-    const { users } = await getUser();
-    let user_value = 0;
-    let pass_value = 0;
-    users.map((u) => user_list.push(u.username));
-    users.map(
-      (u) => (
-        pass_list.push(u.password),
-        type_list.push(u.state),
-        id_list.push(u._id),
-        dorm_list.push(u.dormitory)
-      )
-    );
     for (let i = 0; i < user_list.length; i++) {
       if (user_list[i] == user_login) {
         user_value = 1;

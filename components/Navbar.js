@@ -44,7 +44,7 @@ function logOutBtn(){
 function Booking_btn(){
     router.push("/Booking/"+user_id)
 }
-function PostRomm_btn(){
+async function  PostRomm_btn(){
     router.push("/PostRoom/"+user_id)
 }
 const id_booking_list = []

@@ -1,14 +1,122 @@
 .body {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    background-color: #F0F0F0;
-  }
-  
-  .container {
-    text-align: center;
-    display: grid;
-    width: 93%;
-    background-color: white;
-    margin-top: 160px;
-  }
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background-color: #F0F0F0;
+}
+
+.container {
+  text-align: center;
+  display: grid;
+  width: 93%;
+  place-items: center;
+  background-color: white;
+  margin-top: 160px;
+}
+
+.AuthenticBox{
+width: 60%;
+border: 10px solid gray;
+border-radius: 0.3rem;
+display: grid;place-items: center;
+}
+.topic{
+margin: 20px 0 0px 0;
+font-size: 40px;
+font-weight: 530;
+color: white;
+width: 280px;
+height: 60px;
+display: grid;
+place-items: center;
+border-radius: 0.4rem;
+background-color: #282828;
+}
+.line{
+height: 2px;
+background-color: gray;
+width: 100%
+}
+.Form{
+display: grid;
+place-items: center;
+}
+.FormBox{
+width: 100%;
+height: 580px;
+}
+.label{
+font-size: 18px;
+font-weight: 500;
+margin-right: 10px;
+}
+.line1{
+margin: 30px 0 0 0;
+display: grid;
+grid-template-columns: 30px 330px 330px;
+}
+.inputLine1{
+width: 200px;
+height: 24px;
+font-size: 17px;
+text-align: center;
+}
+.line2{
+margin: 30px 0 0 0;
+display: grid;
+grid-template-columns: auto auto auto;
+}
+.file_ID{
+font-size: 16px;
+width: 200px;
+}
+.tagfile_ID{
+font-size: 13px;
+color: blue;
+}
+.line3{
+display: grid;
+grid-template-columns: 30px 50px 300px;
+margin: 20px 0 40px 0;
+}
+.addressArea{
+width: 400px;
+font-size: 15px;
+border-radius: 0.3rem;
+padding: 5px 0 0 20px;
+}
+.rule{
+height: 180px;
+display: grid;
+place-items: center;
+}
+.topicRule{
+font-size: 18px ;
+color: red;
+}
+.contentRule{
+font-size: 14px;
+text-align: left;
+}
+.agree{
+margin: 20px 0  0 0;
+display: grid;
+place-items: center;
+grid-template-columns:auto auto auto auto;
+}
+.btnArea{
+  display: grid;
+  place-items: center;
+  margin:  30px 0 30px 0;
+}
+.authenticBtn{
+  all:unset;
+  width: 120px;
+  height: 38px;
+  font-size: 22px;
+  color: white;
+  background-color:#42bd41;
+}
+.authenticBtn:hover{
+  background-color: #0d5302;
+}

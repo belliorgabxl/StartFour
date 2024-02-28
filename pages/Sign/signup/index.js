@@ -47,7 +47,6 @@ export default function register_page(){
                 let access2 = "none"
                 let booking = "none"
                 let notic = "off"
-
                 const res3 = await fetch("/api/getBooking", {
                   method: "POST",
                   headers: {
@@ -65,6 +64,32 @@ export default function register_page(){
                       notic
                    }),
                 });
+                const  IDpassport = "";const address = ''; const file_ID = ""; const user_post = user_booking;
+                dorm_name ='';const price_m =''; const price_rent ='';const type = ''
+                const img = '';const detail=''; const location=''; const ID_room='';const floor =''
+                const authentic = 'none'
+                const res = await fetch(`/api/getPost`, {
+                method: "POST",
+                headers: {
+                  "Content-type": "application/json",
+                },
+                body: JSON.stringify({
+                  user_post,
+                    IDpassport,
+                    address,
+                    file_ID,
+                    dorm_name,
+                    price_m,
+                    price_rent,
+                    type,
+                    img,
+                    detail,
+                    location,
+                    ID_room,
+                    floor,
+                    authentic
+                }),
+              });
               }
               if(state=="seller"){
                 let own_name = username;let dorm_name = "none";let dorm_img = "";
