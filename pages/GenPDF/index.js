@@ -39,32 +39,43 @@ export default function InputBox(){
   const [priceWord2, setPW2] = useState("หนึ่งหมื่นสามพันบาทถ้วน")
   
   function Submit(){
-    if(firstName || lastName || born || U_ID){
-      setSub(true);
-      let birthday = document.getElementById("birth").value;
-      let day = birthday.slice(8,10);
-      let year =  birthday.slice(0,4);
-      let month = birthday.slice(5,7);
-      let birth = day+"/"+month+"/"+year
-      setBorn(born => born = birth);
-
-      let BDay  = document.getElementById("beginDay").value;
-      let B_day = BDay.slice(8,10);
-      let B_month = BDay.slice(5,7);
-      let B_year = BDay.slice(0,4);
-      let BeginDay  = B_day+"/"+B_month+"/"+B_year
-      setDateBegin(dateBegin=>dateBegin = BeginDay)
-      
-      let EDay  = document.getElementById("endDay").value;
-      let E_day = EDay.slice(8,10);
-      let E_month = EDay.slice(5,7);
-      let E_year = EDay.slice(0,4);
-      let Endday  = E_day+"/"+E_month+"/"+E_year
-      setDateEnd(dateEnd => dateEnd = Endday);
-      
+    e.preventDefault();
+    try{
+      let state = document.querySelector('input[name="status"]:checked').value;
+      if(state == "yes"){
+        if(firstName || lastName || born || U_ID){
+          setSub(true);
+          let birthday = document.getElementById("birth").value;
+          let day = birthday.slice(8,10);
+          let year =  birthday.slice(0,4);
+          let month = birthday.slice(5,7);
+          let birth = day+"/"+month+"/"+year
+          setBorn(born => born = birth);
+    
+          let BDay  = document.getElementById("beginDay").value;
+          let B_day = BDay.slice(8,10);
+          let B_month = BDay.slice(5,7);
+          let B_year = BDay.slice(0,4);
+          let BeginDay  = B_day+"/"+B_month+"/"+B_year
+          setDateBegin(dateBegin=>dateBegin = BeginDay)
+          
+          let EDay  = document.getElementById("endDay").value;
+          let E_day = EDay.slice(8,10);
+          let E_month = EDay.slice(5,7);
+          let E_year = EDay.slice(0,4);
+          let Endday  = E_day+"/"+E_month+"/"+E_year
+          setDateEnd(dateEnd => dateEnd = Endday);
+        }
+         else{alert("empty")}
+      }
+    else{
+      alert("โปรดยอมรับข้อตกลงเพื่อเข้าถึงเว็บไซต์")
     }
-     else{alert("empty")}
   }
+  catch(e){
+    alert("กรุณาเลือกความยินยอม")
+  }
+}
   return(
     <>
      

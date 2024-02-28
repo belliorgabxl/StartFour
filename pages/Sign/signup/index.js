@@ -13,9 +13,10 @@ export default function register_page(){
   const router = useRouter();
   const handleSubmitt = async (e) => {
     e.preventDefault();
-
-    let name = document.getElementById("f_name").value +" "+ document.getElementById("l_name").value;
+    try{
     let state = document.querySelector('input[name="status"]:checked').value;
+    let name = document.getElementById("f_name").value +" "+ document.getElementById("l_name").value;
+    
     if(!username || !password || !email){
       console.log("you are not send email , password or username");
       alert("Username Password of Email are required");
@@ -134,6 +135,10 @@ export default function register_page(){
           }
       }
   }
+  catch(e){
+    alert("Please Select Your type 'seller' or 'customer' ")
+  }
+}
 
   return (<>
   <Navbar/>
