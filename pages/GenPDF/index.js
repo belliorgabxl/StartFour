@@ -38,7 +38,7 @@ export default function InputBox(){
   const [amount2, setAmount2] =useState("13,000");
   const [priceWord2, setPW2] = useState("หนึ่งหมื่นสามพันบาทถ้วน")
   
-  function Submit(){
+  function Submit(e){
     e.preventDefault();
     try{
       let state = document.querySelector('input[name="status"]:checked').value;
@@ -51,7 +51,6 @@ export default function InputBox(){
           let month = birthday.slice(5,7);
           let birth = day+"/"+month+"/"+year
           setBorn(born => born = birth);
-    
           let BDay  = document.getElementById("beginDay").value;
           let B_day = BDay.slice(8,10);
           let B_month = BDay.slice(5,7);
