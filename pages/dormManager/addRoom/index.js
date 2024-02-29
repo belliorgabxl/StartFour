@@ -3,20 +3,28 @@ import Navbar from "@/components/Navbar";
 import { useState,useEffect } from "react";
 import { useRouter } from "next/router";
 import Footer from "@/components/Footer";
+import { supabase } from "@/libs/supabase";
 
 export default function addRoom(){
   const [type , setType] = useState(""); 
   const [dorm_name , setName] = useState("");
   const [location , setLocat] = useState("");
-  const [img , setImg] = useState("");
   const [price , setPrice] = useState("");
   const [detail , setDetail] =useState("");
   const [lat , setLat] =useState("");
   const [long , setLong] =useState("");
   const [time , setCont] =useState("");
   
+
+  const getDor = async () => {
+    const res = await fetch("/api/getDors", {
+      cache: "no-store",
+    });
+    return res.json();
+  };
   const router = useRouter();
   const [create_by , setCreateBy] = useState("");
+  const [dors , setDors] = useState(null);
     useEffect(()=>{
       const userList = JSON.parse(localStorage.getItem("userList"))
       if(userList){
@@ -24,14 +32,35 @@ export default function addRoom(){
       }else{
         setCreateBy("none");
       }
+      getDor().then((d)=>{
+        setDors(d)
+      })
     },[])
+  const img_list = []
+  const create_by_list =[]
+  let count = 0
+  {
+  dors?.dormitory?.map((d)=>{
+      create_by_list.push(d.create_by)
+  })
+  for(let i =0;i < create_by_list.length; i++){
+    if(create_by == create_by_list[i]){
+      count ++
+    }
+  }
+  }
   const handleSubmitt = async (e) => {
     e.preventDefault();
-    if(!type || !dorm_name || !location || !img || !price || !detail || !lat || !long || !time || !create_by){
+    if(!type || !dorm_name || !location || !price || !detail || !lat || !long || !time || !create_by){
       console.log("Error!");
       alert("empty!!!");
     }
     else{
+      const formData = new FormData(e.currentTarget);
+      formData.getAll("dorm_img")
+      const pathfile =  "/dorm_img:"+create_by+ ":" + count +".png"
+      const { data, error } = await supabase.storage.from('dormitoryImage').upload(pathfile,formData);
+      let img = "https://kmaderbohtpzmtunqlbx.supabase.co/storage/v1/object/public/dormitoryImage"+pathfile;
               try{
                 const res = await fetch("/api/getDors", {
                   method: "POST",
@@ -103,8 +132,7 @@ export default function addRoom(){
                   <img className={styles.iconupload} src="/upload.png" alt="upload.png" width={20} height={20}></img>
                 </div>
                 <div className={styles.Gridinputtwo}>
-                  <input className={styles.input_box7} placeholder="ภาพห้องพัก" type="file" name="upload"
-                  onChange={(e) => setImg(e.target.value)} value={img}/>
+                  <input className={styles.input_box7} placeholder="ภาพห้องพัก" type="file" name="dorm_img" />
                 </div>
               </div>
               <div className={styles.Boxtext}>

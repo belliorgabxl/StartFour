@@ -45,12 +45,10 @@ margin: 10px 0 20px 20px;
 .roomBox:hover{
     border: #000333 3px solid;
 }
-
 .imgBox {
 width: 400px;
 height: 300px;
 }
-
 .textBox {
 width: 600px;
 height: 300px;
