@@ -139,7 +139,6 @@ export default function addRoom(){
                 <p className={styles.textupload}>**กรุณาอัปโหลดภาพ**</p>
               </div>
             </div>
-            
             <div className={styles.input7}>
               <button type="submit" className={styles.send_btn}>ยืนยัน</button>
             </div>
