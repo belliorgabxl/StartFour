@@ -66,7 +66,7 @@ export default function booking() {
         access2_list.push(b.access2);
     });
   }
-  for (let i = 1; i < user_booking_list.length; i++) {
+  for (let i = 0; i < user_booking_list.length; i++) {
     if (user_booking_list[i] == user) {
       own_dormitory = own_dormitory_list[i];
       dorm_name = dorm_name_list[i];
@@ -95,7 +95,7 @@ export default function booking() {
         dorm_name_owner_list.push(d.dorm_name);
     });
   }
-  for (let i = 1; i < dorm_name_owner_list.length; i++) {
+  for (let i = 0; i < dorm_name_owner_list.length; i++) {
     if (dorm_name_owner_list[i] == dorm_name) {
       type = type_list[i];
       location = location_list[i];
@@ -285,6 +285,7 @@ export default function booking() {
               </div>
             <div className={styles.alarm}>
               Loading...
+              
             </div>
           </div>
           <Footer />
