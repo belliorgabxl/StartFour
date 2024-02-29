@@ -19,7 +19,7 @@ export default function Post(){
       setPost(p);
     });
   }, []);
-  
+
   return(
     <div className={styles.body}>
       <Navbar/>
@@ -28,14 +28,54 @@ export default function Post(){
           รวมห้องขายต่อไว้ที่นี่ แลกเปลี่ยนซื้อ-ขายสัญญาหอ
         </div>
         <div className={styles.roomPost}>
-          ช่องหอพัก
+          <div className={styles.topicPost}>
+            community post
+          </div>
           {
             post?.map((p)=>(
-              <Link href={"/Post/room/"+p._id}>
-                <div>
-                  {p.dorm_name}
-                </div>
-              </Link>
+             p.post==="yes"  && ( 
+             <Link key={p._id} href={"/Post/room/"+p._id}>
+                <div className={styles.roomBox}>
+                  <div className={styles.imgBox}>
+                    <img src={p.img} width={400} height={300} alt='img'></img>
+                  </div>
+                  <div className={styles.textBox}>
+                  <div className={styles.textBox1}>
+                    <div className={styles.dormNameBox}>
+                      {p.dorm_name}
+                    </div>
+                    <div className={styles.locationBox}>
+                      , {p.location}
+                    </div>
+                  </div> 
+                  <div className={styles.priceBox}>
+                    <div className={styles.price}>
+                      {p.price_m}
+                    </div>
+                    <div className={styles.month}>
+                      /month
+                    </div>
+                    <div className={styles.priceBox}>
+                      <div className={styles.priceLabel}>
+                      ค่าประกันหอพัก :
+                      </div>
+                    <div className={styles.price}>
+                    {p.price_rent}
+                    </div>
+                    <div className={styles.month}>
+                      /month
+                    </div>
+                    </div>
+                  </div> 
+                  <div className={styles.detailBox}>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{p.detail}
+                  </div> 
+                  <div className={styles.typeBox}>
+                    Roomtype:    {p.type}
+                  </div> 
+          </div>
+        </div>
+            </Link>)
             ))
           }
         </div>

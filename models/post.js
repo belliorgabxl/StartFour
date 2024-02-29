@@ -14,7 +14,8 @@ const postSchema = new Schema(
         location:String,
         ID_room:String,
         floor:String,
-        authentic : String
+        authentic : String,
+        post:String
     },
     {timestamps:true,}
     );

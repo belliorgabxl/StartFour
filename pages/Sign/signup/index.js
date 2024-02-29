@@ -68,7 +68,7 @@ export default function register_page(){
                 const  IDpassport = "";const address = ''; const file_ID = ""; const user_post = user_booking;
                 dorm_name ='';const price_m =''; const price_rent ='';const type = ''
                 const img = '';const detail=''; const location=''; const ID_room='';const floor =''
-                const authentic = 'none'
+                const authentic = 'none' ; let post = 'none'
                 const res = await fetch(`/api/getPost`, {
                 method: "POST",
                 headers: {
@@ -88,7 +88,8 @@ export default function register_page(){
                     location,
                     ID_room,
                     floor,
-                    authentic
+                    authentic,
+                    post
                 }),
               });
               }

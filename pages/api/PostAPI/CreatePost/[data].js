@@ -5,8 +5,8 @@ export default async function handler(req,res){
   const {data} = req.query
   if (req.method === "GET") {
     await connectMongoDB();
-    const post= await Post.findOne({user_post:data})
-    res.json(post);
+    const posts= await Post.findOne({user_post:data})
+    res.json(posts);
   }
   if(req.method === "PUT"){
     await connectMongoDB();
@@ -19,12 +19,13 @@ export default async function handler(req,res){
             Newdetail:detail,
             Newlocation:location,
             NewID_room:ID_room,
-            Newfloor:floor
+            Newfloor:floor,
+            Newpost:post
      }= await req.body;
-    const post = await Post.findOneAndUpdate({user_post:data},
+    const posts = await Post.findOneAndUpdate({user_post:data},
       {
-       dorm_name,img,price_m,price_rent,type,detail,location,ID_room,floor
+       dorm_name,img,price_m,price_rent,type,detail,location,ID_room,floor,post
        })
-    res.json(post);
+    res.json(posts);
   }
 }

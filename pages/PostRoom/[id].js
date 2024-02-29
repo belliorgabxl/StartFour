@@ -62,6 +62,8 @@ export default function PostRoom() {
   const ID_room_list = [];
   const floor_list = [];
   const authentic_list = [];
+  const post_list=[]
+  let postes=''
   let IDpassport = "";
   let address = "";
   let file_ID = "";
@@ -89,7 +91,8 @@ export default function PostRoom() {
         ID_room_list.push(d.ID_room),
         floor_list.push(d.floor),
         authentic_list.push(d.authentic),
-        user_post_list.push(d.user_post);
+        user_post_list.push(d.user_post),
+        post_list.push(d.post)
     });
   }
   for (let i = 0; i < user_post_list.length; i++) {
@@ -106,6 +109,7 @@ export default function PostRoom() {
       ID_room = ID_room_list[i];
       floor = floor_list[i];
       authentic = authentic_list[i];
+      postes = post_list[i]
     }
   }
   const [authenID, setAID] = useState();
@@ -158,9 +162,17 @@ async function PostBtn(e){
         const formData = new FormData(e.currentTarget);
         formData.getAll("img_post");
         const pathfile_postImg = "/postImg:" + user_id + ".jpg";
-        const { data, error } = await supabase.storage
+        if (postes == "yes"){
+          const { data, error } = await supabase.storage
           .from("postImage")
           .update(pathfile_postImg, formData);
+        }
+        else if(postes == "none"){
+          const { data, error } = await supabase.storage
+          .from("postImage")
+          .upload(pathfile_postImg, formData);
+        }
+        let Newpost= 'yes';
         let Newimg ="https://kmaderbohtpzmtunqlbx.supabase.co/storage/v1/object/public/postImage"+pathfile_postImg;
         const res = await fetch(`/api/PostAPI/CreatePost/${user_id}`, {
           method: "PUT",
@@ -174,7 +186,8 @@ async function PostBtn(e){
             Newdetail,
             Newlocation,
             NewID_room,
-            Newfloor
+            Newfloor,
+            Newpost
           }),
         });
         router.push("/Homepage");
