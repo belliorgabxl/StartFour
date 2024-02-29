@@ -57,7 +57,6 @@ color:black;
 .icon {
   display: grid;
   place-items: center;
-  grid-template-rows: ;
   text-align: left;
   margin-top: 10px;
 }
