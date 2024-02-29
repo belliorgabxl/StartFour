@@ -13,9 +13,9 @@ export default async function handler(req,res){
     const {data} = req.query
     await connectMongoDB();
     const {Newtype:type,Newdorm_name:dorm_name,Newlocation:location,Newimg:img
-      ,Newprice:price,Newdetail:detail }= await req.body;
+      ,Newprice:price,Newdetail:detail,Newlat:lat,Newlong:long,Newtime:time }= await req.body;
     const dormitory = await Dors.findByIdAndUpdate(data,
-      {type,dorm_name,location,img,price,detail })
+      {type,dorm_name,location,img,price,lat,long,time,detail })
     res.json(dormitory);
   }
 }

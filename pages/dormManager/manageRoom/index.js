@@ -46,17 +46,28 @@ export default function manageRoom() {
             {dors?.map((d) => (
               <Link className={styles.one} href={"/dormManager/manageRoom/room/" + d._id} >
                 <div className={styles.Box}>
-                  <img className={styles.icon} src="/iconroom.png" width={80} height={80}></img>
-                  <div className={styles.Textedit}>[แก้ไข]</div>
-                  <div className={styles.Textname}>{d.dorm_name}</div>
-                  <div className={styles.Texttype}>{d.type}</div>
+                  <div className={styles.line1}>
+                    <img className={styles.icon} src="/iconroom.png" width={80} height={80}></img>
+                  </div>
+                  <div className={styles.line2}>
+                   <div className={styles.Textname}>{d.dorm_name}</div> 
+                   <div className={styles.Texttype}>{d.type}</div>
+                  </div>
+                  <div className={styles.line3}>
+                    <div className={styles.Textedit}>[แก้ไข]</div>
+                  </div>
                 </div>
               </Link>
             ))}
           </div> ): (
           <div className={styles.errorpost}>
-            <img className={styles.iconerror} src="/error.png" width={200} height={200}></img>
-            <div className={styles.Texterror} >opps no post </div>
+            <div className={styles.lineerror1}>
+              <img className={styles.iconerror} src="/error.png" width={200} height={200}></img>
+            </div>
+            <div className={styles.lineerror2}>
+              <div className={styles.Texterror} >opps no post </div>
+            </div>
+            
           </div>
           )  }
 

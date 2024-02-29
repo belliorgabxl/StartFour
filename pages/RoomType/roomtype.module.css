@@ -8,56 +8,55 @@
 .container {
   place-items: center;
   width: 93%;
+  height: 1500px;
   background-color: white;
-  margin-top: 110px;
-  height: 1700px;
+  margin-top: 140px;
 }
-.boxgrid {
+.boxbackground { 
   margin-top: 50px;
-  margin-left: 100px;
+  width: 1000px;
+  height: 300px;
+  margin-left: 260px;
+  box-shadow: 0px 1px 5px ;
+  border-radius: 0.5rem;
+}
+.boxbackground:hover {
+  background-color: #000333;
+  color:white;
+}
+.boxgrid { 
   display: grid;
-  grid-template-columns: 60% 40%;
+  place-items: center;
+  grid-template-columns: 300px 700px;
+  width: 1000px;
+  height: 300px;
+  margin-bottom: 30px;
+  text-decoration: none;
 }
-.box {
-  margin-top: 50px;
-  margin-left: -50px;
-  background-color: white;
-  height: 350px;
-  width: 770px;
+.box { 
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  width: 250px;
+  height: 250px;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(177, 174, 174);
+  border-radius: 0.5rem;
+}
+.room1 {
+  white-space: pre-wrap;
+  margin-top: 60px;
+}
+.room2 {
+  margin-top: -120px;
+}
+.slide { 
+  width: 650px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 20px gray ;
-}
-.boxbackground {
-  font-size: 30px;
-}
-.text {
-  margin-left: 20px;
-}
-
-.boximg {
-  height: 260px;
-  width: 760px;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-.img1 {
-  position: absolute;
-  z-index: 3;
-  box-shadow: 5px 5px 10px ;
-}
-.img2 {
-  position: absolute;
-  z-index: 2;
-  transform: translate(200px , 0px);
-  box-shadow: 5px 5px 10px ;
-}
-.img3 {
-  position: absolute;
-  z-index: 1;
-  transform: translate(400px , 0px);
-  box-shadow: 5px 5px 10px ;
-}
-.img4 {
-  transform: translate(690px , 100px);
 }
 .figure {
   position: absolute;
@@ -66,30 +65,24 @@
 .iconslideleft {
   position: absolute;
   z-index: 2;
-  transform: translate(15px , 153px);
+  margin-top: 100px;
+  margin-left: 50px;
 }
 .iconslideright {
   position: absolute;
   z-index: 2;
-  transform: translate(450px , 153px);
-}
-.slide {
-  width: 100%;
-  height: 350px;
-  margin-left: -50px;
-  margin-top: 50px;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 2px 20px gray ;
+  margin-top: 100px;
+  margin-left: 550px;
 }
 .slide figure img {
   width: 20%;
-  height: 350px;
+  height: 250px;
   float: left;
 }
 .slide figure {
   position: relative;
   width: 500%;
+  height: 500%;
   margin: 0px;
   animation: roomtype 12s infinite;
 }
@@ -109,4 +102,3 @@
   text-decoration: none;
   color: black;
 }
-

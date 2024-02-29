@@ -7,19 +7,18 @@
 }
 .body{
 display: grid;
-grid-template-columns: 500px 300px 535px;
+grid-template-columns: 33.33% 33.33% 33.33px;
 height: 250px;
 }
-
-.blog{
-  height: 250px;
-  color: white;
-}
-.blog1{
+.blog1{ border: 2px red solid;
   height: 250px;
   padding-left: 30px;
   display: grid;
   grid-template-rows: 80px 60px 60px;
+}
+.blog2{  border: 2px red solid;
+  height: 250px;
+  color: white;
 }
 .logo{
 display: grid;
@@ -38,10 +37,10 @@ padding-bottom: 10px;
 .copyright{
 text-align: left;
 }
-.blog3{
+.blog3{ border: 2px red solid;
 display: grid;
 place-items: center;
-grid-template-rows: 100px 100px 50px;
+grid-template-rows: 30% 70%;
 height: 250px;
 }
 .kmitl{
@@ -56,7 +55,9 @@ color: white;
 color:black;
 }
 .icon {
-  transform: translate(145px , -30px);
+  display: grid;
+  place-items: center;
+  grid-template-rows: ;
   text-align: left;
   margin-top: 10px;
 }
@@ -95,7 +96,7 @@ color:black;
   margin-bottom: 10px;
   text-align: left;
 }
-.blog a{
+.blog2 a{
   text-decoration: none;
   color: gray;
 }

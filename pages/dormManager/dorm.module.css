@@ -142,11 +142,13 @@
 }
 .Box {
   display: grid;
-  transform: translate(-140px , 0px);
   grid-template-columns: 100%;
-    
+  margin-left: -290px;
 }
 .Box1 {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 45px 110px 45px;
   color: gray;
   width: 200px;
   height: 200px;
@@ -156,7 +158,36 @@
   margin-bottom: 35px;
   text-decoration: none;
 }
+.Box1:hover {
+  transform:translateY(-5px)
+}
+.box1line1 { 
+  width: 200px;
+  height: 45px;
+}
+.iconarrowbottom {
+  margin-top: 10px;
+  margin-left: 150px;
+}
+.icon {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.box1line2 { 
+  width: 200px;
+  height: 110px;
+}
+.box1line3 { 
+  width: 200px;
+  height: 45px;
+}
+.Text {
+  color: black;
+}
 .Box2 {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 45px 110px 45px;
   color: gray;
   width: 200px;
   height: 200px;
@@ -166,10 +197,29 @@
   box-shadow: 0px 1px 5px;
   text-decoration: none;
 }
+.Box2:hover {
+  transform:translateY(-5px)
+}
+.box2line1 { 
+  width: 200px;
+  height: 45px;
+}
+.box2line2 { 
+  width: 200px;
+  height: 110px;
+}
+.box2line3 { 
+  width: 200px;
+  height: 45px;
+}
 .Box3 {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 45px 110px 45px;
   color: gray;
-  width: 350%;
+  width: 435px;
   height: 200px;
+  margin-left: 300px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 1px 5px;
@@ -179,67 +229,78 @@
 .Box3:hover {
   transform:translateY(-5px)
 }
-.Box1:hover {
-  transform:translateY(-5px)
-}
-.Box2:hover {
-  transform:translateY(-5px)
-}
-.icon {
-  transform: translate(20px , 50px);
-}
-.iconarrowbottom {
-  transform: translate(20px , -60px);
+.box3line1 { 
+  width: 435px;
+  height: 45px;
 }
 .iconarrowbottom1 {
-  transform: translate(215px , -50px);
+  margin-left: 385px;
+  margin-top: 10px;
 }
 .iconarrowbottom2 {
-  transform: translate(5px , 50px);
+  margin-left: 22px;
 }
-.Text {
-  transform: translate(5px , 50px);
-  color: black;
+.box3line2 { 
+  width: 435px;
+  height: 110px;
+}
+.box3line3 { 
+  width: 435px;
+  height: 45px;
 }
 .Textbox {
-  transform: translate(5px , 55px);
   color: black;
 }
 
+
+.alarmmail{
+  width: 300px;
+  height: 200px;
+  color: green;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px;
+  text-decoration: none;
+  border: 
+  3px solid green;
+}
+.alarmMailBox:hover {
+  transform:translateY(-5px)
+}
 .MailBox{
   display: grid;
-  grid-template-columns: 50% 50%;
-  margin-top: 10px;
+  place-items: center;
+  grid-template-rows: 45px 110px 45px;
+  margin-top: 100px;
+}
+.MailBox:hover {
+  transform:translateY(-5px)
 }
 .mail{
   color: gray;
   width: 300px;
-  height: 220px;
+  height: 200px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 1px 5px;
   margin-bottom: 35px;
   text-decoration: none;
 }
-.mail_icon {
-  transform: translate(14px , 45px);
-}
-.MailBox:hover {
-  transform:translateY(-5px)
-}
-.alarmmail{
+.box4line1 {
   width: 300px;
-  height: 220px;
-  color: green;
-  border-radius: 10px;
-  box-shadow: 0px 1px 5px;
-  margin-bottom: 35px;
-  text-decoration: none;
-  border: 3px solid green;
+  height: 45px;
 }
-.alarmMailBox:hover {
-  transform:translateY(-5px)
+.box4line2 {
+  width: 300px;
+  height: 110px;
 }
-.mailArrowbottom {
-  transform: translate(30px , -80px);
+.box4line3 {
+  width: 300px;
+  height: 45px;
+}
+.mailArrowbottom { 
+  margin-left: 250px;
+  margin-top: 10px;
+}
+.mail_icon { 
+  margin-top: -10px;
 }

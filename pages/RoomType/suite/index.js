@@ -37,7 +37,7 @@ export default function Home() {
             <Navbar/>
             <div className={styles.container}></div>
             {dors?.dormitory?.map((d) => 
-                d.type === 'ห้องสูท' && (
+                d.type === 'ห้องสวีท' && (
                   <div key={d._id} >
                   <Link  className={styles.boxgrid} href={"/Room/"+d._id} key={d._id}>
                       <div className={styles.boxroom}>

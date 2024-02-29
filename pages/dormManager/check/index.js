@@ -41,11 +41,15 @@ export default function check () {
             {dors?.map((d) => (
             <div key={d._id}> 
                 <div className={styles.Box}>
-                    <img className={styles.iconuser} src="/users.png" width={60} height={60}></img>
-                    <div className={styles.Textname}>คุณ {user_id}</div>
-                    <div className={styles.Textdorm}>{d.dorm_name}</div>
-                    
-                    <div className={styles.dropdown}>
+                    <div className={styles.linehead1}>
+                      <img className={styles.iconuser} src="/users.png" width={60} height={60}></img>
+                    </div>
+                    <div className={styles.linehead2}>
+                      <div className={styles.Textname}>คุณ {user_id}</div>
+                      <div className={styles.Textdorm}>{d.dorm_name}</div>
+                    </div>
+                    <div className={styles.linehead3}>
+                        <div className={styles.dropdown}>
                                 <Image
                                 src="/arrowbutton.png" 
                                 alt="dropdown"
@@ -54,17 +58,40 @@ export default function check () {
                                 />
                  
                             <div className={styles.dropdown_menu}>
-                                <img className={styles.showimg} src={d.img} width={400} height={250} alt='img'></img>
-                                <img className={styles.iconstar} src="/star3.5.png" width={60} height={60}></img>
-                                <div className={styles.showreview}>3.5 ดีมาก</div>
-                                <img className={styles.iconmap} src="/map.png" width={15} height={15}></img>
-                                <div className={styles.showlocation}>{d.location}</div>
-                                <div className={styles.showtype}>{d.type}</div>
-                                <img className={styles.icondetail} src="/detail.png" width={15} height={15}></img>
-                                <div className={styles.showdetail}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{d.detail}</div>
+                                <div className={styles.line1}>
+                                  <img className={styles.showimg} src={d.img} width={400} height={250} alt='img'></img>
+                                </div>
+                                <div className={styles.line2}>
+                                  <div className={styles.line2left}>
+                                    <img className={styles.iconstar} src="/star3.5.png" width={60} height={60}></img>
+                                  </div>
+                                  <div className={styles.line2right}>
+                                    <div className={styles.showreview}>3.5 ดีมาก</div>
+                                  </div>
+                                </div>
+                                <div className={styles.line3}>
+                                  <div className={styles.line3left}>
+                                    <img className={styles.iconmap} src="/map.png" width={15} height={15}></img>
+                                  </div>
+                                  <div className={styles.line3right}>
+                                    <div className={styles.showlocation}>{d.location}</div>
+                                  </div>
+                                </div>
+                                <div className={styles.line4}>
+                                  <div className={styles.showtype}>{d.type}</div>
+                                </div>
+                                <div className={styles.line5}>
+                                  <div className={styles.line5left}>
+                                    <img className={styles.icondetail} src="/detail.png" width={15} height={15}></img>
+                                  </div>
+                                  <div className={styles.line5right}>
+                                    <div className={styles.showdetail}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{d.detail}</div>
+                                  </div>
+                                </div> 
                             </div>
                         </div>
-                    
+                    </div>
+             
                 </div>
             </div>
             ))}

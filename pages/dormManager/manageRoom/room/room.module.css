@@ -6,60 +6,129 @@
     
 }
 .container {
+    display: grid;
     place-items: center;
     width: 93%;
     background-color: white;
     margin-top: 110px;
 }
-.Texthead {
+.Boxgrid { 
     display: grid;
     place-items: center;
-    margin-top: 20px;
-}
-.Boxgrid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    margin-top: 80px;
-    margin-bottom: 50px;
-}
-.Box2 {
-    transform: translate(200px , 0px);
-    width: 500px;
+    grid-template-columns: 300px 500px;
+    width: 800px;
     height: 500px;
+    box-shadow: 0px 1px 4px gray;
+}
+.Boxleft { 
     background-color: gray;
-    box-shadow: 0px 2px 15px;
-    border-radius: 30px 0px 0px 30px;
+    width: 300px;
+    height: 500px;
 }
-.Box1 {
-    transform: translate(0px , 0px);
+.Boxlefticon {
+    margin-left: 70px;
+    margin-top: 130px;
+}
+.Boxright { 
+    display: grid;
+    place-items: center;
+    grid-template-rows: 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px;
     width: 500px;
     height: 500px;
-    background-color: white;
-    box-shadow: 0px 2px 15px;
-    border-radius: 0px 30px 30px 0px;
 }
-.Textnameinput {
-    padding-left: 10px;
-    height: 30px;
-    width: 300px;
+.Texthead {
+    width: 500px;
+    height: 62.5px;
+}
+.head {
+    margin-left: 30px;
     margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 100px;
-    border: 1px solid;
-    border-radius: 10px;
 }
-.Textdetailinput {
+.line1 {
+    width: 500px;
+    height: 62.5px;
+}
+.Textnameinput1{
     padding-left: 10px;
-    height: 30px;
-    width: 300px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 100px;
-    border: 1px solid;
-    border-radius: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-left: 30px;
+    margin-top: 12px;
 }
-.button {
-    transform: translate(180px , 10px);
+.Textnameinput2{
+    padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+.line2 {
+    width: 500px;
+    height: 62.5px;
+}
+.Textnameinput4{
+    padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 427px;
+    border-radius: 0.4rem;
+    margin-top: 12px;
+    margin-left: 30px;
+}
+.line3 {
+    width: 500px;
+    height: 62.5px;
+}
+.line4 {
+    width: 500px;
+    height: 62.5px;
+}
+.Textnameinput3{padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-left: 30px;
+    margin-top: 12px;
+}
+.line5 {
+    width: 500px;
+    height: 62.5px;
+}
+.Textdetailinput{
+    padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 45px;
+    width: 427px;
+    border-radius: 0.4rem;
+    margin-left: 30px;
+    margin-top: 7px;
+}
+.line6 {
+    width: 500px;
+    height: 62.5px;
+}
+.Textnameinput5{
+    font-size: 16px;
+    border:gray 1px solid;
+    border-radius: 0.4rem;
+    margin-top: 15px;
+    margin-left: 100px;
+}
+.line7 {
+    width: 500px;
+    height: 62.5px;
+}
+.send_btn{
     border: none;
     border-radius: 0.3rem;
     height: 45px;
@@ -67,8 +136,7 @@
     color: white;
     font-size:20px;
     background-color: #282828;
-    border-radius: 30px;
-}
-.iconedit {
-    transform: translate(170px , 120px);
+    border-radius: 0.5rem;
+    margin-top: -5px;
+    margin-left: 160px;
 }

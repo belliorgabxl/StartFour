@@ -9,44 +9,117 @@
     width: 93%;
     place-items: center;
     background-color: white;
-    margin-top: 140px;
+    margin-top: 100px;
 }
-.icondorm {
-    transform: translate(200px , 110px);
-}
-.iconline {
-    transform: translate(0px , 210px);
-}
-.Boxgrid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    margin-top: 80px;
-}
-.container a{
-    text-decoration: none;
-}
-.Box2 {
-    margin-top: 10px;
-    width: 600px;
-    height: 500px;
-    background-color: gray;
-    border-radius: 30px 0px 0px 30px;
-}
-.form_box{
+.Boxgrid { 
     display: grid;
     place-items: center;
-    width: 600px;
-    margin: 10px 0 20px 0 ;
-    box-shadow:  0 2px 10px gray;
+    grid-template-columns: 300px 500px;
+    width: 800px;
     height: 500px;
-    border-radius: 0px 30px 30px 0px;
+    box-shadow: 0px 1px 4px gray;
 }
-.titleform{
+.Boxleft { background-color: gray;
+    width: 300px;
+    height: 500px;
+}
+.icon { 
+    
+    width: 250px;
+    height: 350px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+.Boxright {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px;
+    width: 500px;
+    height: 500px;
+}
+.texthead { 
+    width: 500px;
+    height: 62.5px;
     font-size: 36px;
     font-weight: 500;
-    margin-top: 5px;
-    margin-bottom: 10px;
     font-weight: bold;
+}
+.head {
+    margin-top: 10px;
+    margin-left: 160px;
+}
+.input1 { 
+    width: 500px;
+    height: 62.5px;
+}
+.input_box2{
+    padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-left: 30px;
+    margin-top: 12px;
+}
+.input_box4{
+    padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 427px;
+    border-radius: 0.4rem;
+    margin-top: 12px;
+    margin-left: 30px;
+}
+.input_box3{
+    padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+.input_box5{
+    padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-top: 12px;
+    margin-left: 30px;
+}
+.input_box6{
+    padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+.input_box8{padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-left: 30px;
+    margin-top: 12px;
+    
+}
+.input_box9{padding-left: 10px;
+    font-size: 16px;
+    border:gray 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 0.4rem;
+    margin-left: 10px;
+    margin-top: 12px;
 }
 .input_detail{padding-left: 10px;
     font-size: 16px;
@@ -54,7 +127,8 @@
     height: 45px;
     width: 427px;
     border-radius: 0.4rem;
-    transform: translate(-6px , -50px );
+    margin-left: 30px;
+    margin-top: 7px;
 }
 .send_btn{
     border: none;
@@ -64,78 +138,70 @@
     color: white;
     font-size:20px;
     background-color: #282828;
-    transform: translate(5px , -25px );
-    border-radius: 30px;
+    border-radius: 0.5rem;
+    margin-top: 8px;
+    margin-left: 160px;
 }
-.input_box1{padding-left: 10px;
-    font-size: 16px;
-    border:gray 1px solid;
-    height: 32px;
+.input2 { 
+    width: 500px;
+    height: 62.5px;
+}
+.input3 { 
+    width: 500px;
+    height: 62.5px;
+}
+.input4 { 
+    display: grid;
+    place-items: center;
+    grid-template-rows: 31.25px 31.25px;
+    width: 500px;
+    height: 62.5px;
+} 
+.Boxinput4 {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 100px 400px;
+    width: 500px;
+    height: 31.25px;
+}
+.Boxtext {
+    width: 500px;
+    height: 31.25px;
+}
+.textupload { 
+    color: red;
+    font-size: 15px;
+    margin-top: 6px;
+    margin-left: 160px;
+}
+.Gridinputone { 
     width: 100px;
-    border-radius: 0.4rem;
-    transform: translate(-170px , 30px );
+    height: 31.25px;
 }
-.input_box2{padding-left: 10px;
+.iconupload {
+    margin-left:75px;
+    margin-top: 3px;
+}
+.Gridinputtwo { 
+    width: 400px;
+    height: 31.25px;
+}
+.input_box7{
     font-size: 16px;
     border:gray 1px solid;
-    height: 32px;
-    width: 200px;
     border-radius: 0.4rem;
-    transform: translate(-120px , -4px );
+    margin-top: 3px;
+    margin-left: 20px;
 }
-.input_box3{padding-left: 10px;
-    font-size: 16px;
-    border:gray 1px solid;
-    height: 32px;
-    width: 200px;
-    border-radius: 0.4rem;
-    transform: translate(105px , -46px );
+.input5 { 
+    width: 500px;
+    height: 62.5px;
 }
-.input_box4{padding-left: 10px;
-    font-size: 16px;
-    border:gray 1px solid;
-    height: 32px;
-    width: 427px;
-    border-radius: 0.4rem;
-    transform: translate(-7px , -35px );
+.input6 { 
+    width: 500px;
+    height: 62.5px;
 }
-.input_box5{padding-left: 10px;
-    font-size: 16px;
-    border:gray 1px solid;
-    height: 32px;
-    width: 200px;
-    border-radius: 0.4rem;
-    transform: translate(-120px , -25px );
-}
-.input_box6{padding-left: 10px;
-    font-size: 16px;
-    border:gray 1px solid;
-    height: 32px;
-    width: 200px;
-    border-radius: 0.4rem;
-    transform: translate(108px , -66px );
-}
-.input_box7{padding-left: 10px;
-    font-size: 16px;
-    border:gray 1px solid;
-    height: 32px;
-    width: 425px;
-    border-radius: 0.4rem;
-    transform: translate(-6px , -46px );
-}
-.input_box8{padding-left: 10px;
-    font-size: 16px;
-    border:gray 1px solid;
-    height: 32px;
-    width: 200px;
-    border-radius: 0.4rem;
-    transform: translate(-120px , -30px );
-}
-.input_box9{padding-left: 10px;
-    font-size: 16px;
-    border:gray 1px solid;
-    height: 32px;
-    width: 200px;
-    border-radius: 0.4rem;
-    transform: translate(109px , -71px );
+.input7 { 
+    width: 500px;
+    height: 62.5px;
 }
