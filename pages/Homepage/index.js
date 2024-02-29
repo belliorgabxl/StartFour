@@ -48,7 +48,7 @@ export default function Homepage(){
     </div>
     
       <div className={styles.roomcomponents}>
-        {dors?.dormitory?.slice(15).map((d) =>
+        {dors?.dormitory?.map((d) =>
         <Link href={'/Room/'+ d._id} key={d._id}>
         <div className={styles.roomBox}>
           <div className={styles.imgBox}>
