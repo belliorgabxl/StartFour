@@ -71,7 +71,7 @@ export default function Dormconfirm(){
         id_book_database_list.push(b._id)
     });
   }
-  for (let i = 1; i < user_booking_list.length; i++) {
+  for (let i = 0; i < user_booking_list.length; i++) {
     if (id_book_database_list[i] == id_booking_local) {
       own_dormitory = own_dormitory_list[i];
       id_booking_database = id_book_database_list[i]

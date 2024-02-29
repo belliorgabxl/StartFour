@@ -75,7 +75,7 @@ useEffect(()=>{
       access2_list.push(b.access2),
       id_book_database_list.push(b._id)
   });
-for (let i = 1; i < user_booking_list.length; i++) {
+for (let i = 0; i < user_booking_list.length; i++) {
   if (id_book_database_list[i] == id_booking_local ) {
     setIDBOOKdb(id_book_database_list[i])
     setOwn(own_dormitory_list[i])
