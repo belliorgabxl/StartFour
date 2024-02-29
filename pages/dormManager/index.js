@@ -97,32 +97,59 @@ const  sendDataCheck = async()=>{
             <div className={styles.body}>
             <Navbar/>
             <div className={styles.container}>
-            <div className={styles.Boxgrid}>
+                <div className={styles.Boxgrid}>
                     <Link href= "/dormManager/addRoom" className={styles.Box1}>
-                        <img className={styles.icon} src="/addroom.png" width={100} height={100}></img>
-                        <img className={styles.iconarrowbottom} src="/circle.png" width={20} height={20}></img>
-                        <div className={styles.Text}>เพิ่มหอพัก</div>
+                        <div className={styles.box1line1}>
+                          <img className={styles.iconarrowbottom} src="/circle.png" width={20} height={20}></img>
+                        </div>
+                        <div className={styles.box1line2}>
+                          <img className={styles.icon} src="/addroom.png" width={100} height={100}></img>
+                        </div>
+                        <div className={styles.box1line3}>
+                          <div className={styles.Text}>เพิ่มหอพัก</div>
+                        </div>  
                     </Link>
                     <Link href= "/dormManager/check" className={styles.Box2}>
-                        <img className={styles.icon} src="/checkview.png" width={100} height={100}></img>
-                        <img className={styles.iconarrowbottom} src="/circle.png" width={20} height={20}></img>
-                        <div className={styles.Text}>ตรวจสอบ</div>
+                        <div className={styles.box2line1}>
+                          <img className={styles.iconarrowbottom} src="/circle.png" width={20} height={20}></img>
+                        </div>
+                        <div className={styles.box2line2}>
+                          <img className={styles.icon} src="/checkview.png" width={100} height={100}></img>
+                        </div>
+                        <div className={styles.box2line3}>
+                          <div className={styles.Text}>ตรวจสอบ</div>
+                        </div>                                    
                     </Link>
                 </div>
                 <div className={styles.Box}>
                     <Link href="/dormManager/manageRoom" className={styles.Box3}>
-                        <img className={styles.iconarrowbottom1} src="/circle.png" width={20} height={20}></img>
-                        <img className={styles.iconarrowbottom2} src="/edit.png" width={100} height={100}></img>
-                        <div className={styles.Textbox}>แก้ไข</div>
+                        <div className={styles.box3line1}>
+                           <img className={styles.iconarrowbottom1} src="/circle.png" width={20} height={20}></img>
+                        </div>
+                        <div className={styles.box3line2}>
+                          <img className={styles.iconarrowbottom2} src="/edit.png" width={100} height={100}></img>
+                        </div>
+                        <div className={styles.box3line3}>
+                          <div className={styles.Textbox}>แก้ไข</div>
+                        </div>                       
                     </Link>
                 </div>
             {count_customer.length>0? (
               <div className={styles.MailBox}>
                 <Link href={"/dormManager/dormConfirm"} className={styles.alarmmail} >
                 <div className={styles.mail}>
-                        <img className={styles.mail_icon} src="/letter.png" width={150} height={120}></img>
-                        <img className={styles.mailArrowbottom} src="/circle.png" width={20} height={20}></img>
-                        <div className={styles.Textbox}>มีการจอง</div>
+                        <div className={styles.box4line1}>
+                          <img className={styles.mailArrowbottom} src="/circle.png" width={20} height={20}></img>
+                           
+                        </div>
+                        <div className={styles.box4line2}>
+                           <img className={styles.mail_icon} src="/letter.png" width={150} height={120}></img>
+                        </div>
+                        <div className={styles.box4line3}>
+                           <div className={styles.Textbox}>มีการจอง</div>
+                        </div>
+                        
+                        
                 </div>              
                 </Link>
               </div>

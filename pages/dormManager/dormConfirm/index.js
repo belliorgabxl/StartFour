@@ -42,26 +42,46 @@ export default function DormConfirm(){
           <Link href={("/dormManager/dormConfirm/confirm/"+b._id)} key={b._id} className={styles.ListBox}>
 
             <div className={styles.texthead}>
-              <Image className={styles.imagechat} src="/chat.png"  width={30} height={30} alt='chat.png'></Image>
-              <div className={styles.textname}>รายชื่อผู้จอง</div>
+              <div className={styles.head1}>
+                <Image className={styles.imagechat} src="/chat.png"  width={30} height={30} alt='chat.png'></Image>
+              </div>
+              <div className={styles.head2}>
+                <div className={styles.textname}>รายชื่อผู้จอง</div>
+              </div>
             </div>
-
-            <div>
-              <div className={styles.line1}>ผู้จอง: คุณ {b.user_booking} </div>
-              <div className={styles.textbooking}>ยืนยันการจองแล้ว</div>
+            <div className={styles.line1}>
+              <div className={styles.line1left}>
+                <div className={styles.line1name}>ผู้จอง: คุณ {b.user_booking} </div>
+              </div>
+              <div className={styles.line1right}>
+                <div className={styles.textbooking}>ยืนยันการจองแล้ว</div>
+              </div>
             </div>
-
-            <div className={styles.divider1}></div>
-
-            <div>
-              <Image className={styles.imageusers} src="/users.png"  width={100} height={100} alt='users.png'></Image>
-              <div className={styles.line2}> {b.dorm_name}</div>
+            <div className={styles.line4}>
+              <div className={styles.linecenter}>
+                <div className={styles.divider1}></div>
+              </div>
+            </div>
+            <div className={styles.line2}>
+              <div className={styles.line2left}>
+                <Image className={styles.imageusers} src="/users.png"  width={100} height={100} alt='users.png'></Image>
+              </div>
+              <div className={styles.line2right}>
+                <div className={styles.line2right_top}>
+                  <div className={styles.namedorm}> {b.dorm_name}</div>
+                </div>
+                <div className={styles.line2right_bottom}>
+                  <div className={styles.uptime}>จองเมื่อ : {b.updatedAt.slice(5,7)}/
+                  {b.updatedAt.slice(8,10)} {b.updatedAt.slice(11,16)}</div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.line3}>
+              <div className={styles.linecenter}>
+                <div className={styles.divider2}></div>
+              </div>
             </div>
             
-            <div className={styles.line3}>จองเมื่อ : {b.updatedAt.slice(5,7)}/
-            {b.updatedAt.slice(8,10)} {b.updatedAt.slice(11,16)}</div>
-
-            <div className={styles.divider2}></div>
           </Link>
         )
         )}

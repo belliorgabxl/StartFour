@@ -22,6 +22,9 @@ export default function pageID(){
   const [Newtype,setType] = useState();
   const [Newdetail , setDetail] = useState();
   const [Newimg  ,setImg] = useState();
+  const [Newlat ,setLat] = useState();
+  const [Newlong,setLong] = useState();
+  const [Newtime,setTime] = useState();
   
   useEffect(()=>{
     getId(id_data).then((d)=>{
@@ -48,13 +51,22 @@ const handleSubmit = async (e) =>{
   if (!Newdetail){
     setDetail(data?.detail)
   }
+  if (!Newlat){
+    setLat(data?.lat)
+  }
+  if (!Newlong){
+    setLong(data?.long)
+  }
+  if (!Newtime){
+    setTime(data?.time)
+  }
   try {
     const res = await fetch(`/api/EditeRoom/${id_data}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ Newdorm_name,Newtype,Newprice,Newimg,Newlocation,Newdetail }),
+      body: JSON.stringify({ Newdorm_name,Newtype,Newprice,Newimg,Newlocation,Newdetail,Newlat,Newlong,Newtime }),
     });
     if (!res.ok) {
       alert("error");
@@ -70,61 +82,67 @@ const handleSubmit = async (e) =>{
     <div className={styles.body}>
       <Navbar/>
       <div className={styles.container}>
-        
-          <div className={styles.Boxgrid}>
-
-              <div className={styles.Box2}>
-                <img className={styles.iconedit} src="/edits.png" width={200} height={200}></img>
-              </div>
-
-              <form className={styles.Box1} onSubmit={handleSubmit} >
-
+        <div className={styles.Boxgrid}>
+          <div className={styles.Boxleft}>
+            <div className={styles.Boxlefticon}>
+              <img className={styles.iconedit} src="/edits.png" width={200} height={200}></img>
+            </div>
+          </div>
           
-
+          <form className={styles.Box1} onSubmit={handleSubmit} >
+              <div className={styles.Boxright}>
                 <div className={styles.Texthead}>
-                      <h1>แก้ไข :{data?.dorm_name}</h1>
+                      <h1 className={styles.head}> แก้ไข :{data?.dorm_name}</h1>
                 </div>
 
-                <div >
-                     <input className={styles.Textnameinput} type="text"  placeholder="dormitory name"
-                     onChange={(e)=>setName(e.target.value)}  defaultValue={data?.dorm_name}  />
-                </div>
-          
-                <div>
-                     <input className={styles.Textnameinput} type="text"  placeholder="type"
+                <div className={styles.line1}>
+                     <input className={styles.Textnameinput1} type="text"  placeholder="ประเภทห้อง"
                      onChange={(e)=>setType(e.target.value)} defaultValue={data?.type} />
-                </div>
-       
-                <div>
-                     <input className={styles.Textnameinput} type="text"  placeholder="price"
-                     onChange={(e) =>setPrice(e.target.value)} defaultValue={data?.price} />
-                </div>
 
-                <div>
-                    <input className={styles.Textnameinput} type="text" placeholder="location"
+                     <input className={styles.Textnameinput2} type="text"  placeholder="ชื่อหอพัก"
+                     onChange={(e)=>setName(e.target.value)}  defaultValue={data?.dorm_name}  />
+                </div >
+                <div className={styles.line2}>
+                     <input className={styles.Textnameinput4} type="text" placeholder="ที่ตั้ง"
                     onChange={(e)=> setLocat(e.target.value)} defaultValue={data?.location} />
                 </div>
 
-                <div>
-                    <input className={styles.Textnameinput} type="text"  placeholder="image"
-                    onChange={(e)=>setImg(e.target.value)} defaultValue={data?.img} />
+                <div className={styles.line3}>
+                    <input className={styles.Textnameinput3} type="text"  placeholder="ละติจูด"
+                    onChange={(e) =>setLat(e.target.value)} defaultValue={data?.lat} />
+
+                    <input className={styles.Textnameinput2} type="text"  placeholder="ลองจิจูด"
+                     onChange={(e) =>setLong(e.target.value)} defaultValue={data?.long} />
+                    
                 </div>
 
-                <div>
-                    <input className={styles.Textdetailinput} type="text"  placeholder="content"
+                <div className={styles.line4}>
+                    <input className={styles.Textnameinput3} type="text"  placeholder="ระยะเวลาของสัญญา"
+                     onChange={(e) =>setTime(e.target.value)} defaultValue={data?.time} />
+
+                    <input className={styles.Textnameinput2} type="text"  placeholder="ราคาห้องพักต่อเดือน"
+                     onChange={(e) =>setPrice(e.target.value)} defaultValue={data?.price} />
+                </div>
+
+                <div className={styles.line5}>
+                    <input className={styles.Textdetailinput} type="text"  placeholder="รายละเอียดหอพัก"
                     onChange={(e) =>setDetail(e.target.value)} defaultValue={data?.detail} />
                 </div>
 
+                <div className={styles.line6}>
+                    <input className={styles.Textnameinput5} type="file" name="upload"  placeholder="ภาพห้องพัก"
+                    onChange={(e)=>setImg(e.target.value)} defaultValue={data?.img} />
+                </div>
+
+                <div className={styles.line7}>
+                    <button className={styles.send_btn} type="submit">submit</button>
+                </div>
+
                 
-
-        
-                <button className={styles.button} type="submit">submit</button>
-
-                
-
-              </form>
-          </div>
-        
+              </div>
+          </form>
+          
+        </div>
       </div>
       <Footer/>
     </div>

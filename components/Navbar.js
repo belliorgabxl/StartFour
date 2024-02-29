@@ -166,7 +166,7 @@ let user_booking = ''
                                 <a href="/NearMe" >ห้องพักใกล้ฉัน</a>
                                 <a href={"/Booking/"+user_id}>จองหอพัก</a>
                                 <a href="/AboutUs">เกี่ยวกับเรา</a>
-                                <a href="#">ช่วยเหลือ</a> 
+                                <a href="/help">ช่วยเหลือ</a> 
                             </div>
                         </div>
                     
