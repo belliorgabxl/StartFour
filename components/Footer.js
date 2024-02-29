@@ -28,7 +28,7 @@ export default function Footer(){
                     </div>
                 </div>
 
-                <div className={styles.blog2}>
+                <div className={styles.blog}>
 
                     <div className={styles.regis}>
                         <Image className={styles.icon2} src="/hand.png" width={100} height={100} alt='hand.png'></Image>
