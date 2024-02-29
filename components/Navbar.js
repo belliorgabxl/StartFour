@@ -44,7 +44,7 @@ function logOutBtn(){
 function Booking_btn(){
     router.push("/Booking/"+user_id)
 }
-function PostRomm_btn(){
+async function  PostRomm_btn(){
     router.push("/PostRoom/"+user_id)
 }
 const id_booking_list = []
@@ -162,8 +162,8 @@ let user_booking = ''
                                 height={45}/>
                             <div className={styles.dropdown_menu}>
                                 <a href="/RoomType" > ประเภทห้อง </a>
+                                <a href={"/Payment/"+user_id} >ห้องขายต่อ</a>
                                 <a href="/NearMe" >ห้องพักใกล้ฉัน</a>
-                                <a href={"/Payment/"+user_id} >จ่ายเงิน</a>
                                 <a href={"/Booking/"+user_id}>จองหอพัก</a>
                                 <a href="/AboutUs">เกี่ยวกับเรา</a>
                                 <a href="/help">ช่วยเหลือ</a> 
@@ -171,8 +171,8 @@ let user_booking = ''
                         </div>
                     
                     <Link href="/RoomType" className={styles.menulist}><span >ประเภทห้อง</span></Link>
+                    <Link href={"/Post"} className={styles.menulist}><span>ห้องขายต่อ</span></Link>
                     <Link href="/NearMe" className={styles.menulist}><span>ห้องพักใกล้ฉัน</span></Link>
-                    <Link href={"/Payment/"+user_id} className={styles.menulist}><span>จ่ายเงิน</span></Link>
                     <Link href={"/Booking/"+user_id} className={styles.menulist}><span>จองหอพัก</span></Link>
                     <Link href="/AboutUs" className={styles.menulist}><span>เกี่ยวกับเรา</span></Link>
                     

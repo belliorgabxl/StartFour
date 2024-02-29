@@ -13,9 +13,10 @@ export default function register_page(){
   const router = useRouter();
   const handleSubmitt = async (e) => {
     e.preventDefault();
-
-    let name = document.getElementById("f_name").value +" "+ document.getElementById("l_name").value;
+    try{
     let state = document.querySelector('input[name="status"]:checked').value;
+    let name = document.getElementById("f_name").value +" "+ document.getElementById("l_name").value;
+    
     if(!username || !password || !email){
       console.log("you are not send email , password or username");
       alert("Username Password of Email are required");
@@ -47,7 +48,6 @@ export default function register_page(){
                 let access2 = "none"
                 let booking = "none"
                 let notic = "off"
-
                 const res3 = await fetch("/api/getBooking", {
                   method: "POST",
                   headers: {
@@ -65,6 +65,33 @@ export default function register_page(){
                       notic
                    }),
                 });
+                const  IDpassport = "";const address = ''; const file_ID = ""; const user_post = user_booking;
+                dorm_name ='';const price_m =''; const price_rent ='';const type = ''
+                const img = '';const detail=''; const location=''; const ID_room='';const floor =''
+                const authentic = 'none' ; let post = 'none'
+                const res = await fetch(`/api/getPost`, {
+                method: "POST",
+                headers: {
+                  "Content-type": "application/json",
+                },
+                body: JSON.stringify({
+                  user_post,
+                    IDpassport,
+                    address,
+                    file_ID,
+                    dorm_name,
+                    price_m,
+                    price_rent,
+                    type,
+                    img,
+                    detail,
+                    location,
+                    ID_room,
+                    floor,
+                    authentic,
+                    post
+                }),
+              });
               }
               if(state=="seller"){
                 let own_name = username;let dorm_name = "none";let dorm_img = "";
@@ -109,6 +136,10 @@ export default function register_page(){
           }
       }
   }
+  catch(e){
+    alert("Please Select Your type 'seller' or 'customer' ")
+  }
+}
 
   return (<>
   <Navbar/>

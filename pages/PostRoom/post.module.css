@@ -1,14 +1,253 @@
 .body {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    background-color: #F0F0F0;
-  }
-  
-  .container {
-    text-align: center;
-    display: grid;
-    width: 93%;
-    background-color: white;
-    margin-top: 160px;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background-color: #F0F0F0;
+}
+
+.container {
+  text-align: center;
+  display: grid;
+  width: 93%;
+  place-items: center;
+  background-color: white;
+  margin-top: 140px;
+  margin-bottom: 30px;
+}
+
+.AuthenticBox{
+width: 60%;
+border: 10px solid gray;
+border-radius: 0.3rem;
+display: grid;place-items: center;
+}
+.topic{
+margin: 20px 0 0px 0;
+font-size: 40px;
+font-weight: 530;
+color: white;
+width: 280px;
+height: 60px;
+display: grid;
+place-items: center;
+border-radius: 0.4rem;
+background-color: #282828;
+}
+.line{
+height: 2px;
+background-color: gray;
+width: 100%
+}
+.Form{
+display: grid;
+place-items: center;
+}
+.FormBox{
+width: 100%;
+height: 580px;
+}
+.label{
+font-size: 18px;
+font-weight: 500;
+margin-right: 10px;
+}
+.line1{
+margin: 30px 0 0 0;
+display: grid;
+grid-template-columns: 30px 330px 330px;
+}
+.inputLine1{
+width: 200px;
+height: 24px;
+font-size: 17px;
+text-align: center;
+}
+.line2{
+margin: 30px 0 0 0;
+display: grid;
+grid-template-columns: auto auto auto;
+}
+.file_ID{
+font-size: 16px;
+width: 200px;
+}
+.tagfile_ID{
+font-size: 13px;
+color: blue;
+}
+.line3{
+display: grid;
+grid-template-columns: 30px 50px 300px;
+margin: 20px 0 40px 0;
+}
+.addressArea{
+width: 400px;
+font-size: 15px;
+border-radius: 0.3rem;
+padding: 5px 0 0 20px;
+}
+.rule{
+height: 180px;
+display: grid;
+place-items: center;
+}
+.topicRule{
+font-size: 18px ;
+color: red;
+}
+.contentRule{
+font-size: 14px;
+text-align: left;
+}
+.agree{
+margin: 20px 0  0 0;
+display: grid;
+place-items: center;
+grid-template-columns:auto auto auto auto;
+}
+.btnArea{
+  display: grid;
+  place-items: center;
+  margin:  30px 0 30px 0;
+}
+.authenticBtn{
+  all:unset;
+  width: 120px;
+  height: 38px;
+  font-size: 22px;
+  color: white;
+  background-color:#42bd41;
+}
+.authenticBtn:hover{
+  background-color: #0d5302;
+}
+.PostBox{
+  width: 70%;
+  box-shadow: 0 1px 5px gray;
+  display: grid;
+  place-items: center;
+  margin: 20px 0 0 0 ;
+  border-radius: 0.5rem;
+}
+.topicPost{
+margin: 20px 0 0px 0;
+font-size: 30px;
+font-weight: 530;
+color: white;
+width: 350px;
+height: 60px;
+display: grid;
+place-items: center;
+border-radius: 0.4rem;
+background-color: #000333;
+}
+.PostForm{
+  width: 100%;
+  margin: 30px 0 0 0;
+  background-color: white;
+  height: 360px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.imgPostBox{
+  border: 3px solid #bdbdbd;
+  height: 230px;
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
+  margin: 0 0 0 20px ;
+}
+.imgPost{
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  display: none;
+}
+.imgFake{
+  display: grid;
+  place-items: center;
+ width: 200px;
+ grid-template-columns:30px 40px 100px;
+ height: 50px;
+  color: white;
+  background-color: #bdbdbd;
+  font-size: 20px;
+}
+.imgFake:hover{
+  background-color: gray;
+}
+.line4{
+  margin: 20px 0 0 0 ;
+  display: grid;
+  grid-template-columns: 38px 250px 150px 80px;
+}
+.post_dormname{
+  text-align: center;
+  width: 140px;
+  font-size: 17px;
+  height: 23px;
+}
+.post_roomID{
+  text-align: center;
+  width: 50px;
+  font-size: 17px;
+  height: 23px;
+}
+.post_floor{
+  text-align: center;
+  width: 30px;
+  font-size: 17px;
+  height: 23px;
+}
+.line5{
+  margin: 20px 0 0 0 ;
+  display: grid;
+  grid-template-columns: 30px 250px 250px;
+}
+.post_price{
+  text-align: center;
+  width: 80px;
+  font-size: 17px;
+  height: 23px;
+}
+.line6{
+  margin: 20px 0 0 0 ;
+  display: grid;
+  grid-template-columns: 30px 300px ;
+}
+
+.btnArea_post{
+  display: grid;
+  place-items: center;
+}
+.PostBtn{
+  all: unset;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 40px;
+  margin: 0 0 20px 0;
+  font-size: 25px;
+  background-color: #282828;
+  color: white;
+  font-weight: 500px;
+}
+.PostBtn:hover{
+  background-color: #000333;
+}
+.line7{
+  display: grid;
+grid-template-columns: 40px 50px 100px 250px;
+margin: 20px 0 20px 0;
+}
+.line8{
+  display: grid;
+grid-template-columns: 40px 150px 300px;
+margin: 20px 0 40px 0;
+}
+.Post_addressArea{
+  width: 300px;
+  font-size: 15px;
+  border-radius: 0.3rem;
+  padding: 5px 0 0 20px;
   }

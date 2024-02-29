@@ -13,6 +13,6 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     await connectMongoDB();
     const users = await User.find();
-    return res.json({ users });
+    return res.json(users);
   }
 }
