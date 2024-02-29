@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         ID_room,
         floor,
         authentic,
-      Post}
+      post}
     )
     res.json(posts);
   }
