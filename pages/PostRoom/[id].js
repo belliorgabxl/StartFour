@@ -167,7 +167,7 @@ async function PostBtn(e){
           .from("postImage")
           .update(pathfile_postImg, formData);
         }
-        else if(postes == "none"){
+        if(postes == "none"){
           const { data, error } = await supabase.storage
           .from("postImage")
           .upload(pathfile_postImg, formData);
