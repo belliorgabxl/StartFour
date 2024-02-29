@@ -12,6 +12,7 @@
   place-items: center;
   background-color: white;
   margin-top: 140px;
+  margin-bottom: 30px;
 }
 
 .AuthenticBox{
@@ -144,7 +145,7 @@ background-color: #000333;
   width: 100%;
   margin: 30px 0 0 0;
   background-color: white;
-  height: 270px;
+  height: 360px;
   display: grid;
   grid-template-columns: 30% 70%;
 }
@@ -214,11 +215,7 @@ background-color: #000333;
   display: grid;
   grid-template-columns: 30px 300px ;
 }
-.line7{
-  display: grid;
-grid-template-columns: 40px 50px 300px;
-margin: 20px 0 40px 0;
-}
+
 .btnArea_post{
   display: grid;
   place-items: center;
@@ -238,3 +235,19 @@ margin: 20px 0 40px 0;
 .PostBtn:hover{
   background-color: #000333;
 }
+.line7{
+  display: grid;
+grid-template-columns: 40px 50px 100px 250px;
+margin: 20px 0 20px 0;
+}
+.line8{
+  display: grid;
+grid-template-columns: 40px 150px 300px;
+margin: 20px 0 40px 0;
+}
+.Post_addressArea{
+  width: 300px;
+  font-size: 15px;
+  border-radius: 0.3rem;
+  padding: 5px 0 0 20px;
+  }

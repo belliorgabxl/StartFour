@@ -143,6 +143,42 @@ export default function PostRoom() {
       alert("โปรดเลือกความยินยอมข้อตกลง"+e);
     }
   }
+const [Newdorm_name , setDorm] = useState();
+const [Newprice_m,setPm] = useState();
+const [Newprice_rent,setPr] =useState();
+const [Newtype , setType] = useState();
+const [Newdetail,setDetail] = useState();
+const [Newlocation , setLocat] = useState();
+const [NewID_room ,setIDroom] =useState();
+const [Newfloor , setFloor] = useState();
+
+
+async function PostBtn(e){
+  e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        formData.getAll("img_post");
+        const pathfile_postImg = "/postImg:" + user_id + ".jpg";
+        const { data, error } = await supabase.storage
+          .from("postImage")
+          .update(pathfile_postImg, formData);
+        let Newimg ="https://kmaderbohtpzmtunqlbx.supabase.co/storage/v1/object/public/postImage"+pathfile_postImg;
+        const res = await fetch(`/api/PostAPI/CreatePost/${user_id}`, {
+          method: "PUT",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            Newimg,
+            Newdorm_name,
+            Newprice_m,
+            Newprice_rent,
+            Newtype,
+            Newdetail,
+            Newlocation,
+            NewID_room,
+            Newfloor
+          }),
+        });
+        router.push("/Homepage");
+}
   return (
     <div className={styles.body}>
       <Navbar />
@@ -250,7 +286,7 @@ export default function PostRoom() {
             </form>
           </div>
         ) : authentic == "yes" ? (
-          <form className={styles.PostBox}>
+          <form className={styles.PostBox} onSubmit={PostBtn}>
             <div className={styles.topicPost}>
               ประกาศขายห้องของคุณ
             </div>
@@ -268,41 +304,56 @@ export default function PostRoom() {
                   <div></div>
                   <span>
                     <label className={styles.label}>ชื่อหอพัก :</label>
-                  <input className={styles.post_dormname} type="text" placeholder="ชื่อหอพัก"/>
+                  <input className={styles.post_dormname} type="text" placeholder="ชื่อหอพัก"
+                  onChange={(e)=>setDorm(e.target.value)} value={Newdorm_name}/>
                   </span>
                   <span>
                     <label className={styles.label}>เลขห้อง:</label>
-                    <input className={styles.post_roomID} type="text" />
+                    <input className={styles.post_roomID} type="text"
+                     onChange={(e)=>setIDroom(e.target.value)} value={NewID_room}/>
                   </span>
                   <span>
                     <label className={styles.label}>ชั้น:</label>
-                    <input className={styles.post_floor} min={0} max={7} type="number"/>
+                    <input className={styles.post_floor} min={0} max={7} type="number"
+                    onChange={(e)=>setFloor(e.target.value)} value={Newfloor} />
                   </span>
                 </div>
                 <div className={styles.line5}>
                   <div></div>
                   <span>
                     <label className={styles.label}>ราคาต่อเดือน :</label>
-                    <input className={styles.post_price} type="text" placeholder="..."/> 
+                    <input className={styles.post_price} type="text" placeholder="..."
+                    onChange={(e)=>setPm(e.target.value)} value={Newprice_m}/> 
                   </span>
                   <span>
                     <label className={styles.label}>ค่าสัญญาหอ :</label>
-                    <input className={styles.post_price}  type="text" placeholder="..."/>
+                    <input className={styles.post_price}  type="text" placeholder="..."
+                    onChange={(e)=>setPr(e.target.value)} value={Newprice_rent}/>
                   </span>
                 </div>
                 <div className={styles.line6}>
                   <div></div>
                   <span>
                     <label className={styles.label}>ประเภทห้อง : </label>
-                    <input className={styles.post_dormname} type="text" placeholder="type"/>
+                    <input className={styles.post_dormname} type="text" placeholder="type"
+                    onChange={(e)=>setType(e.target.value)} value={Newtype}/>
                   </span>
                 </div>
                 <div className={styles.line7}>
                   <div></div>
+                  <div></div>
                   <label className={styles.label}>ที่อยู่:</label>
                   <textarea placeholder="..."
-                    className={styles.addressArea}
-                    rows={3}
+                    className={styles.Post_addressArea} rows={3}
+                    onChange={(e)=>setLocat(e.target.value)} value={Newlocation}
+                  />
+                </div>
+                <div className={styles.line8}>
+                  <div></div>
+                  <label className={styles.label}>ข้อมูลหอพัก:</label>
+                  <textarea placeholder="..."
+                    className={styles.Post_addressArea} rows={4}
+                    onChange={(e)=>setDetail(e.target.value)} value={Newdetail}
                   />
                 </div>
               </div>
