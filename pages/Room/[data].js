@@ -60,7 +60,7 @@ export default function Roomdata() {
     detail_list.push(d.detail),
     type_list.push(d.type)
   })}
-  for(let i = 1;i<id_list.length ; i++ ){
+  for(let i = 0;i<id_list.length ; i++ ){
     if(id_list[i] == id){
       dorm_name = dorm_name_list[i]
       locat_name = locat_list[i]
