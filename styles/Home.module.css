@@ -111,53 +111,55 @@
 }
 
 .roomcomponents {
-  width: 100%;
+  width: 90%;
   border: 1px solid #E0E0E0;
   display: grid;
-  place-items: center;
-
+  grid-template-columns: auto auto;
 }
-
 .roomBox {
   display: flex;
-  width: 1000px;
-  height: 300px;
+  width: 500px;
+  height: 150px;
   box-shadow: 0 2px 10px gray;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 20px 20px;
+}
+.roomBox:hover{
+  background-color: #E0E0E0;
 }
 
 .imgBox {
-  width: 400px;
-  height: 300px;
+  width: 200px;
+  height: 150px;
 }
 
 .textBox {
-  width: 600px;
-  height: 300px;
+  width: 300px;
+  height: 150px;
   display: grid;
-  grid-template-rows: 70px 60px 140px 30px;
+  grid-template-rows: 50px 30px 45px 20px;
   padding-left: 20px;
 }
 
 .textBox1 {
   padding-top: 10px;
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .dormNameBox {
-  height: 35px;
+  height: 30px;
   border-bottom: 1px solid gray;
-  font-size: 28px;
-  font-weight: 550;
+  font-size: 20px;
+  font-weight: 500;
   font-family: 'Times New Roman', Times, serif;
 
 }
 
 .locationBox {
   padding-top: 7px;
-  font-size: 20px;
+  font-size: 14px;
   font-family: 'Times New Roman', Times, serif;
+  width: 130px;
 }
 
 .priceBox {
@@ -167,25 +169,26 @@
 }
 
 .price {
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 650;
 }
 
 .month {
   padding-top: 13px;
-  font-size: 25px;
+  font-size: 16px;
 }
 
 .detailBox {
   text-align: left;
   display: flex;
-  font-size: 18px;
+  font-size: 14px;
   padding-right: 5px;
+  width: 250px;
 }
 
 .typeBox {
   display: flex;
-  font-size: 22px;
+  font-size: 18px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 400;
 }

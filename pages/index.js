@@ -71,13 +71,11 @@ export default function Home() {
       </div>
       
       <div className={styles.roomcomponents}>
-
         {dors?.dormitory?.map((d) =>
-        <div key={d._id}>
+        <div key={d._id} className={styles.frameBox}>
         <div className={styles.roomBox}>
-      
           <div className={styles.imgBox}>
-            <img src={d.img} width={400} height={300} alt='img'></img>
+            <img src={d.img} width={200} height={150} alt='img'></img>
           </div>
           <div className={styles.textBox}>
 
@@ -86,7 +84,7 @@ export default function Home() {
                  {d.dorm_name}
                 </Link>
                 <div className={styles.locationBox}>
-                  , {d.location}
+                  , {d.location.slice(0,25)+"..."}
                 </div>
               </div> 
 
@@ -100,15 +98,14 @@ export default function Home() {
               </div> 
 
               <div className={styles.detailBox}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{d.detail}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{d.detail.slice(0,70)+"...."}
               </div> 
 
               <div className={styles.typeBox}>
                 Roomtype:    {d.type}
               </div> 
 
-          </div>
-          
+        </div>
         </div>
     </div>
         )}
