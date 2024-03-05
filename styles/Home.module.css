@@ -126,10 +126,12 @@
 .roomBox:hover{
   background-color: #E0E0E0;
 }
-
 .imgBox {
   width: 200px;
   height: 150px;
+}
+.roomBox:hover .imgBox{
+  opacity: 80%;
 }
 
 .textBox {

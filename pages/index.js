@@ -69,7 +69,6 @@ export default function Home() {
               </div>
               <div></div>
       </div>
-      
       <div className={styles.roomcomponents}>
         {dors?.dormitory?.map((d) =>
         <div key={d._id} className={styles.frameBox}>
