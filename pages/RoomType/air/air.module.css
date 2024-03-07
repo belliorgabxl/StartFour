@@ -6,64 +6,68 @@
   
 }
 .container {
-  place-items: center;
+  display: grid;
   width: 93%;
+  place-items: center;
   background-color: white;
-  margin-bottom: 120px;
-  height: 10px;
+  grid-template-columns: auto auto ;
+  margin:160px 0  0px 0;
+  padding: 0 0 40px 0;
 }
 .boxgrid {
-  box-shadow: 0 2px 20px gray ;
-  border-radius: 15px;
+  box-shadow: 0 1px 5px gray ;
+  border-radius: 0.5rem;
   margin-top: 50px;
-  margin-left: 100px;
   display: grid;
   grid-template-columns: 50% 50%;
-  width: 850px;
-  height: 350px;
+  width: 500px;
+  height: 170px;
   text-decoration: none;
+  background-color: white;
+}
+.boxgrid:hover {
+  background-color: #E8E8E8;
+}
+.boxgrid:hover .boxroom{
+  opacity: 90%;
 }
 
 .boxroom {
-  box-shadow: 0 2px 20px gray ;
   background-color: white;
-  height: 350px;
-  width: 400px;
+  height: 170px;
+  width: 200px;
   border-radius: 15px;
   text-decoration: none;
   margin-bottom: 50px;
 }
 .Text {
   display: grid;
-  grid-template-rows: 14% 14% 14% 14% 14% 14% 14%;
-  height: 350px;
-  
+  grid-template-rows: 30px 30px 30px 20px 20px 20px 20px ;
+  height: 170px;
 }
 .line1 {
   margin-top: 10px;
 }
 .line2 {
-  margin-top: -20px;
+  margin-top: -15px;
 }
 .line3 {
-  margin-top: -20px;
+  margin-top: -5px;
+  font-size: 14px;
 }
 .line4 {
-  margin-top: -35px;
+margin :-10px 0 0 5px ;
 }
 .line5 {
-  margin-top: -40px;
+  margin-top: 0px;
 }
 .line6 {
-  margin-top: 40px;
-  margin-left: 300px;
-}
-.line7 {
-  margin-top: 15px;
-  margin-left: 250px;
+  display: grid; 
+  margin: 8px 0 0 0;
+  grid-template-columns: 10px 45px 200px;
 }
 .Texthead {
-  font-size: 30px;
+  font-size: 18px;
   font-weight: bold;
   color: black;
 }
@@ -75,9 +79,10 @@
   margin-left: 25px;
 }
 .Textdetail {
-  width: 400px;
+  width: 300px;
   color: rgb(155, 10, 10);
   font-weight: bold;
+  font-size: 14px;
   font-family: 'Helvetica' , sans-serif;
   margin-top: -22px;
   margin-left: 5px;
@@ -86,16 +91,17 @@
   color: rgb(155, 10, 10);
 }
 .price {
-  font-size: 30px;
+  font-size: 14px;
   color: rgb(155, 10, 10);
   font-weight: bold;
-  margin-left: 20px;
-  margin-top: -30px;
+  margin-left: 5px;
+  margin-top: 3px;
 }
 .Textprice {
   font-weight: bold;
   opacity: 0.5;
   color: black;
+
 }
 .Texttype {
   font-weight: bold;
