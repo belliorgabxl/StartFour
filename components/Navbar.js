@@ -167,6 +167,7 @@ let user_booking = ''
                                 <a href={"/Booking/"+user_id}>จองหอพัก</a>
                                 <a href="/AboutUs">เกี่ยวกับเรา</a>
                                 <a href="/help">ช่วยเหลือ</a> 
+                                <a href="/Admin">Admin Manager</a> 
                             </div>
                         </div>
                     
@@ -304,6 +305,7 @@ let user_booking = ''
                                 <a href="#">ใกล้ฉัน</a>
                                 <a href="/AboutUs">เกี่ยวกับเรา</a>
                                 <a href="#">ช่วยเหลือ</a>
+                                <a href="/Admin">Admin Manager</a> 
                             </div>
                         </div>
                     

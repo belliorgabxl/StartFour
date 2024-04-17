@@ -86,6 +86,7 @@ export default function Roomdata() {
     );
   };
   async function BookingBtn() {
+    if(user_id!= 'none'){
     let Newown_dormitory = create_by
     let Newdorm_name = dorm_name
     let Newid_room = dorm_id
@@ -111,6 +112,10 @@ export default function Roomdata() {
     var getID = {UserID:user_id,State:"login",Type:"customer",_id :id_booking_local,Dormitory:Newdorm_name}
     localStorage.setItem("userList",JSON.stringify(getID));
     router.push("/Homepage");
+  }else{
+    alert("Please Login or Register first..")
+    router.push("/Sign/signup")
+  }
   }
   return (
     <div>

@@ -71,7 +71,7 @@ export default function Home() {
       </div>
       <div className={styles.roomcomponents}>
         {dors?.dormitory?.map((d) =>
-        <div key={d._id} className={styles.frameBox}>
+        <Link  href={"/Room/"+d._id}  key={d._id} className={styles.frameBox}>
         <div className={styles.roomBox}>
           <div className={styles.imgBox}>
             <img src={d.img} width={200} height={150} alt='img'></img>
@@ -79,7 +79,7 @@ export default function Home() {
           <div className={styles.textBox}>
 
               <div className={styles.textBox1}>
-                <Link  className={styles.dormNameBox} href={"/Room/"+d._id} key={d._id}>
+                <Link className={styles.dormNameBox} href={"/Room/"+d._id} key={d._id}>
                  {d.dorm_name}
                 </Link>
                 <div className={styles.locationBox}>
@@ -106,7 +106,7 @@ export default function Home() {
 
         </div>
         </div>
-    </div>
+    </Link>
         )}
       </div>
       <div>
