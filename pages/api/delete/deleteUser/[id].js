@@ -5,6 +5,7 @@ export default async function handler(req, res) {
   const  {id} =  req.query
   if (req.method === "DELETE") {
     await connectMongoDB();
-    await User.findByIdAndDelete(id);
+    const user = await User.findByIdAndDelete(id);
+    res.json(user);
 }
 }

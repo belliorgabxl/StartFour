@@ -39,6 +39,7 @@ const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
 function logOutBtn(){
     localStorage.clear()
+    router.reload();
     router.push("/")
 }
 function Booking_btn(){
