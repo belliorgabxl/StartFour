@@ -88,7 +88,28 @@ const deleteBook = async(e)=>{
     }
   }
 }
-
+const deletePost= async(e)=>{
+  const confirmed = confirm("Are you sure?");
+  if(confirmed){
+    const res = await fetch(`/api/delete/deletePost/${e.target.value}`, {
+      method: "DELETE",
+    }); 
+    if(res.ok){
+      route.reload();
+    }
+  }
+}
+const deleteDorMNM= async(e)=>{
+  const confirmed = confirm("Are you sure?");
+  if(confirmed){
+    const res = await fetch(`/api/delete/deleteDorMNM/${e.target.value}`, {
+      method: "DELETE",
+    }); 
+    if(res.ok){
+      route.reload();
+    }
+  }
+}
 const editUserBtn=async(e)=>{
   route.push("/Admin/Edite/editUser/"+e.target.value)
 }
@@ -257,7 +278,8 @@ const editUserBtn=async(e)=>{
                     <button className={styles.editeBtn}value={d._id}>
                       Edite
                     </button>
-                    <button value={d._id} className={styles.deleteBtn}>
+                    <button value={d._id} className={styles.deleteBtn}
+                    onClick={deleteDorMNM}>
                       Delete
                     </button><div></div>
                   </div>
@@ -269,11 +291,11 @@ const editUserBtn=async(e)=>{
           <div className={styles.Table}>
                  <div className={styles.thead4}>
               <div className={styles.th}>No.</div>
-              <div className={styles.th}>Own_name</div>
+              <div className={styles.th}>User post</div>
               <div className={styles.th}>Dorm_name</div>
-              <div className={styles.th}>Phone_dorm</div>
-              <div className={styles.th}>PassportID</div>
-              <div className={styles.th}>Booking_status</div>
+              <div className={styles.th}>Type</div>
+              <div className={styles.th}>Authentic</div>
+              <div className={styles.th}>Post</div>
               <div className={styles.th}>Config</div>
             </div>
             <div className={styles.TableBody}>
@@ -282,12 +304,17 @@ const editUserBtn=async(e)=>{
                   <div className={styles.td}>
                     <div className={styles.tdNum}>{i+=1}.</div>
                   </div>
-                  <div className={styles.td}>{d._id}</div>
+                  <div className={styles.td}>{d.user_post}</div>
+                  <div className={styles.td}>{d.dorm_name}</div>
+                  <div className={styles.td}>{d.type}</div>
+                  <div className={styles.td}>{d.authentic}</div>
+                  <div className={styles.td}>{d.post}</div>
                   <div className={styles.tdAction}><div></div>
                     <button className={styles.editeBtn}value={d._id}>
                       Edite
                     </button>
-                    <button value={d._id} className={styles.deleteBtn}>
+                    <button value={d._id} className={styles.deleteBtn}
+                    onClick={deletePost}>
                       Delete
                     </button><div></div>
                   </div>
