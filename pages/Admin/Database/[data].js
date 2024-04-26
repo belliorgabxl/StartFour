@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import styles from "./db.module.css"
 import { useState , useEffect} from "react"
 import Footer from "@/components/Footer"
+import editeUser from "../Edite/editUser/[data]"
 
 
 const getUser= async()=>{
@@ -64,7 +65,32 @@ const deleteUser = async(e)=>{
       route.reload();
     }
   }
-  
+}
+const deleteDors = async(e)=>{
+  const confirmed = confirm("Are you sure?");
+  if(confirmed){
+    const res = await fetch(`/api/delete/deleteDors/${e.target.value}`, {
+      method: "DELETE",
+    }); 
+    if(res.ok){
+      route.reload();
+    }
+  }
+}
+const deleteBook = async(e)=>{
+  const confirmed = confirm("Are you sure?");
+  if(confirmed){
+    const res = await fetch(`/api/delete/deleteBook/${e.target.value}`, {
+      method: "DELETE",
+    }); 
+    if(res.ok){
+      route.reload();
+    }
+  }
+}
+
+const editUserBtn=async(e)=>{
+  route.push("/Admin/Edite/editUser/"+e.target.value)
 }
 
   return(
@@ -104,7 +130,8 @@ const deleteUser = async(e)=>{
                   {d.createdAt.slice(5,7)}/{d.createdAt.slice(0,4)} +
                   {d.createdAt.slice(11,19)}</div>
                   <div className={styles.tdAction}><div></div>
-                    <button className={styles.editeBtn}value={d._id}>
+                    <button onClick={editUserBtn}
+                     className={styles.editeBtn}value={d._id}>
                       Edite
                     </button>
                     <button onClick={deleteUser}
@@ -151,7 +178,8 @@ const deleteUser = async(e)=>{
                     <button className={styles.editeBtn}value={d._id}>
                       Edite
                     </button>
-                    <button value={d._id} className={styles.deleteBtn}>
+                    <button onClick={deleteDors}
+                     value={d._id} className={styles.deleteBtn}>
                       Delete
                     </button><div></div>
                   </div>
@@ -193,7 +221,8 @@ const deleteUser = async(e)=>{
                     <button className={styles.editeBtn}value={d._id}>
                       Edite
                     </button>
-                    <button value={d._id} className={styles.deleteBtn}>
+                    <button onClick={deleteBook}
+                     value={d._id} className={styles.deleteBtn}>
                       Delete
                     </button><div></div>
                   </div>
@@ -248,16 +277,12 @@ const deleteUser = async(e)=>{
               <div className={styles.th}>Config</div>
             </div>
             <div className={styles.TableBody}>
-              {dorsMNM?.map((d)=>(
+              {post?.map((d)=>(
                 <div key={d._id} className={styles.tr4}>
                   <div className={styles.td}>
                     <div className={styles.tdNum}>{i+=1}.</div>
                   </div>
-                  <div className={styles.td}>{d.own_name}</div>
-                  <div className={styles.td}>{d.dorm_name}</div>
-                  <div className={styles.td}>{d.phone_dorm}</div>
-                  <div className={styles.td}>{d.passportID}</div>
-                  <div className={styles.td}>{d.booking_status}</div>
+                  <div className={styles.td}>{d._id}</div>
                   <div className={styles.tdAction}><div></div>
                     <button className={styles.editeBtn}value={d._id}>
                       Edite

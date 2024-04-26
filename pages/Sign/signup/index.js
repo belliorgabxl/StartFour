@@ -125,6 +125,7 @@ export default function register_page(){
                 });
               }
               if (res.ok)  {
+                alert("Register Success")
                 router.push("/Sign/signup/verify");
               } else {
                 throw new Error("Failed to create User");

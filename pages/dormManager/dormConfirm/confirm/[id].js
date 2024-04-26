@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import styles from "./confirm.module.css"
 import Image from "next/image";
-import Link from "next/link";
 const  getBookingId = async (id)=>{
   const res = await fetch(`/api/getBooking`, {
     cache: "no-store",
