@@ -1,0 +1,75 @@
+.body{
+    background:white;
+}
+.container {
+    margin:  100px  0 0  0;
+    display: grid;
+    place-items: center;
+}
+.nav{
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    font-size: 25px;
+    top : 0px;
+    left: 0px;
+    padding: 0 ;
+    background-color: hsl(236, 100%, 10%);
+    display: grid;
+    place-items: left;
+    grid-template-columns: 20% 30% 50%;
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+}
+.navBtn{
+    display: grid;
+    place-items: center;
+}
+.navBtn:hover{
+    background-color: #283593;
+}
+.formArea{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.formBox{
+    display:grid;
+    width: 40%;
+    border: 1px solid;
+    padding:  10px 0 10px 40px;
+}
+.btnArea{
+    display: grid;
+    place-items: center;
+}
+.inputBox{
+    width: 230px;
+    height: 30px;
+    font-size: 19px;
+}
+.inputDiv{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    margin: 10px 0;
+}
+.label{
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.btnSubmit{
+    all:unset;
+    margin: 20px 0 ;
+    font-size: 25px;
+    padding:  15px 20px;
+    background-color: green;
+    color: white;
+}
+.btnSubmit:hover{
+    background-color: #283593;
+}

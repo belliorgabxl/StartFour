@@ -67,6 +67,12 @@
 .tr3:hover{
     background-color: #d0d9ff;
 }
+.tr4:hover{
+    background-color: #d0d9ff;
+}
+.tr5:hover{
+    background-color: #d0d9ff;
+}
 .td{
     padding: 5px 0 5px 0;
     display: grid;
@@ -158,3 +164,27 @@
     17% 16% 13%;
     border-bottom: 1px solid gray;
 }
+.toolBtn{
+    width: 100%;
+    padding-left: 80px;
+    display: flex;
+}
+.btnTools{
+    all:unset;
+    font-size: 20px;
+    padding : 10px 20px 10px 20px ;
+    margin: 5px 5px ;
+    background-color: #259b24;
+    color:white;
+
+}
+.btnTools:hover{
+    background-color: green;
+}
+.Area{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+

@@ -113,7 +113,16 @@ const deleteDorMNM= async(e)=>{
 const editUserBtn=async(e)=>{
   route.push("/Admin/Edite/editUser/"+e.target.value)
 }
+const editeDorBtn = async(e)=>{
+  route.push("/Admin/Edite/editDors/"+e.target.value)
+}
+const addBtn = (e)=>{
+  route.push("/Admin/Add/"+e.target.value)
+}
 
+const RefreshBtn =()=>{
+  route.reload();
+}
   return(
     <div className={styles.body}>
       <nav className={styles.nav}>
@@ -125,6 +134,16 @@ const editUserBtn=async(e)=>{
       <div className={styles.container}>
         <h1 className={styles.topic}>{database} Table</h1>
         { database == "User" ?(
+          <div className={styles.Area}>
+          <div className={styles.toolBtn}>
+          <div>
+            <button onClick={addBtn}
+             value="addUser" className={styles.btnTools}>Add+</button>
+          </div>
+          <div>
+            <button onClick={RefreshBtn} className={styles.btnTools}>Refresh</button>
+          </div>
+        </div>
           <div className={styles.Table}>
             <div className={styles.thead}>
               <div className={styles.th}>No.</div>
@@ -165,7 +184,18 @@ const editUserBtn=async(e)=>{
               ))}
             </div>
           </div>
+          </div>
         ): database== "Dormitory" ?(
+          <div className={styles.Area}>
+            <div className={styles.toolBtn}>
+            <div>
+            <button onClick={addBtn}
+            value="addDors" className={styles.btnTools}>Add+</button>
+            </div>
+            <div>
+            <button onClick={RefreshBtn} className={styles.btnTools}>Refresh</button>
+            </div>
+            </div>
           <div className={styles.Table}>
             <div className={styles.thead2}>
               <div className={styles.th}>No.</div>
@@ -196,7 +226,8 @@ const editUserBtn=async(e)=>{
                 <div className={styles.td}>{d.detail.slice(0,22)}..</div>
                 <div className={styles.td}>{d.create_by}</div>
                 <div className={styles.tdAction}><div></div>
-                    <button className={styles.editeBtn}value={d._id}>
+                    <button onClick={editeDorBtn}
+                     className={styles.editeBtn}value={d._id}>
                       Edite
                     </button>
                     <button onClick={deleteDors}
@@ -208,7 +239,18 @@ const editUserBtn=async(e)=>{
             ))}
           </div>
           </div>
+          </div>
         ): database == "Book"?(
+          <div className={styles.Area}>
+        <div className={styles.toolBtn}>
+          <div>
+            <button onClick={addBtn}
+             value="addBook" className={styles.btnTools}>Add+</button>
+          </div>
+          <div>
+            <button onClick={RefreshBtn} className={styles.btnTools}>Refresh</button>
+          </div>
+        </div>
           <div className={styles.Table}>
             <div className={styles.thead3}>
               <div className={styles.th}>No.</div>
@@ -251,8 +293,19 @@ const editUserBtn=async(e)=>{
               ))}
             </div>
           </div>
+          </div>
         )
         :database == "DorMNM"?(
+          <div className={styles.Area}>
+          <div className={styles.toolBtn}>
+          <div>
+            <button onClick={addBtn}
+             value="addDorMNM" className={styles.btnTools}>Add+</button>
+          </div>
+          <div>
+            <button onClick={RefreshBtn} className={styles.btnTools}>Refresh</button>
+          </div>
+        </div>
           <div className={styles.Table}>
             <div className={styles.thead4}>
               <div className={styles.th}>No.</div>
@@ -287,7 +340,18 @@ const editUserBtn=async(e)=>{
               ))}
             </div>
           </div>
-        ) : database == "Post" ?(    //  Just moment for rest please...
+          </div>
+        ) : database == "Post" ?(  
+          <div className={styles.Area}>
+          <div className={styles.toolBtn}>
+          <div>
+            <button onClick={addBtn}
+             value="addPost" className={styles.btnTools}>Add+</button>
+          </div>
+          <div>
+            <button onClick={RefreshBtn} className={styles.btnTools}>Refresh</button>
+          </div>
+        </div>
           <div className={styles.Table}>
                  <div className={styles.thead4}>
               <div className={styles.th}>No.</div>
@@ -322,13 +386,13 @@ const editUserBtn=async(e)=>{
               ))}
             </div>
           </div>
-        )
-        : (
-          <div>
-            Loading ...
           </div>
         )
-
+        : (
+            <div>
+              Loading ...
+            </div>
+          )
         }
       </div>
         <Footer/>
